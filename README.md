@@ -14,8 +14,8 @@ have some example code or data provided.
 To participate, simply fork the repository and then make a folder for your
 solution, inside the challenge you are solving.
 
-If I am solving the example challenge in Rust, I would work in the folder
-`challenge_example/rust/myrrlyn`, to organize solutions by their language and
+If I am solving the zeroth challenge in Rust, I would work in the folder
+`challenge_0/rust/myrrlyn`, to organize solutions by their language and
 then their author. This allows us to easily browse solutions by language, and
 compare work!
 
