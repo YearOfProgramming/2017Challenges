@@ -12,6 +12,10 @@
 
 /stdout { (%stdout) (w) file } def   % push stdout for writing
 /stdin { (%stdin) (r) file } def     % push stdin for writing
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
 /2dup { 1 index 1 index } def        % dup top 2 elements
 
 /chopstring {      % s1 start-chars end-chars - s2
@@ -66,8 +70,7 @@ counts
 { 
   % key value
   2 index gt {
-    stdout exch 1024 string cvs writestring
-    stdout (\n) writestring
+    1024 string cvs println
   } {
     pop
   } ifelse
