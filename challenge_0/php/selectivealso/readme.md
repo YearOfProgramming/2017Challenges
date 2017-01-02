@@ -6,4 +6,4 @@ From the php/selectivealso/ directory, run
 php -S localhost:8080
 ```
 
-Visit `localhost:8080` and click the button
+Visit `localhost:8080/hello_world.php` and click the button

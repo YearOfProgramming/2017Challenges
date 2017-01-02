@@ -1,6 +1,6 @@
 #Reverse a String
 
-##premace
+##Premace
 -	For this coding challenge, your task is to reverse a string for any given string input.
 
 Example: Given s = "hello", return "olleh".
