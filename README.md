@@ -168,6 +168,14 @@ If you go to the page where your forked repository is contained your updated cod
 
 Click on the "New pull request" button button to submit your work for review.
 
-*Image here*
+**Image 3 here**
 
 
+#### 7. Acquiring New Challenges
+
+To get a new challenge that has just been posted you open your command line and enter
+```
+$ git pull challenges master
+```
+
+This will download the newest solutions and challenges to your computer
