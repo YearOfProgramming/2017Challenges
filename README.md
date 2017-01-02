@@ -99,6 +99,8 @@ $ git remote add challenges https://github.com/YearOfProgramming/2017Challenges.
 
 The challenges will be structured in the following format
 ```
+/                                     -> root directory
+
 README.md                             -> Contains the information in this help page
 challenge_0/                          -> challenge_<number>
 
@@ -118,4 +120,38 @@ challenge_0/                          -> challenge_<number>
                            src/       -> contains your source code
 ```
   
-To be continued...
+Assuming that you are in the root of the directory you will look for the challenge you want to complete.
+
+`/challenge_#/`
+
+Move into the directory for the challenge you want to complete and see if a directory already exists for your preferred programming language.
+
+If it exists, move into that directory. Otherwise, make a new directory for your language.
+
+Note: The format for directory naming for programming languages is all lowercase plain text with no special characters(i.e. csharp).
+
+`/challenge_#/language/`
+
+Once inside your preferred programming language directory you will create a directory with your slackusername or name you want to be identified by for your work.
+
+`/challenge_#/language/name/`
+
+###### Documentation For Your Program and Source Code
+
+Inside this directory you will have 2 items:
+* A file named 'README.md' and inside you will document how your program works.
+* Your source code, preferably in a directory titled 'src'
+
+Note: When you are documenting your program, pretend you are someone who has never seen that programming language and instruct them on the steps to run your program and how to use it
+
+Your set up should be as follows so far:
+```
+/challenge_#/language/name/README.md
+/challenge_#/language/name/src/file_1
+/challenge_#/language/name/src/file_2
+/challenge_#/language/name/src/...
+```
+
+#### 6. Submitting your code
+
+
