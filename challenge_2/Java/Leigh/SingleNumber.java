@@ -9,12 +9,12 @@ public class SingleNumber {
         };
         String[] list2 = new String[] {
             "2", "a", "l", "3", "l", "4", "k", "2", "3", 
-            "5", "4", "a", "6", "c", "4", "m", "6", "m", 
-            "k", "9", "10", "9", "8", "7", "8", "10", "7"
+            "4", "a", "6", "c", "4", "m", "6", "m", "k", 
+            "9", "10", "9", "8", "7", "8", "10", "7"
         };
 
         System.out.println(findUniqueChar(list));  // 5
-        System.out.println(findUniqueChar(list2)); // 5
+        System.out.println(findUniqueChar(list2)); // c
     }
 
     public static String findUniqueChar (String[] list) {
