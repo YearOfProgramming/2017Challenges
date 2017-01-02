@@ -1,1 +1,288 @@
+#######################################
+# Operating Systems                   #
+#######################################
+
+# OS X
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# KDE directory preferences
+.directory
+
+# Windows
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+Icon?
+
+
+#######################################
+# Temporary                           #
+#######################################
+
+# Files
+*.tmp
+*.log
+
+# Directories
+log/
+logs/
+tmp/
+cache/
+
+
+#######################################
+# Archives                            #
+#######################################
+
+*.7z
+*.bz2
+*.bzip
+*.deb
+*.dmg
+*.egg
+*.gem
+*.gz
+*.iso
+*.lzma
+*.rar
+*.rpm
+*.tar
+*.xpi
+*.xz
+*.zip
+
+
+#######################################
+# IDE and Editors                     #
+#######################################
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+bin
+bin/**
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.cproject
+.buildpath
+
+# Netbeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# XCode
+xcuserdata
+project.xcworkspace
+
+# Notepad++
+nppBackup
+
+# SublimeText project files
+*.sublime-workspace
+
+# Textmate
+*.tmproj
+*.tmproject
+tmtags
+
+# vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Editors with AutoBackup
+*~
+
+
+#######################################
+# Build Systems                       #
+#######################################
+
+# Autotools
+Makefile.in
+autom4te.cache
+aclocal.m4
+compile
+configure
+depcomp
+install-sh
+missing
+
+# waf
+.waf-*
+.lock-*
+
+# Maven
+target
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+
+#######################################
+# Version Control Systems             #
+#######################################
+
+# Mercurial
+/.hg/*
+*/.hg/*
+.hgignore
+
+# SVN
+.svn/
+
+
+#######################################
+# Languages                           #
+#######################################
+
+# Java
+*.class
+*.ear
+*.jar
+*.war
+
+# C
+*.o
+*.lib
+*.a
+*.dll
+*.ko
+*.so
+*.so.*
+*.dylib
+*.exe
+*.out
+*.app
+
+# C++
+*.slo
+*.lo
+*.o
+*.so
+*.dylib
+*.lai
+*.la
+*.a
+
+# Latex
+*.acn
+*.acr
+*.alg
+*.aux
+*.bcf
+*.bbl
+*.blg
+*.brf
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lol
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.pdftex
+*.ps
+*.pyg
+*.snm
+*.synctex.gz
+*.thm
+*.toc
+*.vrb
+*.xdy
+*.tdo
+
+# Python
+*.pyc
+
+# Rust
 target/
+
+# Scala - sbt specific
+.cache
+.history
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+project/target
+
+# Scala - IDE specific
+.scala_dependencies
+.worksheet
+
+
+#######################################
+# Server                              #
+#######################################
+
+cgi-bin/
+error_log
+.bash_logout
+.bash_profile
+.bashrc
+.cgi-bin/
+.contactemail
+.cpanel/
+.cpanel-logs
+.ftpquota
+.htpasswd
+.htpasswds
+.HttpRequest/
+.lastlogin
+.rnd
+.trash/
+
+
+#######################################
+# Caches                              #
+#######################################
+
+# SASS
+.sass-cache
+
+
+#######################################
+# File backups                        #
+#######################################
+
+*.bak
+*.backup
