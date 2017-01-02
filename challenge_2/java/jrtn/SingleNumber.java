@@ -15,8 +15,7 @@ public class SingleNumber {
         }
         
         for(Map.Entry<Integer, Integer> e : map.entrySet()) {
-            int val = e.getValue();
-            if(val < 2) {
+            if(e.getValue() < 2) {
                 return e.getKey();
             }
         }
