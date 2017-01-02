@@ -1,6 +1,6 @@
-#Invert Binary Tree
+# Invert Binary Tree
 
-##Premise
+## Premise
 
 -	Your challenge is to take a binary tree and invert it. If you don't know what a binary tree is, follow this link: http://cslibrary.stanford.edu/110/BinaryTrees.html
 
