@@ -154,4 +154,20 @@ Your set up should be as follows so far:
 
 #### 6. Submitting your code
 
+Assuming you are in the directory under your name you will enter the following
+```
+$ git add ./*
+$ git commit -m "challenge_# in language"
+$ git pull challenges master
+$ git push origin master
+```
+
+Note: Replace the text inside the quotations with the relevant information.
+
+If you go to the page where your forked repository is contained your updated code should be there. 
+
+Click on the "New pull request" button button to submit your work for review.
+
+*Image here*
+
 
