@@ -23,3 +23,16 @@ compare work!
 
 To submit, just open a [pull request](https://help.github.com/articles/about-pull-requests/) on the main repository. We'll make sure
 that merging won't cause any problems, and go from there.
+
+## Getting Set Up
+
+If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), please do that first.
+
+Now that you have git installed please open up the command line tool for you operating system.
+
+To confirm that you have git installed type in:
+```
+$ git --version
+git version 1.9.1
+```
+It should respond by showing you the version of git you have installed.
