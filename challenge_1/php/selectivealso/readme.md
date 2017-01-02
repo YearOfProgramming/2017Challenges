@@ -1,5 +1,5 @@
 ## The Deets
-`string_reversal.php` has my solution, but `string_reversal_short.php` has a very short (5 lines) solution. Either one works, but one looks better and can be build off of.
+`string_reversal.php` has my solution, but `string_reversal_short.php` has a very short (5 lines) solution. Either one works, but one looks better and can be build off of.g
 
 
 ## To Run
