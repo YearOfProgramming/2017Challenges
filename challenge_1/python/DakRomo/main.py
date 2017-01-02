@@ -1,4 +1,4 @@
 string = 'Jon'
 print string
-string = [-1::-1]
-print string
+stringb = [-1::-1]
+print stringb
