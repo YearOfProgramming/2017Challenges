@@ -8,5 +8,5 @@ def main():
     reverse_string("hello world")
     reverse_string("42")
   
-if __name__ = "__main__":
+if __name__ == "__main__":
   main()
