@@ -11,7 +11,7 @@ have some example code or data provided.
 
 ## Solutions
 
-To participate, simply fork the repository and then make a folder for your
+To participate, simply [fork](https://help.github.com/articles/fork-a-repo/) the repository and then make a folder for your
 solution, inside the challenge you are solving.
 
 If I am solving the zeroth challenge in Rust, I would work in the folder
@@ -21,5 +21,5 @@ compare work!
 
 ## Submitting Your Work
 
-To submit, just open a pull request on the main repository. We'll make sure
+To submit, just open a [pull request](https://help.github.com/articles/about-pull-requests/) on the main repository. We'll make sure
 that merging won't cause any problems, and go from there.
