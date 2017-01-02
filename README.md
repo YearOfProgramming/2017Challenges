@@ -31,9 +31,7 @@ If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Starte
 
 Note: If you have never used the command line a `$` before some text denotes a command and a line following that without the `$` denotes the output of that command.
 
-
 #### 1. Now that you have git installed please open up the command line tool for you operating system.
-
 
 To confirm that you have git installed type in:
 ```
