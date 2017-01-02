@@ -1,0 +1,22 @@
+using System;
+
+namespace Challenge1
+{
+	class MainClass
+	{
+		public static string Reversal(string forward)
+		{
+			char[] charArray = forward.ToCharArray();
+			Array.Reverse(charArray);
+			return new string(charArray);
+		}
+
+		public static void Main(string[] args)
+		{
+			Console.WriteLine("Provide your string to reverse");
+			string Palindrome = Console.ReadLine();
+			Console.WriteLine(Reversal(Palindrome));
+			Console.ReadKey();
+		}
+	}
+}
