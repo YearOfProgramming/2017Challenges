@@ -9,9 +9,6 @@ So while standard library usage may be cheating; it's what we should do in real
 cases where multi-byte characters or grapheme clusters (yeah, Unicode is *wild*)
 may happen.
 
-But I'm an American, ASCII-centric barbarian, so I'm swapping bytes around
-myself.
-
 ## Usage
 
 If you don't have Rust, install it through your package manager or [Rustup].
