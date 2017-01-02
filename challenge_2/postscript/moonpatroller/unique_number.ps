@@ -1,0 +1,78 @@
+% gs -dBATCH unique_number .ps
+%
+
+% - For this coding challenge you are given an array of random integers where every integer is repeated except for a single one. 
+% Your challenge is to find the single integer that does NOT repeat.
+
+% example: given array = [2,3,4,2,3,5,4,6,4,6,9,10,9,8,7,8,10,7] your program should return: 5
+
+% - Assume that the array can hold infinitely many integers. Can you make your solution run in linear time O(n)? Good luck!
+
+% - attempt to search through array with characters
+% extra credit: given array = [2,a,l,3,l,4,k,2,3,4,a,6,c,4,m,6,m,k,9,10,9,8,7,8,10,7] your program should return: c, 5
+
+/stdout { (%stdout) (w) file } def   % push stdout for writing
+/stdin { (%stdin) (r) file } def     % push stdin for writing
+/2dup { 1 index 1 index } def        % dup top 2 elements
+
+/chopstring {      % s1 start-chars end-chars - s2
+
+  2 index length   % copy up string and convert to length
+  exch sub 1 sub   % subtract end-chars from length
+  getinterval
+
+} def
+
+/readstdin {   % size - str
+  stdin exch string readline pop
+} def
+
+/split {       % string needle - array
+  [ 3 1 roll   % mark array start
+  {
+    search {
+      3 1 roll % bury found element under needle and rest of search string
+    }
+    {
+      ] exit % remaining string left on stack, finish array and exit loop
+    }
+    ifelse
+  }
+  loop
+} def
+
+/counts { % array - dict
+  1024 10 mul dict exch             % create initial dict
+  {
+    % dict el
+    2dup known
+    {
+      1 index exch 2dup
+      get 1 add put
+    }
+    {
+      1 index exch
+      1 put
+    }
+    ifelse
+  }
+  forall 
+} def
+
+1024 10 mul readstdin  % read ~10k string onto stack
+1 1 chopstring         % chop brackets off string
+(,) split              % convert to array
+counts
+{ 
+  % key value
+  1 eq {
+    % =
+    stdout exch 1024 string cvs writestring
+    stdout ( ) writestring
+  } {
+    pop
+  } ifelse
+} forall
+
+stdout (\n) writestring
+pstack quit

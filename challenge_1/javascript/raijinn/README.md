@@ -1,0 +1,1 @@
+Goal: Reverse given string.
