@@ -31,9 +31,7 @@ If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Starte
 
 Note: If you have never used the command line a `$` before some text denotes a command and a line following that without the `$` denotes the output of that command.
 
-
-### 1. Now that you have git installed please open up the command line tool for you operating system.
-
+#### 1. Now that you have git installed please open up the command line tool for you operating system.
 
 To confirm that you have git installed type in:
 ```
@@ -43,7 +41,7 @@ git version 1.9.1
 It should respond by showing you the version of git you have installed.
 
 
-### 2. [Fork](https://help.github.com/articles/fork-a-repo/) the 2017Challenges repository.
+#### 2. [Fork](https://help.github.com/articles/fork-a-repo/) the 2017Challenges repository.
 
 
 Click on the button on the top that says fork.
@@ -53,7 +51,7 @@ Click on the button on the top that says fork.
 You will now have a copy of the 2017Challenges repository in your profile.
 
 
-### 3. [Clone](https://help.github.com/articles/cloning-a-repository/) your fork of the 2017Challenges repository onto your computer.
+#### 3. [Clone](https://help.github.com/articles/cloning-a-repository/) your fork of the 2017Challenges repository onto your computer.
 
 
 Click on the green dropdown button titled "Clone or download" and copy the URL there.
@@ -79,7 +77,7 @@ Checking connectivity... done.
 ```
 
 
-### 4. Git Configuration
+#### 4. Git Configuration
 
 
 Next we will be [configuring](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup) your git setup. 
@@ -96,11 +94,13 @@ $ git remote add challenges https://github.com/YearOfProgramming/2017Challenges.
 ```
 
 
-### 5. Proceeding with a challenge
+#### 5. Proceeding with a challenge
 
 
 The challenges will be structured in the following format
 ```
+/                                     -> root directory
+
 README.md                             -> Contains the information in this help page
 challenge_0/                          -> challenge_<number>
 
@@ -120,7 +120,65 @@ challenge_0/                          -> challenge_<number>
                            src/       -> contains your source code
 ```
   
-To be continued...
+Assuming that you are in the root of the directory you will look for the challenge you want to complete.
+
+`/challenge_#/`
+
+Move into the directory for the challenge you want to complete and see if a directory already exists for your preferred programming language.
+
+If it exists, move into that directory. Otherwise, make a new directory for your language.
+
+Note: The format for directory naming for programming languages is all lowercase plain text with no special characters(i.e. csharp).
+
+`/challenge_#/language/`
+
+Once inside your preferred programming language directory you will create a directory with your slackusername or name you want to be identified by for your work.
+
+`/challenge_#/language/name/`
+
+###### Documentation For Your Program and Source Code
+
+Inside this directory you will have 2 items:
+* A file named 'README.md' and inside you will document how your program works.
+* Your source code, preferably in a directory titled 'src'
+
+Note: When you are documenting your program, pretend you are someone who has never seen that programming language and instruct them on the steps to run your program and how to use it
+
+Your set up should be as follows so far:
+```
+/challenge_#/language/name/README.md
+/challenge_#/language/name/src/file_1
+/challenge_#/language/name/src/file_2
+/challenge_#/language/name/src/...
+```
+
+#### 6. Submitting your code
+
+Assuming you are in the directory under your name you will enter the following
+```
+$ git add ./*
+$ git commit -m "challenge_# in language"
+$ git pull challenges master
+$ git push origin master
+```
+
+Note: Replace the text inside the quotations with the relevant information.
+
+If you go to the page where your forked repository is contained your updated code should be there. 
+
+Click on the "New pull request" button button to submit your work for review.
+
+**Image 3 here**
+
+
+#### 7. Acquiring New Challenges
+
+To get a new challenge that has just been posted you open your command line and enter
+```
+$ git pull challenges master
+```
+
+This will download the newest solutions and challenges to your computer
 
 
 ## The Administration Team
