@@ -121,3 +121,13 @@ challenge_0/                          -> challenge_<number>
 ```
   
 To be continued...
+
+
+## The Administration Team
+- [myrrlyn](https://github.com/myrrlyn "myrrlyn")
+- [jremillard](https://github.com/jarydremillard "jaryd remillard")
+- [sten](https://github.com/dashsten "dashten")
+- [manual](https://github.com/ManuelMeraz "ManuelMeraz")
+- [marcus](https://github.com/MJUIUC "MJUIUC")
+- [ae1vtas](https://github.com/aev1tas "aev1tas")
+- [aakash](https://github.com/asethi77 "asethi77")
