@@ -6,10 +6,10 @@
 
 for example, say you have a tree that looks like the following
 
-![tree](https://github.com/MJUIUC/2017Challenges/tree/master/challenge_4/tree.jpg)
+![tree](/tree.jpg)
 
 after your program runs, it should return a tree that looks like this
 
-![reversedTree](https://github.com/MJUIUC/2017Challenges/tree/master/challenge_4/treeReversed.jpg)
+![reversedTree](/treeReversed.jpg)
 
 -	Your program should run on any size tree. What is the runtime and space of your algorithm? Do you think it's reasonable? These are important questions you should ask yourself when creating these types of solutions.
