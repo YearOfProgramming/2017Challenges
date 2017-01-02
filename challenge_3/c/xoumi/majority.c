@@ -10,15 +10,16 @@ void main()
     len-=1;
 
     //Run every number from 0 to 9 and if matching, flag+=1
+    //only changed one line from Challenge_2 at line20.
     //This has a runtime of O(11n) I think. That's linear right ?
-    //would have a runtime of O(37n) if I added characters.
+    //would have a run time of O(37n) if I included characters.
     
     for(i='0';i<='9';i++){
 	flag=0;
 	for(j=0;j<=len;j++)
 	    if (array[j]==i)
 		flag++;
-	if(flag==1)
+	if(flag>=len/2)
 	    printf("%c",i);
     }
 }
