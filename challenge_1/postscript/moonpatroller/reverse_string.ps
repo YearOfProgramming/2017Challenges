@@ -1,0 +1,28 @@
+% gs -dBATCH reverse_string.ps
+%
+
+% read string onto stack
+(%stdin) (r) file 1024 string readline pop
+
+% push same length empty string under
+dup length string exch
+
+% push length under
+dup length exch
+
+% dest len orig
+
+{
+  % dest pos letter
+
+  % decrement pos
+  exch 1 sub exch
+
+  % put letter into dest
+  2 index 2 index 3 -1 roll put
+
+} forall
+
+pop
+(%stdout)(w)file exch writestring
+(%stdout)(w)file (\n) writestring
