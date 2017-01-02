@@ -9,4 +9,4 @@ example: given array = [2,3,4,2,3,5,4,6,4,6,9,10,9,8,7,8,10,7] your program shou
 -	Assume that the array can hold infinitely many integers. Can you make your solution run in linear time O(n)? Good luck!
 
 - attempt to search through array with characters
-extra credit: given array = [2,a,l,3,l,4,k,2,3,5,4,a,6,c,4,m,6,m,k,9,10,9,8,7,8,10,7]
+extra credit: given array = [2,a,l,3,l,4,k,2,3,4,a,6,c,4,m,6,m,k,9,10,9,8,7,8,10,7] your program should return: c
