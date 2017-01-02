@@ -32,7 +32,7 @@ If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Starte
 Note: If you have never used the command line a `$` before some text denotes a command and a line following that without the `$` denotes the output of that command.
 
 
-### 1. Now that you have git installed please open up the command line tool for you operating system.
+#### 1. Now that you have git installed please open up the command line tool for you operating system.
 
 
 To confirm that you have git installed type in:
@@ -43,7 +43,7 @@ git version 1.9.1
 It should respond by showing you the version of git you have installed.
 
 
-### 2. [Fork](https://help.github.com/articles/fork-a-repo/) the 2017Challenges repository.
+#### 2. [Fork](https://help.github.com/articles/fork-a-repo/) the 2017Challenges repository.
 
 
 Click on the button on the top that says fork.
@@ -53,7 +53,7 @@ Click on the button on the top that says fork.
 You will now have a copy of the 2017Challenges repository in your profile.
 
 
-### 3. [Clone](https://help.github.com/articles/cloning-a-repository/) your fork of the 2017Challenges repository onto your computer.
+#### 3. [Clone](https://help.github.com/articles/cloning-a-repository/) your fork of the 2017Challenges repository onto your computer.
 
 
 Click on the green dropdown button titled "Clone or download" and copy the URL there.
@@ -79,7 +79,7 @@ Checking connectivity... done.
 ```
 
 
-### 4. Git Configuration
+#### 4. Git Configuration
 
 
 Next we will be [configuring](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup) your git setup. 
@@ -96,7 +96,7 @@ $ git remote add challenges https://github.com/YearOfProgramming/2017Challenges.
 ```
 
 
-### 5. Proceeding with a challenge
+#### 5. Proceeding with a challenge
 
 
 The challenges will be structured in the following format
