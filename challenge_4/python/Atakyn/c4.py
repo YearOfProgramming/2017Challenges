@@ -23,7 +23,7 @@ def reverse(root):  # solution, accounts for unpaired nodes (e.g. if 10 were add
             root.right = temp
             reverse(root.left)
             reverse(root.right)
-        elif root.right is not None:
+        if root.right is not None:
             temp = root.right
             root.right = root.left
             root.left = temp
