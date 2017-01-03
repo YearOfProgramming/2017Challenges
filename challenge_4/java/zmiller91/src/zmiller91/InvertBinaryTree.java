@@ -20,8 +20,8 @@ public class InvertBinaryTree {
      */
     public static void invert(Node root) {
         
-        // Stop at the n-1 row
-        if(root.left() == null || root.right() == null) {
+        // Stop when theres nothing to do
+        if(root == null) {
             return;
         }
         

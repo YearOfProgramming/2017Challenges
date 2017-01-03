@@ -54,14 +54,14 @@ public class Node {
      */
     public void addEdges(Node left, Node right) {
         
+        this.left = left;
         if(left != null) {
             left.level = this.level + 1;
-            this.left = left;
         }
         
+        this.right = right;
         if(right != null) {
             right.level = this.level + 1;
-            this.right = right;
         }
     }
 }
