@@ -3,7 +3,7 @@ while (TRUE) {
   if (interactive () ) {
     strinput <- readline(prompt="Type or paste an array of numbers. Type 'quit' to quit: ")
   }
-  else{
+  else {
     cat("Type or paste an array of numbers. Type 'quit' to quit: ")
     strinput <- readLines("stdin",n=1)
   }
