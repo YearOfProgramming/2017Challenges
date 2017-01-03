@@ -8,4 +8,3 @@ def majority_element(array):
     return("No majority found. :(")
 
 print(majority_element(a))
-
