@@ -1,0 +1,21 @@
+.container {
+	text-align: center;
+}
+
+#string-reverse {
+	display: inline-block;
+	max-width: 600px;
+	padding: 15px 30px;
+	margin-top: 200px;
+	border: solid 3px #999;
+	border-radius: 10px;
+}
+
+input, label{
+	display: block;
+	margin:10px auto;
+}
+
+#output {
+	margin-top:5px;
+}
