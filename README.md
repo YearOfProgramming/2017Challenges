@@ -6,9 +6,13 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 
 ## Table of Contents
     
-1. [The Administration Team](#the-administration-team)
+1. [Challenges](#challenges)
+2. [Solutions](#solutions)
+3. [Submitting Your Work](#submitting-your-work)
+4. [Getting Set Up](#getting-set-up)
+    4.1 [
 
-## <a name="the-administration-team"></a>The Administration Team
+## The Administration Team
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
 - [jremillard](https://github.com/jarydremillard "jaryd remillard")
 - [sten](https://github.com/dashsten "dashten")
@@ -23,7 +27,7 @@ Each challenge will be posted in its own folder, in numbered order. Each
 challenge folder will have a Challenge.md file describing the challenge, and may
 have some example code or data provided.
 
-## Solutions
+## <a name="solutions"></a>Solutions
 
 To participate, simply [fork](https://help.github.com/articles/fork-a-repo/) the repository and then make a folder for your
 solution, inside the challenge you are solving.
@@ -33,13 +37,13 @@ If I am solving the zeroth challenge in Rust, I would work in the folder
 then their author. This allows us to easily browse solutions by language, and
 compare work!
 
-## Submitting Your Work
+## <a name="submitting-your-work"></a> Submitting Your Work
 
 To submit, open a [pull request](https://help.github.com/articles/about-pull-requests/) on the main repository. We'll make sure that merging won't cause any problems, and go from there.
 
 Note: Your solution will not be instantly accepted onto repository. We will be reviewing your code, file formatting and directory structure of your code. If you satisfy the requirements, then we will accept and merge. 
 
-## Getting Set Up
+## <a name="getting-set-up"></a>Getting Set Up
 
 If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), please do that first.
 
