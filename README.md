@@ -6,9 +6,9 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 
 ## Table of Contents
     
-    1. [The Administrative Team](#the-administrative-team)
+1. [The Administration Team](#the-administration-team)
 
-## <a name="the-administrative-team"></a>The Administration Team
+## <a name="the-administration-team"></a>The Administration Team
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
 - [jremillard](https://github.com/jarydremillard "jaryd remillard")
 - [sten](https://github.com/dashsten "dashten")
