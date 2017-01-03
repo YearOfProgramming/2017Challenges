@@ -1,6 +1,6 @@
 trait Tree[+A] {
-  val isEmptyTree: Boolean = true
-  val isFull: Boolean      = false
+  val isEmpty: Boolean
+  val isFull: Boolean
 
   lazy val inverted: Tree[A] = {
     this match {
@@ -22,19 +22,20 @@ trait Tree[+A] {
   }
 }
 
-case class EmptyTree[A]() extends Tree[A]
+case class EmptyTree[A]() extends Tree[A] {
+  override val isEmpty = true
+  override val isFull = false
+}
 
 case class Node[A](elem: A,
                    left: Tree[A] = EmptyTree(),
                    right: Tree[A] = EmptyTree())
     extends Tree[A] {
-  override val isEmptyTree = false
-  override val isFull      = !left.isEmptyTree && !right.isEmptyTree
+  override val isEmpty = false
+  override val isFull      = !left.isEmpty && !right.isEmpty
 }
 
 object Challenge4 extends App {
-  import BinaryTreeInversion.invert
-
   val tree = Node(4).add(2).add(7).add(1).add(3).add(6).add(9)
   println(tree)
   println(tree.inverted)
