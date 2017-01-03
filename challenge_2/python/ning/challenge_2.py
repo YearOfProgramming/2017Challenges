@@ -1,7 +1,7 @@
-import collections
+from collections import defaultdict
 
 def find_unique(sequence):
-    counter_dict = collections.defaultdict(int)
+    counter_dict = defaultdict(int)
     uniques = []
 
     for item in sequence:
