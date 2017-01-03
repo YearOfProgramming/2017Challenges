@@ -1,15 +1,14 @@
+import collections
+
 def find_unique(sequence):
-    item_counter = dict()
-    uniques = list()
+    counter_dict = collections.defaultdict(int)
+    uniques = []
 
     for item in sequence:
-        if item not in item_counter:
-            item_counter[item] = 1
-        else:
-            item_counter[item] += 1
+        counter_dict[item] += 1
 
-    for item, item_count in item_counter.items():
-        if item_count == 1:
+    for item, count in counter_dict.items():
+        if count == 1:
             uniques.append(item)
 
     return uniques
