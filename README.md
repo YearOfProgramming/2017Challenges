@@ -10,7 +10,13 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 2. [Solutions](#solutions)
 3. [Submitting Your Work](#submitting-your-work)
 4. [Getting Set Up](#getting-set-up)
-    4.1 [
+    1. [Verify Git Installation](#verify-git-installation)
+    2. [Fork the 2017Challenges Repository](#fork-the-2017challenges-repository)
+    3. [Clone Your Fork](#clone-your-fork)
+    4. [Git Configuration](#git-configuration)
+    5. [Proceeding With A Challenge](#proceeding-with-a-chaellenge)
+    6. [Submitting Your Code](#submitting-your-code)
+    7. [Acquiring New Challenges](#acquiring-new-challenges)
 
 ## The Administration Team
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
@@ -27,7 +33,7 @@ Each challenge will be posted in its own folder, in numbered order. Each
 challenge folder will have a Challenge.md file describing the challenge, and may
 have some example code or data provided.
 
-## <a name="solutions"></a>Solutions
+## Solutions
 
 To participate, simply [fork](https://help.github.com/articles/fork-a-repo/) the repository and then make a folder for your
 solution, inside the challenge you are solving.
@@ -37,19 +43,19 @@ If I am solving the zeroth challenge in Rust, I would work in the folder
 then their author. This allows us to easily browse solutions by language, and
 compare work!
 
-## <a name="submitting-your-work"></a> Submitting Your Work
+## Submitting Your Work
 
 To submit, open a [pull request](https://help.github.com/articles/about-pull-requests/) on the main repository. We'll make sure that merging won't cause any problems, and go from there.
 
 Note: Your solution will not be instantly accepted onto repository. We will be reviewing your code, file formatting and directory structure of your code. If you satisfy the requirements, then we will accept and merge. 
 
-## <a name="getting-set-up"></a>Getting Set Up
+## Getting Set Up
 
 If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), please do that first.
 
 Note: If you have never used the command line a `$` before some text denotes a command and a line following that without the `$` denotes the output of that command.
 
-#### 1. Now that you have git installed please open up the command line tool for you operating system.
+#### 1. Verify Git Installation
 
 To confirm that you have git installed type in:
 ```
@@ -59,7 +65,7 @@ git version 1.9.1
 It should respond by showing you the version of git you have installed.
 
 
-#### 2. [Fork](https://help.github.com/articles/fork-a-repo/) the 2017Challenges repository.
+#### 2. [Fork](https://help.github.com/articles/fork-a-repo/) The 2017Challenges Repository
 
 
 Click on the button on the top that says fork.
@@ -69,7 +75,7 @@ Click on the button on the top that says fork.
 You will now have a copy of the 2017Challenges repository in your profile.
 
 
-#### 3. [Clone](https://help.github.com/articles/cloning-a-repository/) your fork of the 2017Challenges repository onto your computer.
+#### 3. [Clone](https://help.github.com/articles/cloning-a-repository/) Your Fork
 
 
 Click on the green dropdown button titled "Clone or download" and copy the URL there.
@@ -112,7 +118,7 @@ $ git remote add challenges https://github.com/YearOfProgramming/2017Challenges.
 ```
 
 
-#### 5. Proceeding with a challenge
+#### 5. Proceeding With A Challenge
 
 
 The challenges will be structured in the following format
@@ -170,7 +176,7 @@ Your set up should be as follows so far:
 /challenge_#/language/name/src/...
 ```
 
-#### 6. Submitting your code
+#### 6. Submitting Your Code
 
 Assuming you are in the directory under your name you will enter the following
 ```
