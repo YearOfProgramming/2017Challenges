@@ -1,7 +1,21 @@
+
 # Year of Challenges 2017
 
 Hello and welcome to the Year of Programming 2017's challenges repository! Here
 we will be posting ~~daily~~ periodic challenges for the community to complete.
+
+## Table of Contents
+    
+    1. [The Administrative Team](#the-administrative-team)
+
+## <a name="the-administrative-team"></a>The Administration Team
+- [myrrlyn](https://github.com/myrrlyn "myrrlyn")
+- [jremillard](https://github.com/jarydremillard "jaryd remillard")
+- [sten](https://github.com/dashsten "dashten")
+- [manual](https://github.com/ManuelMeraz "ManuelMeraz")
+- [marcus](https://github.com/MJUIUC "MJUIUC")
+- [ae1vtas](https://github.com/aev1tas "aev1tas")
+- [aakash](https://github.com/asethi77 "asethi77")
 
 ## Challenges
 
@@ -181,11 +195,3 @@ $ git pull challenges master
 This will download the newest solutions and challenges to your computer
 
 
-## The Administration Team
-- [myrrlyn](https://github.com/myrrlyn "myrrlyn")
-- [jremillard](https://github.com/jarydremillard "jaryd remillard")
-- [sten](https://github.com/dashsten "dashten")
-- [manual](https://github.com/ManuelMeraz "ManuelMeraz")
-- [marcus](https://github.com/MJUIUC "MJUIUC")
-- [ae1vtas](https://github.com/aev1tas "aev1tas")
-- [aakash](https://github.com/asethi77 "asethi77")
