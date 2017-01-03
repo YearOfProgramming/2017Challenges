@@ -5,6 +5,8 @@
  */
 package zmiller91;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author zmiller
@@ -41,14 +43,14 @@ public class InvertBinaryTree {
         int level = root.level();
         
         // Create the node queue and enqueue the first value
-        Queue<Node> q = new Queue<Node>();
-        q.enqueue(root);
+        LinkedList<Node> q = new LinkedList<Node>();
+        q.addLast(root);
         
         // Pop from the queue and add new nodes
-        while(!q.empty()) {
+        while(!q.isEmpty()) {
             
             // print the next node
-            Node current = q.dequeue();
+            Node current = q.removeFirst();
             if(current.level() > level) {
                 System.out.println();
                 level = current.level();
@@ -57,12 +59,12 @@ public class InvertBinaryTree {
             
             // Add the left node to the queue
             if(current.left() != null) {
-                q.enqueue(current.left());
+                q.addLast(current.left());
             }
             
             // Add the right node to the queue
             if(current.right() != null) {
-                q.enqueue(current.right());
+                q.addLast(current.right());
             }
         }
         
