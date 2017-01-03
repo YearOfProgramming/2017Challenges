@@ -6,10 +6,11 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 
 ## Table of Contents
     
-1. [Challenges](#challenges)
-2. [Solutions](#solutions)
-3. [Submitting Your Work](#submitting-your-work)
-4. [Getting Set Up](#getting-set-up)
+1. [The Administration Team](#the-administration-team)
+2. [Challenges](#challenges)
+3. [Solutions](#solutions)
+4. [Submitting Your Work](#submitting-your-work)
+5. [Getting Set Up](#getting-set-up)
     1. [Verify Git Installation](#verify-git-installation)
     2. [Fork the 2017Challenges Repository](#fork-the-2017challenges-repository)
     3. [Clone Your Fork](#clone-your-fork)
