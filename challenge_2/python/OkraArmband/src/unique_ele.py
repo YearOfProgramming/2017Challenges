@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 def unique(lst):
-    # Super duper lazy way of solving problem... o(n^2) method
+    # Super duper lazy way of solving problem... o(n^2) method.
     unique_lst = [itm for itm in lst if lst.count(itm) == 1]
     return unique_lst
 
