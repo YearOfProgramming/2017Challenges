@@ -191,7 +191,7 @@ Note: Replace the text inside the quotations with the relevant information.
 
 If you go to the page where your forked repository is contained your updated code should be there. 
 
-Click on the "New pull request" button button to submit your work for review. Be sure to include the challenge number and language of your code!
+Click on the "New pull request" button button to submit your work for review. Be sure to include the challenge number and language of your solution!
 
 **Image 3 here**
 
