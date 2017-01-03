@@ -75,8 +75,10 @@
 
 } def
 
+/leaf { [ [] [] [] ] dup 0 4 -1 roll put } def
 
-[4 [2 [1 [] []] [3 [][]]][7 [6 [] []][9 [][]]]] 
+
+[4 [2 1 leaf 3 leaf][7 6 leaf 9 leaf]] 
 (Original:) println
 dup 0 print_tree
 dup reverse_tree
