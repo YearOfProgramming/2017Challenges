@@ -1,0 +1,1 @@
+To run this project, open your command prompt and navigate to the "build" directory. Then write "java Reversal 'text I want reversed'". Simple as that :)
