@@ -42,7 +42,7 @@ As a participant, you will solve this challenge with the programming language of
 
 You will then submit your code for review and your peers will review your code and give you feedback. Once enough people have reviewed and approved of your solution, we will merge your code onto the repository and the solution will be stored there for that challenge. 
 
-Most of our communication is done through our [slack](https://yearofprogramming.slack.com/shared_invite/MTIyNDM3Mjc1OTI1LTE0ODMzMDQwMzAtOGNkNTA2NDY5Yg) chat room. Through this chat room you can collaborate with others to help solve these challenges or anything you feel like discussing. 
+Most of our communication is done through our [slack](https://yearofprogramming.signup.team/) chat room. Through this chat room you can collaborate with others to help solve these challenges or anything you feel like discussing. 
 
 This will develop key skills required for problem solving and development for new developers such as:
 * Solving problems through programming
@@ -266,4 +266,3 @@ Then you can submit a pull request.
 ![workflow](https://github.com/YearOfProgramming/storage/blob/master/images/workflow.png?raw=true)
 
 **All credit goes to [@selectivealso](https://github.com/SelectiveAlso) from our slack chat for this awesome image!**
-s
