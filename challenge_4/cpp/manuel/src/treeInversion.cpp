@@ -25,21 +25,19 @@ std::vector<int> stringToDigits (std::string stringDigits) {
 }
 
 struct node * buildTree(std::vector<int> numbers) {
-    int height = 0; // Current tree depth
 
     // Initialize tree root
     struct node *root = new struct node();
-    root->parent = NULL;
     int index = 0;
 
     // Build the tree
-    build(numbers, index, height, root);
+    build(numbers, index, root);
 
     return root;
 }
 
 void build(std::vector<int> numbers, int index,
-        int height, struct node *currentNode) {
+        struct node *currentNode) {
 
     currentNode->value = numbers[index];
 
@@ -48,8 +46,7 @@ void build(std::vector<int> numbers, int index,
     if (newIndex < numbers.size()) {
         currentNode->leftChild = new struct node();
 
-        currentNode->leftChild->parent = currentNode;
-        build(numbers, newIndex, height + 1, currentNode->leftChild);
+        build(numbers, newIndex, currentNode->leftChild);
     } else {
         currentNode->leftChild = NULL;
     }
@@ -59,8 +56,7 @@ void build(std::vector<int> numbers, int index,
     if (newIndex < numbers.size()) {
         currentNode->rightChild = new struct node();
 
-        currentNode->rightChild->parent = currentNode;
-        build(numbers, newIndex, height + 1, currentNode->rightChild);
+        build(numbers, newIndex, currentNode->rightChild);
     } else {
         currentNode->rightChild = NULL;
     }
