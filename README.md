@@ -112,7 +112,7 @@ Click on the green dropdown button titled "Clone or download" and copy the URL t
 
 *Note: I recommend cloning as [SSH](https://help.github.com/articles/generating-an-ssh-key/) as it will allow you to use git without constant user authentication. If you are not comfortable with this yet, proceed with HTTPS.*
 
-~[2](https://github.com/YearOfProgramming/storage/blob/master/images/2.png?raw=true)
+![2](https://github.com/YearOfProgramming/storage/blob/master/images/2.png?raw=true)
 
 Open up your command line tool and enter:
 
