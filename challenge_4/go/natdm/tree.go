@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"log"
 	"time"
 )
 
@@ -21,51 +20,6 @@ func reverse(t *tree, to time.Duration) error {
 		return nil
 	case <-ctx.Done():
 		return fmt.Errorf("could not finish before %s", to.String())
-	}
-}
-
-func main() {
-	t := &tree{
-		A: &tree{
-			A: &tree{
-				V: 4,
-			},
-			B: &tree{
-				V: 2,
-				A: &tree{
-					V: 100,
-					A: &tree{
-						V: 94,
-					}, B: &tree{
-						V: 66,
-					},
-				},
-				B: &tree{},
-			},
-			V: 10,
-		},
-		B: &tree{
-			A: &tree{
-				V: 12,
-			},
-			B: &tree{
-				V: 5,
-			},
-			V: 90,
-		},
-		V: 9,
-	}
-
-	// Add five second timeout so trees don't infinitely reverse, if it's a big enough tree
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
-	defer cancel()
-
-	// If the timeout is hit, stop reversing the tree
-	select {
-	case <-t.reverse(ctx):
-		log.Println(t)
-	case <-ctx.Done():
-		log.Println("could not finish")
 	}
 }
 
