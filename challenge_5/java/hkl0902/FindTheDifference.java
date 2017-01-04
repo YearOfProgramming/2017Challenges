@@ -20,6 +20,8 @@ class FindTheDifference {
     }
 
     public char getTheDifference() {
+        sortS();
+        sortT();
         for (int i = 0; i < s.size(); i += 1) {
             if (s.get(i) != t.get(i)) {
                 return s.get(i);
@@ -48,7 +50,7 @@ class FindTheDifference {
                 return lst;
             }
             lst.add(0, lst.get(1));
-            lst.remove(1);
+            lst.remove(2);
             return lst;
         }
         double pivot = findPivot(lst);

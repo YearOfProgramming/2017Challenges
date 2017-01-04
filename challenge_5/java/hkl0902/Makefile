@@ -1,13 +1,12 @@
 SRCS := $(wildcard *.java)
 COMPILED := $(wildcard *.class)
 
-#CPATH = "..:$(CLASSPATH):;..;$(CLASSPATH)"
+CPATH = "..:$(CLASSPATH):"
 
 JFLAGS = -g -Xlint:unchecked -Xlint:deprecation
 
 default:
 	javac $(JFLAGS) -cp $(CLASSPATH) $(SRCS)
-	mv *.class CompiledFiles
 
 check:
-	java -ea -cp UnitTest
+	java -ea -cp $(CLASSPATH) UnitTest
