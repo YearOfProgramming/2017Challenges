@@ -58,6 +58,10 @@ public class UnitTest {
         String t = "kwxlbgpqevait";
         FindTheDifference ftd = new FindTheDifference(s, t);
         assertEquals('g', ftd.getTheDifference());
+        // test edge case
+        t = s + 'z';
+        ftd = new FindTheDifference(s, t);
+        assertEquals('z', ftd.getTheDifference());
     }
 
 }
