@@ -11,6 +11,9 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
+        #   made two histograms of each string. Saw wich characters didn't repeat the same ammount of times.
+        #   pretty striaght forward, but the runtime would be better if I used a dictionary. Oh well :/
+
         sHisto = []
         tHisto = []
         

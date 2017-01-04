@@ -16,7 +16,7 @@ e
 Explanation:
 'e' is the letter that was added.
 
--	I wrote a unit test for python users to accompany this challenge. Feel free to write your own unit tests so that others can use it to better their code!
+-	I wrote a unit test for python users to accompany this challenge. Feel free to write your own unit tests so that others can use it to better their code! The test is under the folder mjuiuc
 
 ## Unit testing!
 
