@@ -20,22 +20,30 @@ int main()
   // Sort ant then print the array.
   std::sort(num_array.begin(), num_array.end());
   print_array(num_array);
-
-  for(int i = 0; i < num_array.size(); i++)
+  
+  int i = 0;
+  while(i < num_array.size())
   {
+    /*
+     * This if statement will check if the number is equal to the next one, and
+     * if so it will remove all the numbers of that value in the entire vector
+     * array.
+     */
     if(num_array.at(i) == num_array.at(i + 1))
     {
-      std::cout << num_array.at(i) << " is duped\n";
-      num_array.erase(std::remove(num_array.begin(), num_array.end(), num_array.at(i)), num_array.end());
+      num_array.erase(std::remove(num_array.begin(), num_array.end(), +num_array[i]), num_array.end());
+      
+      // Here we print out the array just to see its progress.
       print_array(num_array);
     }
-    else
+    else if(num_array.at(i) != num_array.at(i + 1))
     {
-      std::cout << num_array.at(i) << " is not duped.\n";
+      // This will tell us if a value is duped or not.
+      std::cout << num_array.at(i) << " is not a dupe.\n";
+      i++;
     }
   }
 
-
-  print_array(num_array);
+  //print_array(num_array);
   return 0;
 }
