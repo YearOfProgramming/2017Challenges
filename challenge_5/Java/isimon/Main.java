@@ -2,7 +2,7 @@ import java.util.HashSet;
 
 public class Main {
 
-    // O(n) time, O(1) space hashing method
+    // O(n+m) time, O(1) space hashing method
     public static char findTheDifference(String s, String t){
         if((s == null && t == null) || (s.length() == 0 && t.length() == 0)) return ' ';
         
@@ -19,7 +19,7 @@ public class Main {
         return hash;
     }
     
-    // O(n) time, O(n) space Hash Set Method
+    // O(n+m) time, O(n+m) space Hash Set Method
     public static char findTheDifferenceHashSet(String s, String t){
       if((s == null && t == null) || (s.length() == 0 && t.length() == 0)) return ' ';
       
