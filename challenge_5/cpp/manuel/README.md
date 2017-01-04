@@ -1,4 +1,4 @@
-# Single Number
+# Find the Difference
 
 ### 1. Approch to Solving the problem
 
@@ -24,7 +24,10 @@ I create a count array of size 'e' with all 0s.
 As I iterate through those strings I increment the matching index value
 for the corresponding ASCII value of that string.
 
-The index that contains a value of 1 is the single number different number.
+The index that contains a differing count value is the different character.
+
+If all the values end up being equal up until the size of the shorter string,
+then the max ASCII value of the larger string is the different character.
 
 ### 2. How to compile and run this code
 
