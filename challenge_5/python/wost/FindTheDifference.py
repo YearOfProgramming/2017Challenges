@@ -1,6 +1,3 @@
-import random
-
-
 class Solution(object):
     def findTheDifference(self, s, t):
         for i in t:
