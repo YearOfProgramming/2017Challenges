@@ -14,17 +14,17 @@ function getTally(arr){
 // Filter out any keys in object that has a value of 1, and add to a string,
 // separating chars with ', ' for each new addition
 function logSingles(obj){
-	var singles = '';
-	for (var key in obj){
-		if(obj[key] === 1){
-			singles.length >=1 ? singles += ', ' + key : singles = key;
-		}
-	}
-	return singles;
+  var singles = '';
+  for (var key in obj){
+    if(obj[key] === 1){
+      singles.length >=1 ? singles += ', ' + key : singles = key;
+    }
+  }
+  return singles;
 }
 
 function test(arr){
-	console.log(logSingles(getTally(arr)));
+  console.log(logSingles(getTally(arr)));
 }
 
 test(array);
