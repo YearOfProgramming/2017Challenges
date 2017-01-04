@@ -12,4 +12,6 @@ main(int argc, char *argv[]){
             printf("%c", argv[1][i]);
         }
         printf("\n");
-}}
+}
+	return 0;
+}
