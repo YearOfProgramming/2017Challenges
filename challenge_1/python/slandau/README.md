@@ -1,1 +1,1 @@
-Challange 0, reverse a string by Steven Landau
+Challange 1, reverse a string by Steven Landau
