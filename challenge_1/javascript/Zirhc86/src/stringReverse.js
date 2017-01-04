@@ -1,5 +1,6 @@
 
-console.log('Running test() with no argument will log \'Example string!\' reversed.'); 
+console.log('Running test() with no argument will log \'Example string!\' reversed.');
+ 
 /*
  ********************************************************************
  ************************CHALLENGE ANSWER ***************************
