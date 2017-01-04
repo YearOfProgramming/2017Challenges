@@ -16,9 +16,10 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
     2. [Fork the 2017Challenges repository](#2-fork-the-2017challenges-repository)
     3. [Clone your fork](#3-clone-your-fork)
     4. [Git configuration](#4-git-configuration)
-    5. [Proceeding with a challenge](#5-proceeding-with-a-chaellenge)
+    5. [Proceeding with a challenge](#5-proceeding-with-a-challenge)
     6. [Submitting your code](#6-submitting-your-code)
     7. [Acquiring new challenges](#7-acquiring-new-challenges)
+7. [Workflow](#workflow) 
 
 ## The Administration Team
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
