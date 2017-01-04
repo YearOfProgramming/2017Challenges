@@ -6,20 +6,20 @@ import sys
 from collections import defaultdict
 
 try:
-    j = json.loads(" ".join(sys.argv[1:]))
+    inlist = json.loads(" ".join(sys.argv[1:]))
 except json.decoder.JSONDecodeError as e:
     print("Invalid input, try JSON")
     exit(1)
 
-ls = defaultdict(int)
-for num in j:
-    ls[num] += 1
+sumdict = defaultdict(int)
+for num in inlist:
+    sumdict[num] += 1
 
 res = []
 
-for num, value in ls.items():
+for key, value in sumdict.items():
     if value == 1:
-        res.append(num)
+        res.append(key)
 
 if len(res) == 1:
     print(res[0])
