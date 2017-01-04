@@ -265,4 +265,5 @@ Then you can submit a pull request.
 
 ![workflow](https://github.com/YearOfProgramming/storage/blob/master/images/workflow.png?raw=true)
 
-**All credit goes to @selectivealso from our slack chat for this awesome image!**
+**All credit goes to [@selectivealso](https://github.com/SelectiveAlso) from our slack chat for this awesome image!**
+s
