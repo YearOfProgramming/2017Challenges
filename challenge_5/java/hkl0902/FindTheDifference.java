@@ -1,20 +1,21 @@
-import java.util.stream.IntStream;
+import java.util.List;
+import java.util.ArrayList;
 
 class FindTheDifference {
-    char[] s;
-    char[] t;
+    ArrayList<Character> s;
+    ArrayList<Character> t;
 
     public FindTheDifference(String s, String t) {
-        this.s = new char[s.length()];
-        this.t = new char[t.length()];
+        this.s = new ArrayList<Character>();
+        this.t = new ArrayList<Character>();
         for (int i = 0; i < s.length(); i += 1) {
             char k = s.charAt(i);
-            this.s[i] = k;
+            this.s.add(k);
         }
 
         for (int i = 0; i < t.length(); i += 1) {
             char k = t.charAt(i);
-            this.t[i] = k;
+            this.t.add(k);
         }
     }
 
@@ -29,18 +30,18 @@ class FindTheDifference {
     /** Sorts LST using quicksort.
      *  This function should be in a different class if you were to follow OOP principles.
      */
-    public static void quicksort(char[] lst) {
-
+    public static char[] quicksort(char[] lst) {
+        return null;
     }
 
     /** Find the appropriate pivot character in LST
      */
-    public static double findPivot(char[] lst) {
+    public static double findPivot(List<Character> lst) {
         int sum = 0;
-        for (int i = 0; i < lst.length; i += 1) {
-            sum += lst[i];
+        for (char x: lst) {
+            sum += x;
         }
-        return sum/lst.length;
+        return sum/lst.size();
     }
 
 
