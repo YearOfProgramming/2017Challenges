@@ -77,14 +77,14 @@ When submitting a pull request please use the following format for your title:
 [Language] Challenge #
 ```
 
-Note: Your solution will not be instantly accepted onto repository. We will be reviewing your code, file formatting and directory structure of your code. If you satisfy the requirements, then we will accept and merge. 
+*Note: Your solution will not be instantly accepted onto repository. We will be reviewing your code, file formatting and directory structure of your code. If you satisfy the requirements, then we will accept and merge.*
 
 ## Getting set up
 
 If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), please do that first.
 
-Note: If you have never used the command line a `
-` before some text denotes a command and a line following that without the `$` denotes the output of that command.
+*Note: If you have never used the command line a `
+` before some text denotes a command and a line following that without the `$` denotes the output of that command.*
 
 #### 1. Verify your Git installation
 
@@ -111,13 +111,13 @@ You will now have a copy of the 2017Challenges repository in your profile.
 
 Click on the green dropdown button titled "Clone or download" and copy the URL there.
 
-Note: I recommend cloning as [SSH](https://help.github.com/articles/generating-an-ssh-key/) as it will allow you to use git without constant user authentication. If you are not comfortable with this yet, proceed with HTTPS.
+*Note: I recommend cloning as [SSH](https://help.github.com/articles/generating-an-ssh-key/) as it will allow you to use git without constant user authentication. If you are not comfortable with this yet, proceed with HTTPS.*
 
 ~[2](https://github.com/YearOfProgramming/storage/blob/master/images/2.png?raw=true)
 
 Open up your command line tool and enter:
 
-Note: Enter the following without the following without the angled brackets (i.e. `git clone git@github.com:ManuelMeraz/2017Challenges.git`)
+*Note: Enter the following without the following without the angled brackets (i.e. `git clone git@github.com:ManuelMeraz/2017Challenges.git`)*
 
 ```
 $ cd ~
@@ -138,7 +138,7 @@ Checking connectivity... done.
 Next we will be [configuring](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup) your git setup. 
 
 
-Note: Simply replace the text inside the quotation marks with your name and email.
+*Note: Simply replace the text inside the quotation marks with your name and email.*
 
 ```
 $ cd ~/2017Challenges/
