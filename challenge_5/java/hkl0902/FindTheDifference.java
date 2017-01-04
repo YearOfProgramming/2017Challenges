@@ -2,8 +2,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 class FindTheDifference {
-    ArrayList<Character> s;
-    ArrayList<Character> t;
+    List<Character> s;
+    List<Character> t;
 
     public FindTheDifference(String s, String t) {
         this.s = new ArrayList<Character>();
@@ -19,19 +19,53 @@ class FindTheDifference {
         }
     }
 
-    public void sortS() {
+    public char getTheDifference() {
+        for (int i = 0; i < s.size(); i += 1) {
+            if (s.get(i) != t.get(i)) {
+                return s.get(i);
+            }
+        }
+        return t.get(t.size() - 1);
+    }
 
+    public void sortS() {
+        s = quicksort(s);
     }
 
     public void sortT() {
-
+        t = quicksort(t);
     }
 
     /** Sorts LST using quicksort.
      *  This function should be in a different class if you were to follow OOP principles.
      */
-    public static char[] quicksort(char[] lst) {
-        return null;
+    public static List<Character> quicksort(List<Character> lst) {
+        if (lst.size() < 2) {
+            return lst;
+        }
+        if (lst.size() < 3) {
+            if (lst.get(0) < lst.get(1)) {
+                return lst;
+            }
+            lst.add(0, lst.get(1));
+            lst.remove(1);
+            return lst;
+        }
+        double pivot = findPivot(lst);
+        List<Character> left = new ArrayList<Character>();
+        List<Character> right = new ArrayList<Character>();
+        for (char k: lst) {
+            if (k <= pivot) {
+                left.add(k);
+            } else {
+                right.add(k);
+            }
+        }
+        left = quicksort(left);
+        right = quicksort(right);
+        left.addAll(right);
+        return left;
+
     }
 
     /** Find the appropriate pivot character in LST
