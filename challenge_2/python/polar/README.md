@@ -1,3 +1,3 @@
 Python 3.6
 
-I begin by using a for loop to sort through the array for each element in the array. Then I use a temporary variable to check the instances of one element across the entire array. If the element shows up only once, a for loop is triggered, thus ending the program.
+In this program, I use the Counter() function to count without using a for loop. This data is then put into a dictionary. Once in the dictionary, the keys and values are swapped. I then search for the key "1", and it returns five.
