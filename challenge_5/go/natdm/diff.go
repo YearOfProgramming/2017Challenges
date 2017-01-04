@@ -50,9 +50,9 @@ func diff(a, b string) (s string) {
 		if c, ok := chars[v]; ok && c > 0 {
 			chars[v]--
 		} else {
-			return string(v)
+			s = string(v)
+			return
 		}
 	}
-
-	return string(n)
+	return
 }
