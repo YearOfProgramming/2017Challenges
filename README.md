@@ -83,8 +83,7 @@ When submitting a pull request please use the following format for your title:
 
 If you do not have git [installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), please do that first.
 
-*Note: If you have never used the command line a `
-` before some text denotes a command and a line following that without the `$` denotes the output of that command.*
+*Note: If you have never used the command line a `$` before some text denotes a command and a line following that without the `$` denotes the output of that command.*
 
 #### 1. Verify your Git installation
 
