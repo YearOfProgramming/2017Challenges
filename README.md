@@ -48,6 +48,11 @@ compare work!
 
 To submit, open a [pull request](https://help.github.com/articles/about-pull-requests/) on the main repository. We'll make sure that merging won't cause any problems, and go from there.
 
+When submitting a pull request please use the following format for your title:
+```
+[Language] Challenge #
+```
+
 Note: Your solution will not be instantly accepted onto repository. We will be reviewing your code, file formatting and directory structure of your code. If you satisfy the requirements, then we will accept and merge. 
 
 ## Getting Set Up
@@ -167,7 +172,7 @@ Inside this directory you will have 2 items:
 * A file named 'README.md' and inside you will document how your program works.
 * Your source code, preferably in a directory titled 'src'
 
-Note: When you are documenting your program, pretend you are someone who has never seen that programming language and instruct them on the steps to run your program and how to use it
+Note: When you are documenting your program, pretend you are someone who has never seen that programming language and instruct them on the steps to run your program and how to use it. [Here](https://gist.github.com/anonymous/52b08845673ef9c86c12e94d95f412b5) is a working template and [here](https://gist.github.com/anonymous/d89ec2a00976b2d42f90990ee3796972) is an example.
 
 Your set up should be as follows so far:
 ```
@@ -182,7 +187,7 @@ Your set up should be as follows so far:
 Assuming you are in the directory under your name you will enter the following
 ```
 $ git add ./*
-$ git commit -m "challenge_# in language"
+$ git commit -m "[Language] Challenge #"
 $ git pull challenges master
 $ git push origin master
 ```
