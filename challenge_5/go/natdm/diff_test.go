@@ -1,10 +1,18 @@
 package natdm
 
-import "testing"
+import (
+	"log"
+	"testing"
+)
 
 func TestDiff(t *testing.T) {
-	if diff("1azfdafd4", "1azfdatfd4") != "t" {
-		t.Error("expected t")
+	w := "1asafsd23"
+	x, n := shuffleAndAdd(w)
+	log.Println(w)
+	log.Println(string(x))
+	log.Println(string(n))
+	if diff(w, string(n)) != string(x) {
+		t.Errorf("expected %s", string(x))
 		t.Fail()
 	}
 }
