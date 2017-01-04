@@ -2,11 +2,11 @@
 
 ### 1. Approch to Solving the problem
 
-My approach to solvin this problem is to first find the max number 
+My approach to solving this problem is to first find the max number 
 in the given set of numbers
 
-Once I have the max numbers, I create a counting array of the length of the max numbers
-with all the values set to 0;
+Once I have the max numbers, I create a counting array of the l
+ength of the max numbers with all the values set to 0;
 
 I then iterate through the set of numbers and increment the value of
 each index of the count array for each value of the set of numbers
