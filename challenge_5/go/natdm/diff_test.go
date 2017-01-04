@@ -14,3 +14,15 @@ func TestDiff(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestDiffDupe(t *testing.T) {
+	word := "1asafsd23"
+	newWord := "1asaafsd23"
+
+	foundChar := diff(word, newWord)
+
+	if foundChar != "a" {
+		t.Errorf("expected %s but got %s", "a", foundChar)
+		t.Fail()
+	}
+}

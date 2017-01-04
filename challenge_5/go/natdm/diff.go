@@ -31,27 +31,29 @@ func shuffleAndAdd(s string) (b byte, out []byte) {
 }
 
 func diff(a, b string) (s string) {
-	var orig []byte
-	var n []byte
+	ob, nb := []byte{}, []byte{}
+	orig, big := make(map[byte]int), make(map[byte]int)
+
 	if a > b {
-		n = append(n, []byte(a)...)
-		orig = append(orig, []byte(b)...)
+		ob = append(ob, []byte(b)...)
+		nb = append(nb, []byte(a)...)
 	} else {
-		n = append(n, []byte(b)...)
-		orig = append(orig, []byte(a)...)
+		ob = append(ob, []byte(a)...)
+		nb = append(nb, []byte(b)...)
 	}
 
-	chars := make(map[byte]int)
-	for _, v := range orig {
-		chars[v]++
+	for _, v := range nb {
+		big[v]++
 	}
 
-	for _, v := range n {
-		if c, ok := chars[v]; ok && c > 0 {
-			chars[v]--
-		} else {
-			s = string(v)
-			return
+	for _, v := range ob {
+		orig[v]++
+	}
+
+	for k, v := range big {
+		if orig[k] != v {
+			s = string(k)
+			break
 		}
 	}
 	return
