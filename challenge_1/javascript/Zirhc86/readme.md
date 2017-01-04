@@ -5,7 +5,15 @@
 reverses a given string
 
 #### Instructions
-Open index.html in any browser. Click the reverse button to reverse any given string. Default example string provided.
+Open index.html in any browser and open developer console.
+You can run `test()` with no arguments to log *Example string!* reversed, or pass 
+a string to log it reversed. ie:
+```javascript
+test('Reverse this');
+```
+
+
+
 
 ### Contact
 Chris -- zirhc86@gmail.com
