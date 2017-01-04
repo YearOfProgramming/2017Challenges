@@ -3,7 +3,7 @@ def search_item(a):
     for i in a:
         if i in d:
             d[i] += 1
-        else: 
+        else:
             d[i] = 1
 
     if 1 not in d.values():
