@@ -1,8 +1,8 @@
 # Majority Element
 
-1. Approch to Solving the problem
+### 1. Approch to Solving the problem
 
-My approach to solvin this problem is to first find the max number 
+My approach to solving this problem is to first find the max number 
 in the given set of numbers
 
 Once I have the max numbers, I create a counting array of the length of the max numbers
@@ -21,7 +21,7 @@ for that number in the count array.
 
 The index that contains a value of n/2 is the majority element.
 
-2. How to compile this code
+### 2. How to compile this code
 
 Assuming you are within the directory under my name
 
@@ -30,7 +30,7 @@ $ g++ src/main.cpp src/majorityElement.cpp -o challenge_3.exe
 $ ./challenge_3.exe < src/input
 ```
 
-3. How this program works
+### 3. How this program works
 
 I have a file in the src/ directory that you can modify. 
 The first line is the number of testcases to test and following
