@@ -100,6 +100,7 @@ nppBackup
 
 # SublimeText project files
 *.sublime-workspace
+*.sublime-project
 
 # Textmate
 *.tmproj
