@@ -223,7 +223,7 @@ If you go to the page where your forked repository is contained your updated cod
 
 Click on the "New pull request" button button to submit your work for review. Be sure to include the challenge number and language of your solution!
 
-![3](https://github.com/YearOfProgramming/storage/blob/master/images/3.png?raw=true)
+![3](https://raw.githubusercontent.com/YearOfProgramming/storage/master/images/3.png)
 
 
 #### 7. Acquiring New Challenges
