@@ -1,6 +1,15 @@
+import random
+
+
 class Solution(object):
     def findTheDifference(self, s, t):
         for i in t:
             if i not in s:
                 return i
         return None
+
+finalTestStringS = 'yipsqffxmqafnrlnkwrnvspeekejbsuuvuhanlxmgkyjlgmloxmpyxuvqeabmycqycwkzvhyviaavwryyhtepqacfuzggcoctviibhbcwzmkbsivtjywienaojkcekvgsyylliasczuzoivipcsqknbshavzwyufkeaxjiunbyiuvxvpfokrfphcxbaljktkiygrboihqczhxnreigzhsinustzzrzstbpkfrqsenhrnkrfbekfwaozenxqabbhhsaxyrubmtzmvtclatncfkkvplvuwzfggfnprinyjblutbovtmxxvacouiwgrkgjvszkwswvnwaggsiwzymixwmhmujmuckgyiwcwrigtshqeuguytpjjsrmijmxikeraqqgjymbvmvcugxubuxmlzoiqzfjwpzpqnwalcxczzxaitpmjsorwzmwzgjcgpztaynujqqmhvyscupqjflrnjqseeapavmakvexuvkntgcvkvonjqoivimybahutpjtzubamihhbyhspgtmjwexylkqqjvmtpxxcjnlpbkaiiekjlxkrewthipzhfljcfyuclowlptfhksrngxpzijabhfjhwtlbfuouqskheybgoqinmhnjzciqvscvneokfqrghekuzkahlyosemcgqipimjaypxkkwvtqztcexlhogjqfxvfihqqcriaimioaezfrbaxwfuwbiylpztmxovutxwhqrlrxfwpfcppazjsztewupvarsqcizlneiomljrbufbuhljmgnlqkofsersqhfucsvfswqxnmqlthjcopeaseqmsghvqpnmxmuvuoteoqsaneknirsjrleslfsiceoypypbijhmtmesxpxcurnxjzwjclcesyfmffbcsxvnlhtnmwgxaywahyhqqfuevmwhhovxrqsslemlpxeiuqipmtqmeqosghyvgyexblvnsbofvtjqfhcowmfvhyyerktinhggqamtykvntxyywn'
+finalTestStringT = ''.join(random.sample(finalTestStringS, len(finalTestStringS))) + "f"
+
+s = Solution()
+print(s.findTheDifference(finalTestStringS, finalTestStringT))
