@@ -15,3 +15,15 @@ e
 
 Explanation:
 'e' is the letter that was added.
+
+-	I wrote a unit test for python users to accompany this challenge. Feel free to write your own unit tests so that others can use it to better their code!
+
+## Unit testing!
+
+-	Name your solution.py file FindTheDifference.py
+-	Encapsulate your code into a Solution class
+-	In that class, write all of your logic in a function named: findTheDifference(s,t) where s and t are the two strings as prev stated.
+
+If you did all of that correctly, then you should be able to use my test.py file. All you have to do is run that instead of you solution.py
+
+This is the first unit test I've written in python so go easy on the criticism ;) but it is still indeed welcome.
