@@ -61,4 +61,3 @@ print_tree("", tree2, "center")
 invert_tree(tree2)
 print("tree2 after:")
 print_tree("", tree2, "center")
-

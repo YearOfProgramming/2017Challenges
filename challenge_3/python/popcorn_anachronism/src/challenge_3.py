@@ -14,4 +14,3 @@ def majority_element(array):
     return("No majority found. :(") #if not present, error message
 
 print(majority_element(a))
-
