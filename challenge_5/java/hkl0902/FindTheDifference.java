@@ -24,7 +24,7 @@ class FindTheDifference {
         sortT();
         for (int i = 0; i < s.size(); i += 1) {
             if (s.get(i) != t.get(i)) {
-                return s.get(i);
+                return t.get(i);
             }
         }
         return t.get(t.size() - 1);
