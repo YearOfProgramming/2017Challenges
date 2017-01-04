@@ -6,18 +6,18 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 
 ## Table of Contents
     
-1. [The Administration Team](#the-administration-team)
+1. [The administration team](#the-administration-team)
 2. [Challenges](#challenges)
 3. [Solutions](#solutions)
-4. [Submitting Your Work](#submitting-your-work)
-5. [Getting Set Up](#getting-set-up)
-    1. [Verify Git Installation](#1-verify-git-installation)
-    2. [Fork the 2017Challenges Repository](#2-fork-the-2017challenges-repository)
-    3. [Clone Your Fork](#3-clone-your-fork)
-    4. [Git Configuration](#4-git-configuration)
-    5. [Proceeding With A Challenge](#5-proceeding-with-a-chaellenge)
-    6. [Submitting Your Code](#6-submitting-your-code)
-    7. [Acquiring New Challenges](#7-acquiring-new-challenges)
+4. [Submitting your work](#submitting-your-work)
+5. [Getting set up](#getting-set-up)
+    1. [Verify git installation](#1-verify-git-installation)
+    2. [Fork the 2017Challenges repository](#2-fork-the-2017challenges-repository)
+    3. [Clone your fork](#3-clone-your-fork)
+    4. [Git configuration](#4-git-configuration)
+    5. [Proceeding with a challenge](#5-proceeding-with-a-chaellenge)
+    6. [Submitting your code](#6-submitting-your-code)
+    7. [Acquiring new challenges](#7-acquiring-new-challenges)
 
 ## The Administration Team
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
@@ -191,7 +191,7 @@ Note: Replace the text inside the quotations with the relevant information.
 
 If you go to the page where your forked repository is contained your updated code should be there. 
 
-Click on the "New pull request" button button to submit your work for review.
+Click on the "New pull request" button button to submit your work for review. Be sure to include the challenge number and language of your solution!
 
 **Image 3 here**
 
