@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include "findTheDifference.h"
 
 int main(int argc, char **argv) {
