@@ -31,6 +31,7 @@ Pre Order Traversal of this tree would print out:
 3
 6
 7
+```
 
 
 ### 2. How to compile this code
