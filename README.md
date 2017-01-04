@@ -48,6 +48,11 @@ compare work!
 
 To submit, open a [pull request](https://help.github.com/articles/about-pull-requests/) on the main repository. We'll make sure that merging won't cause any problems, and go from there.
 
+When submitting a pull request please use the following format for your title:
+```
+[Language] Challenge #
+```
+
 Note: Your solution will not be instantly accepted onto repository. We will be reviewing your code, file formatting and directory structure of your code. If you satisfy the requirements, then we will accept and merge. 
 
 ## Getting Set Up
