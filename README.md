@@ -36,7 +36,7 @@ A common source of frustration among budding developers is acquiring the experie
 
 ## How does this work?
 
-Periodically (as close to daily as possible) we will be releasing a new programming challenge by pushing it to our Github repository targeted at a wide audience. 
+Periodically we will be releasing a new programming challenge by pushing it to our Github repository targeted at a wide audience. 
 
 As a participant, you will solve this challenge with the programming language of your choice and document the thought process behind solving this problem, explain how to compile your code and how to use your program. 
 
