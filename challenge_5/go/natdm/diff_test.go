@@ -3,10 +3,14 @@ package natdm
 import "testing"
 
 func TestDiff(t *testing.T) {
-	w := "1asafsd23"
-	x, n := shuffleAndAdd(w)
-	if diff(w, string(n)) != string(x) {
-		t.Errorf("expected %s", string(x))
+	word := "1asafsd23"
+	randByte, newBytes := shuffleAndAdd(word)
+	randChar := string(randByte)
+	newWord := string(newBytes)
+	foundChar := diff(word, newWord)
+
+	if foundChar != randChar {
+		t.Errorf("expected %s", string(randChar))
 		t.Fail()
 	}
 }
