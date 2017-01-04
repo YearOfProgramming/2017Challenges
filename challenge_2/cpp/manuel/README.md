@@ -27,13 +27,14 @@ Assuming you are within the directory under my name
 
 ```
 $ g++ src/main.cpp src/singleNumber.cpp -o challenge_2.exe
-$ ./challenge_2 < src/input
+$ ./challenge_2.exe < src/input
 ```
 
 ### 3. How this program works
 
-I have a file in the src/ directory that you can modify. 
-The first line is the number of testcases to test and following
-that each line is a testcase.
+I have a file called input in the src/ directory that you can modify. 
+
+The first line is the number of testcases to test and following that
+each line is a testcase.
 
 
