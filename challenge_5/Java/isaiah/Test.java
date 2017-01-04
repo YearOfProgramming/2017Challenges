@@ -1,26 +1,42 @@
 
 public class Test {
+    // swaps array elements i and j
+    public static void exchange(char[] a, int i, int j) {
+        char temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    // returns a random integer between 0 and n-1
+    public static int uniform(int n) {
+        return (int) (Math.random() * n);
+    }
+
+    // take as input an array of strings and rearrange them in random order
+    public static String shuffle(char[] a) {
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
+            int r = i + uniform(n-i);   // between i and n-1
+            exchange(a, i, r);
+        }
+        
+        return new String(a);
+    }
+
     public static void main(String[] args) {
         long t1, t2;
         String answer;
         char result;
         
-        //Short String timing
         //As the first test, this always takes longer to run than others of comparable length
+        //Short String timing
         System.out.println("Short String");
+        String s = "abcd";
+        String t = s + "e";
+        t = shuffle(t.toCharArray());
         
         t1 = System.currentTimeMillis();
-        result = Main.findTheDifference("abcd","abcde");
-        t2 = System.currentTimeMillis();
-        answer = (result == 'e')? "Correct" : "Incorrect";
-        System.out.println("Your solution took " + (t2-t1) + "ms to complete.");
-        System.out.println("Your answer was: " + answer);
-        
-        //Short swapped String timing
-        System.out.println("\nShort swapped String");
-        
-        t1 = System.currentTimeMillis();
-        result = Main.findTheDifference("abcd","dcabe");
+        result = Main.findTheDifference(s,t);
         t2 = System.currentTimeMillis();
         answer = (result == 'e')? "Correct" : "Incorrect";
         System.out.println("Your solution took " + (t2-t1) + "ms to complete.");
@@ -28,9 +44,12 @@ public class Test {
         
         //Medium String timing
         System.out.println("\nMedium String");
+        s = "abcdefghijklmno";
+        t = s + "p";
+        t = shuffle(t.toCharArray());
         
         t1 = System.currentTimeMillis();
-        result = Main.findTheDifference("abcdefghijklmno","abcdefghijklmnop");
+        result = Main.findTheDifference(s,t);
         t2 = System.currentTimeMillis();
         answer = (result == 'p')? "Correct" : "Incorrect";
         System.out.println("Your solution took " + (t2-t1) + "ms to complete.");
@@ -48,9 +67,10 @@ public class Test {
         
         //Long String timing
         System.out.println("\nVery long String");
-        String s = "yipsqffxmqafnrlnkwrnvspeekejbsuuvuhanlxmgkyjlgmloxmpyxuvqeabmycqycwkzvhyviaavwryyhtepqacfuzggcoctviibhbcwzmkbsivtjywienaojkcekvgsyylliasczuzoivipcsqknbshavzwyufkeaxjiunbyiuvxvpfokrfphcxbaljktkiygrboihqczhxnreigzhsinustzzrzstbpkfrqsenhrnkrfbekfwaozenxqabbhhsaxyrubmtzmvtclatncfkkvplvuwzfggfnprinyjblutbovtmxxvacouiwgrkgjvszkwswvnwaggsiwzymixwmhmujmuckgyiwcwrigtshqeuguytpjjsrmijmxikeraqqgjymbvmvcugxubuxmlzoiqzfjwpzpqnwalcxczzxaitpmjsorwzmwzgjcgpztaynujqqmhvyscupqjflrnjqseeapavmakvexuvkntgcvkvonjqoivimybahutpjtzubamihhbyhspgtmjwexylkqqjvmtpxxcjnlpbkaiiekjlxkrewthipzhfljcfyuclowlptfhksrngxpzijabhfjhwtlbfuouqskheybgoqinmhnjzciqvscvneokfqrghekuzkahlyosemcgqipimjaypxkkwvtqztcexlhogjqfxvfihqqcriaimioaezfrbaxwfuwbiylpztmxovutxwhqrlrxfwpfcppazjsztewupvarsqcizlneiomljrbufbuhljmgnlqkofsersqhfucsvfswqxnmqlthjcopeaseqmsghvqpnmxmuvuoteoqsaneknirsjrleslfsiceoypypbijhmtmesxpxcurnxjzwjclcesyfmffbcsxvnlhtnmwgxaywahyhqqfuevmwhhovxrqsslemlpxeiuqipmtqmeqosghyvgyexblvmsbofvtjqfhcowmfvhyyerktinhggqamtykvntxyywn";
-        String t = "yipsqffxmqafnrlnkwrnvspeekejbsuuvuhanlxmgkyjlgmloxmpyxuvqeabmycqycwkzvhyviaavwryyhtepqacfuzggcoctviibhbcwzmkbsivtjywienaojkcekvgsyylliasczuzoivipcsqknbshavzwyufkeaxjiunbyiuvxvpfokrfphcxbaljktkiygrboihqczhxnreigzhsinustzzrzstbpkfrqsenhrnkrfbekfwaozenxqabbhhsaxyrubmtzmvtclatncfkkvplvuwzfggfnprinyjblutbovtmxxvacouiwgrkgjvszkwswvnwaggsiwzymixwmhmujmuckgyiwcwrigtshqeuguytpjjsrmijmxikeraqqgjymbvmvcugxubuxmlzoiqzfjwpzpqnwalcxczzxaitpmjsorwzmwzgjcgpztaynujqqmhvyscupqjflrnjqseeapavmakvexuvkntgcvkvonjqoivimybahutpjtzubamihhbyhspgtmjwexylkqqjvmtpxxcjnlpbkaiiekjlxkrewthipzhfljcfyuclowlptfhksrngxpzijabhfjhwtlbfuouqskheybgoqinmhnjzciqvscvneokfqrghekuzkahlyosemcgqipimjaypxkkwvtqztcexlhogjqfxvfihqqcriaimioaezfrbaxwfuwbiylpztmxovutxwhqrlrxfwpfcppazjsztewupvarsqcizlneiomljrbufbuhljmgnlqkofsersqhfucsvfswqxnmqlthjcopeaseqmsghvqpnmxmuvuoteoqsaneknirsjrleslfsiceoypyppbijhmtmesxpxcurnxjzwjclcesyfmffbcsxvnlhtnmwgxaywahyhqqfuevmwhhovxrqsslemlpxeiuqipmtqmeqosghyvgyexblvmsbofvtjqfhcowmfvhyyerktinhggqamtykvntxyywn";
-        
+        s = "yipsqffxmqafnrlnkwrnvspeekejbsuuvuhanlxmgkyjlgmloxmpyxuvqeabmycqycwkzvhyviaavwryyhtepqacfuzggcoctviibhbcwzmkbsivtjywienaojkcekvgsyylliasczuzoivipcsqknbshavzwyufkeaxjiunbyiuvxvpfokrfphcxbaljktkiygrboihqczhxnreigzhsinustzzrzstbpkfrqsenhrnkrfbekfwaozenxqabbhhsaxyrubmtzmvtclatncfkkvplvuwzfggfnprinyjblutbovtmxxvacouiwgrkgjvszkwswvnwaggsiwzymixwmhmujmuckgyiwcwrigtshqeuguytpjjsrmijmxikeraqqgjymbvmvcugxubuxmlzoiqzfjwpzpqnwalcxczzxaitpmjsorwzmwzgjcgpztaynujqqmhvyscupqjflrnjqseeapavmakvexuvkntgcvkvonjqoivimybahutpjtzubamihhbyhspgtmjwexylkqqjvmtpxxcjnlpbkaiiekjlxkrewthipzhfljcfyuclowlptfhksrngxpzijabhfjhwtlbfuouqskheybgoqinmhnjzciqvscvneokfqrghekuzkahlyosemcgqipimjaypxkkwvtqztcexlhogjqfxvfihqqcriaimioaezfrbaxwfuwbiylpztmxovutxwhqrlrxfwpfcppazjsztewupvarsqcizlneiomljrbufbuhljmgnlqkofsersqhfucsvfswqxnmqlthjcopeaseqmsghvqpnmxmuvuoteoqsaneknirsjrleslfsiceoypypbijhmtmesxpxcurnxjzwjclcesyfmffbcsxvnlhtnmwgxaywahyhqqfuevmwhhovxrqsslemlpxeiuqipmtqmeqosghyvgyexblvmsbofvtjqfhcowmfvhyyerktinhggqamtykvntxyywn";
+        t = s + "p";
+        t = shuffle(t.toCharArray());
+         
         t1 = System.currentTimeMillis();
         result = Main.findTheDifference(s,t);
         t2 = System.currentTimeMillis();
