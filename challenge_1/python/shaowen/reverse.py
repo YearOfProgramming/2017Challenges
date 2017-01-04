@@ -5,4 +5,4 @@ Created on Wed Jan  4 10:36:21 2017
 @author: shaowen Liu
 """
 def reverse(s):
-    return ''.join(list(s)[::-1])
+    return s[::-1]
