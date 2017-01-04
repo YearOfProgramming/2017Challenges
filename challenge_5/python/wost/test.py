@@ -15,7 +15,7 @@ class OutcomesTest(unittest.TestCase):
         t1 = time.time()
         case1out = case1in.findTheDifference("abcd", "abcde")
         t2 = time.time()
-        print('Runtime of Case1: ' + str(t2-t1) + ' seconds' + case1out)
+        print('Runtime of Case1: ' + str(t2-t1) + ' seconds')
         self.assertEqual(case1out, 'e')
 
     def test_case2(self):
@@ -23,7 +23,7 @@ class OutcomesTest(unittest.TestCase):
         t1 = time.time()
         case2out = case2in.findTheDifference("abcd", "dcabe")
         t2 = time.time()
-        print('Runtime of Case2: ' + str(t2-t1) + ' seconds' + case2out)
+        print('Runtime of Case2: ' + str(t2-t1) + ' seconds')
         self.assertEqual(case2out, 'e')
 
     def test_case3(self):
@@ -31,7 +31,7 @@ class OutcomesTest(unittest.TestCase):
         t1 = time.time()
         case3out = case3in.findTheDifference("abcdefghijklmno", "abcdefghijklmnop")
         t2 = time.time()
-        print('Runtime of Case3: ' + str(t2-t1) + ' seconds' + case3out)
+        print('Runtime of Case3: ' + str(t2-t1) + ' seconds')
         self.assertEqual(case3out, 'p')
 
     def test_case4(self):
