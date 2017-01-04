@@ -1,4 +1,4 @@
-import java.lang.Math.*;
+import java.util.stream.IntStream;
 
 class FindTheDifference {
     char[] s;
@@ -35,8 +35,12 @@ class FindTheDifference {
 
     /** Find the appropriate pivot character in LST
      */
-    public static void findPivot(char[] lst) {
-
+    public static double findPivot(char[] lst) {
+        int sum = 0;
+        for (int i = 0; i < lst.length; i += 1) {
+            sum += lst[i];
+        }
+        return sum/lst.length;
     }
 
 
