@@ -8,7 +8,7 @@ import java.util.ArrayList;
  A RangeList containing {1, 3, 2} would be invalid.
  */
 
-class RangeList implements List {
+class RangeList<T extends Integer> extends ArrayList {
     /** Returns a string representation of RangeList.
      *  If the list contains {1, 2, 3}, it returns "1->3"
      *  If the list contains simply {1}, it returns "1"
