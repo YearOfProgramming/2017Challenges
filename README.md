@@ -19,7 +19,8 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
     5. [Proceeding with a challenge](#5-proceeding-with-a-challenge)
     6. [Submitting your code](#6-submitting-your-code)
     7. [Acquiring new challenges](#7-acquiring-new-challenges)
-7. [Workflow](#workflow) 
+7. [Workflow](#workflow)
+8. [Submission Review](#submission-review)
 
 ## The Administration Team
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
@@ -265,3 +266,39 @@ Then you can submit a pull request.
 ![workflow](https://raw.githubusercontent.com/YearOfProgramming/storage/master/images/github_flow.png)
 
 **All credit goes to [@selectivealso](https://github.com/SelectiveAlso) from our slack chat for this awesome image!**
+
+##Submission Review
+
+Reviewing and testing code is just as important as writing it. Peer to peer review is a core component of what we're striving to accomplish with our year of programming challenge. We would appreciate it if everyone who submits a solution reviews at least one other persons submission. All submitted code should be well documented and work for the provided test cases.
+
+Pulling seperate PR's to test code is cumbersome and we realize that. To help with this, we suggest using an online compiler so that you can check over anothers code without having to leave your browser. A good online compiler is [repl.it](https://repl.it/languages) which has many languages available to work with!
+
+###please follow these guildlines for PR reviews
+- [ ] **Code Correctness**
+* Does the code compile and run?
+* If it compiles/runs, does it make sense? 
+- [ ] **Code Style**
+* Is the code readable?
+* Give positive feedback on what you liked!
+* What can they improve on?
+- [ ] **Code Documentation**
+* Are there comments when needed or unnecessary comments?
+* Did they include a README.md with some basic [documentation](https://gist.github.com/anonymous/52b08845673ef9c86c12e94d95f412b5)?
+- [ ] **Path Structure**
+* Is the directory naming in all lower case for language and challenges?
+* The directory for the username and solution file don't follow any format
+* Encourage the use of a src/ directory for multiple files!
+- [ ] **Merge PR**
+* Is everything good? Check this off. 
+
+
+###Review Title System
+
+When You do perform a pull request, you should set the title of it so that others know no one has looked at it yet.
+-   If you just submitted the PR, your title should look like this: `[language]challenge_[chalNumber](UnReviewed)`
+-   If you have already recieved one review, your PR title should look like this: `[language]challenge_[chalNumber](Pending)`
+-   If you have at least 2 reviews, set your pull request to this: `[language]challenge_[chalNumber](ReadyForMerge)` and a mod will merge your code to the main repository.
+
+
+Taking this approach to code review will help to streamline the process and make reviews easier for everyone involved. Take the time to check your github notifications so that you can check to see if anyone has reviewed your code yet.
+
