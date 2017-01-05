@@ -262,6 +262,6 @@ $ git push origin master
 
 Then you can submit a pull request. 
 
-![workflow](https://github.com/YearOfProgramming/storage/blob/master/images/workflow.png?raw=true)
+![workflow](https://raw.githubusercontent.com/YearOfProgramming/storage/master/images/github_flow.png)
 
 **All credit goes to [@selectivealso](https://github.com/SelectiveAlso) from our slack chat for this awesome image!**
