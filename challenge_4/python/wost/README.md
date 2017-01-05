@@ -1,4 +1,6 @@
 # Read me: Challenge 7
+Special thanks to MicalV for his [https://github.com/YearOfProgramming/2017Challenges/blob/master/challenge_4/python/Mical/srs/main.py](great code), it really helped me
+understand the binary tree!
 
 ## How to use:
 Initialize a Tree by giving it an integer, this integer is converted to a Node
