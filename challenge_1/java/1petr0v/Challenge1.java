@@ -2,6 +2,7 @@ import java.io.IOException;
 
 public class Challenge1 {
 
+    // A bit defensive ¯\_(ツ)_/¯
     public static void main(String ... args) {
         if(args.length != 1) {
             System.err.println("Illegal number of arguments");
