@@ -21,4 +21,4 @@ $ python test/reverse_string_test.py
 
 ### 3. How this program works
 
-Type any input and press enter. Your input will be output reverse.
+It will output the reverse of string you passed as argument in the command line
