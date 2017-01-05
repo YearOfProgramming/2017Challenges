@@ -10,7 +10,7 @@ I need to print a statement at screen.
 You only need one step to make this program works :
 
 ```
-$ python2 src/helloworld.py
+$ python src/helloworld.py
 ```
 
 ### 3. How this program works
