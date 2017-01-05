@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
  @author: Hyunkyu Michael Lee
  */
+
 class FindTheDifference {
     List<Character> s;
     List<Character> t;
