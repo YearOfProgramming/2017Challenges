@@ -16,3 +16,16 @@ def reverse(tree):
         return [subtree[0], subtree[2], [reverse(subtree[1])]]
     else:
         return [subtree[0], reverse(subtree[2]), reverse(subtree[1])]
+
+
+test = [4,
+        [2,
+         [1], [3]],
+        [7,
+         [6], [9]]
+       ]
+
+
+test_rev = reverse(test)
+print(test_rev)
+print(reverse(test_rev))
