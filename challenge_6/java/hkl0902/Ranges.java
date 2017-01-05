@@ -20,6 +20,7 @@ class Ranges {
                     ranges.add(new RangeList<Integer>());
                     rangeCount += 1;
                 }
+                prev = next;
             }
         }
         rangesStr = new ArrayList<String>();
