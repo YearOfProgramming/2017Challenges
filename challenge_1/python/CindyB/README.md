@@ -16,7 +16,7 @@ $ python src/reverse_string.py replaceMeWithYourInput
 To run the tests, you need to execute this command :
 
 ```
-$ python test/reverse_string_test.py
+$ python src/reverse_string_test.py
 ```
 
 ### 3. How this program works
