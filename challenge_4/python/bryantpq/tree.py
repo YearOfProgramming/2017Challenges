@@ -30,13 +30,13 @@ class BinaryTree:
     def _invert(self, node):
         # find lowest point where nodes can be swapped
         # swap nodes
-        if not (node.l.l == None and node.l.r == None): # node.left is terminal/leaf
+        if node:
             node.l = self._invert(node.l)
-        if not (node.r.l == None and node.r.r == None):
             node.r = self._invert(node.r)
-        temp = node.l
-        node.l = node.r
-        node.r = temp
+            temp = node.l
+            node.l = node.r
+            node.r = temp
+
         return node
 
 
@@ -63,7 +63,7 @@ class BinaryTree:
 
 def main():
     t = BinaryTree()
-    t.add([4, 2, 7, 1, 3, 6, 9])
+    t.add([4, 2, 7, 1, 3, 6, 9, 11])
     t.draw()
     t.invert()
     t.draw()
