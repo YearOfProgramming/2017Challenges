@@ -4,7 +4,7 @@
 int main() {
     std::string input;
     std::cout << "Enter a string to be reversed:" << std::endl;
-    std::cin >> input;
+    std::getline(std::cin,input);
     
     int length = input.length();
     
