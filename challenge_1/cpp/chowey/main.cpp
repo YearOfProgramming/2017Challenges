@@ -3,10 +3,13 @@
 
 int main() {
     std::string input;
+    std::cout << "Enter a string to be reversed:" << std::endl;
     std::cin >> input;
     
-    for(int i = 1; i <= input.length(); i++) {
-        std::cout << input[input.length()-i];
+    length = input.length();
+    
+    for(int i = 1; i <= length; i++) {
+        std::cout << input[length-i];
     }
     std::cout << std::endl;
     
