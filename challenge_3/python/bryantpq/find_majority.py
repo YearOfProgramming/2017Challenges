@@ -4,7 +4,7 @@ def find_majority(a):
     for i in a:
         if i in d:
             d[i] += 1
-            if d[i] >= l / 2:
+            if d[i] > l / 2:
                 return i
         else:
             d[i] = 1
