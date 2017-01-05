@@ -1,5 +1,6 @@
-# Reverse a String
-Application which reverses a string.
+# Single Number
+[DESCRIPTION]
+
 ## Building
 ``` bash
 make
@@ -7,7 +8,7 @@ make
 
 ## Running
 ``` bash
-./reverse_string
+./find_non_dups
 ```
 
 ## Cleanup
