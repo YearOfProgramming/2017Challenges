@@ -37,7 +37,7 @@
       3 1 roll % bury found element under needle and rest of search string
     }
     {
-      ] exit % remaining string left on stack, finish array and exit loop
+      ] exit   % remaining string left on stack, finish array and exit loop
     }
     ifelse
   }
@@ -45,7 +45,7 @@
 } def
 
 /counts { % array - dict
-  1024 10 mul dict exch             % create initial dict
+  1024 10 mul dict exch  % create initial dict
   {
     % dict el
     2dup known
