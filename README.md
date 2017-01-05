@@ -307,6 +307,8 @@ When You do perform a pull request, you should set the title of it so that other
 -   If you have already recieved one review, your pull request title should look like this: `[language]challenge_[chalNumber](Pending)`
 -   If you have at least 2 reviews, set your pull request to this: `[language]challenge_[chalNumber](ReadyForMerge)` and a mod will merge your code to the main repository.
 
+**Please check your github notifications frequently**
+Once you've seen that you've been given an approval by any two people, write a comment aknowledging that you've seen them. Even a simple "Seen" will do.
 
 Taking this approach to code review will help to streamline the process and make reviews easier for everyone involved. Take the time to check your github notifications so that you can check to see if anyone has reviewed your code yet.
 
