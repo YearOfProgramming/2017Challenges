@@ -21,7 +21,7 @@ Requirements
 Notes
 -----
 * The fact that the values range from 0 to N is important
-* O(1) space means that your algorithm should not need to allocate additional objects to solve the problem
+* O(1) space means that your algorithm should not need to allocate an additional additional array of N elements  to solve the problem
 * O(N) times means that your algorithm can not contain nested loops
 
 Example 1
