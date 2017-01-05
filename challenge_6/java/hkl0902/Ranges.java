@@ -4,7 +4,7 @@ import java.util.ArrayList;
 class Ranges {
     List<RangeList<Integer>> ranges;
     int rangeCount = 0;
-    String[] rangesStr;
+    List<String> rangesStr;
 
     public Ranges(int[] arr) {
         ranges = new ArrayList<RangeList<Integer>>();
@@ -22,9 +22,12 @@ class Ranges {
                 }
             }
         }
-        rangesStr = new String[rangeCount];
+        rangesStr = new ArrayList<String>();
         for (int i = 0; i < rangeCount; i += 1) {
-            rangesStr[i] = ranges.get(i).toString();
+            rangesStr.add(ranges.get(i).toString());
+            if (rangesStr.get(i) == null) {
+                rangesStr.remove(i);
+            }
         }
     }
 
@@ -33,7 +36,7 @@ class Ranges {
     }
 
     public String[] rangesString() {
-        return rangesStr;
+        return (String[])(rangesStr.toArray());
     }
 
 }

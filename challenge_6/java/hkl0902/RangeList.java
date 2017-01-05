@@ -11,13 +11,13 @@ import java.util.ArrayList;
 class RangeList<T extends Integer> extends ArrayList<T> {
     /** Returns a string representation of RangeList.
      *  If the list contains {1, 2, 3}, it returns "1->3"
-     *  If the list contains simply {1}, it returns "1"
+     *  If the list contains simply {1} or is empty, return null.
      */
     @Override
     public String toString() {
         switch(this.size()) {
-            case 0: return "";
-            case 1: return "" + this.get(0);
+            case 0: return null;
+            case 1: return null;
             default: return this.get(0) + "->" + this.get(this.size() -1);
         }
     }
