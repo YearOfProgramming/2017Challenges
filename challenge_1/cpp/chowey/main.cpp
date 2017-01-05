@@ -6,7 +6,7 @@ int main() {
     std::cout << "Enter a string to be reversed:" << std::endl;
     std::cin >> input;
     
-    length = input.length();
+    int length = input.length();
     
     for(int i = 1; i <= length; i++) {
         std::cout << input[length-i];
