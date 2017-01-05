@@ -1,0 +1,90 @@
+% gs -dBATCH compress-ranges.ps
+%
+
+/mark-1-below { 1 index [ eq } def
+/mark-2-below { 2 index [ eq } def
+
+/stdout { (%stdout) (w) file } def   % push stdout for writing
+
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+
+/2dup { 1 index 1 index } def        % duplicate top 2 elements
+
+/top-2-sequential { 2dup sub -1 eq } def
+
+/remove-mark-or-finish-array { dup [ eq { pop } { ] } ifelse } def
+
+/range-to-string {    % array - string
+	/a exch def
+	a length 1 eq
+	{
+		a 0 get 10 10 string cvrs
+	}
+	{
+		/first-num  a 0 get def
+		/second-num a 1 get def
+		/first-str  first-num  10 10 string cvrs def
+		/second-str second-num 10 10 string cvrs def
+		/dest-str first-str length second-str length add 2 add string def
+		dest-str 0 first-str putinterval
+		dest-str first-str length (->) putinterval
+		dest-str first-str length 2 add second-str putinterval
+		dest-str
+	}
+	ifelse
+} def
+
+% [1,2,3,4,8,9,10,12,13,14] - ["1->4", "8->10", "12->14"]
+/ranges {
+	[ exch [ exch   % start results array and current range arrays
+	{
+		mark-1-below   % [ current -
+		{
+			% do nothing, push first in range onto stack
+		}
+		{
+			mark-2-below   % [ num current -
+			{
+				top-2-sequential
+				{
+					% do nothing, current is next in range and the second number in its array
+				}
+				{
+					% current starts new range
+					3 1 roll ] exch [ exch
+
+					% [ num ] [ current -
+				} ifelse
+			}
+			{
+				% [ n1 n2 current -
+				top-2-sequential
+				{
+					% current is next in range, replace n2 with current
+					exch pop
+				}
+				{
+					% current starts new range
+					4 1 roll ] exch [ exch
+
+					% [ n1 n2 ] [ current -
+				} ifelse
+			}
+			ifelse
+		}
+		ifelse
+	}
+	forall
+
+	remove-mark-or-finish-array
+
+	] % end results array
+
+	[ exch
+	{ range-to-string } forall
+	]
+} def
+
