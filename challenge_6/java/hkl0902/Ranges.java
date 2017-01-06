@@ -11,6 +11,7 @@ class Ranges {
         input = new int[arr.length];
         System.arraycopy(arr, 0, input, 0, arr.length);
         ranges = new ArrayList<RangeList<Integer>>();
+        this.separate();
     }
 
     /** Populates the RANGES with the input from INPUT. */
@@ -19,7 +20,7 @@ class Ranges {
             int prev = input[0];
             ranges.add(new RangeList<Integer>());
             ranges.get(0).add(prev);
-            for (int i = 0, rangeIndex = 0; i < input.length; i += 1) {
+            for (int i = 1, rangeIndex = 0; i < input.length; i += 1) {
                 int next = input[i];
                 if (next == prev + 1) {
                     ranges.get(rangeIndex).add(next);
