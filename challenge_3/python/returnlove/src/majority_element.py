@@ -1,6 +1,16 @@
+"""
+To find the majority elements in a list.
+	Counts number of times each element is present in the list
+	prints all the elements which are present more than half of the list
+
+"""
+
+
+import math
+
 def find_majority_element(input_list):
-	majority_condition = len(input_list)/2
-	# print(majority_condition)	
+	majority_condition = math.floor(len(input_list)/2)
+	print(majority_condition)	
 	my_dict = {}
 	# print(input_list)
 	# convert input list into dictionary, key being the element and value is the count
