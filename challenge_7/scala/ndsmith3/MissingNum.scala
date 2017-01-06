@@ -2,12 +2,10 @@ import scala.annotation.tailrec
 
 object MissingNum {
   def missingNum(nums: Array[Int]): Int = {
-    // Not sure if using (1 to nums.length).sum breaks the space requirement
-    // of the challenge, so I'm using this accumluation function insteam
-    def accu(currNums: Array[Int], sum: Int = 0): Int =
-      if (currNums.isEmpty) sum else accu(currNums.tail, sum + currNums.head)
+    def accu(currInt: Int, sum: Int = 0): Int =
+      if (currInt == 0) sum else accu(currInt - 1, sum + currInt)
 
-    val shouldBe = accu(nums)
+    val shouldBe = accu(nums.length)
     val is       = nums.sum
     shouldBe - is
   }
