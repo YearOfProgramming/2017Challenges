@@ -5,7 +5,7 @@ def find_missing_number(c):
     else:
         d = min(c)
     v = set(range(d, b)) - set(c)
-    return v if v != set() else None
+    return list(v)[0] if v != set() else None
 
 print(find_missing_number([1, 3, 2, 4]))
 print(find_missing_number([0, 2, 3, 4, 5]))
