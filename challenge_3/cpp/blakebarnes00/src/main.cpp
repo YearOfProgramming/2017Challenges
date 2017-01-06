@@ -2,7 +2,6 @@
 #include <vector>
 #include <algorithm>
 
-<<<<<<< HEAD
 /*
  * Here we call for a reference to the array (This prevents the compiler from
  * having to recreate the same variables over again for this function.
@@ -12,13 +11,6 @@ void print_array(std::vector<int> &array)
   for(auto i : array)
   {
     std::cout << i << " ";
-=======
-void print_array(std::vector<int> array)
-{
-  for(int i = 0; i < array.size(); i++)
-  {
-    std::cout << array.at(i) << " ";
->>>>>>> 2656416c1f7b18d96165977753f57dc1a69928be
   }
   std::cout << std::endl;
 }
@@ -41,7 +33,6 @@ int main()
   int max = array.back();
 
   /*
-<<<<<<< HEAD
    * The counter has the max number in it, plus one so that it has a buffer
    * space so we won't overflow.
    */
@@ -67,28 +58,6 @@ int main()
     return 0;
   }
   std::cout << "Majority: " << majority << std::endl;
-=======
-   * The idea behind using the counter like this is so that we can use it in
-   * more than one place. 
-   *
-   * We allocate (in this case) 30 spaces + 1 buffer to prevent overflow.
-   */
-  int* counter = new int[max + 1]();
-
-  for(int i = 0; i < array.size(); i++)
-  {
-    counter[array[i]]++;
-  }
-
-  int majority = 0;
-  while(counter[majority] <= array.size()/2)
-  {
-    majority++;
-  }
-
-  std::cout << "Majority: " << majority << std::endl;
-  delete[] counter; // Deollocate the memory
->>>>>>> 2656416c1f7b18d96165977753f57dc1a69928be
 
   return 0;
 }
