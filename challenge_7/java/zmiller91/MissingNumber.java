@@ -11,19 +11,15 @@ public class MissingNumber {
         }
         
         // Find the sum, min, and max values
-        int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         int actualSum = 0;
         for(int i : input) {
             actualSum += i;
-            min = Math.min(min, i);
             max = Math.max(max, i);
         }
         
-        // Calculate the expected sum
-        int expectedSum = max * (max + 1) / 2;
-        
         // The answer is the difference between the expected and actual
+        int expectedSum = max * (max + 1) / 2;
         return expectedSum - actualSum;
     }
     
