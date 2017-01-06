@@ -2,7 +2,7 @@ Random Pointer Linked List
 ======
 Idea
 ------
-You are given a  linked list, nothing unusual about that right? The kicker is that aside from the normal "next" attribute each node has, they also have a "random" attribute. The "random" attribute is essentially a reference to any other node in the linked list. For example, take a look at the linked list below.
+You are given a  linked list, nothing unusual about that right? The kicker is that aside from the normal "next" attribute each node has, they also have a "random" attribute. The "random" attribute is essentially a reference to any other node in the linked list. For example, take a look at the linked list below. Don't know what a linked list is? start [here](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html)
 
 ![](linkedlist.jpg) 
 
