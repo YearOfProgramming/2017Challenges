@@ -4,7 +4,7 @@ Idea
 ------
 You are given a  linked list, nothing unusual about that right? The kicker is that aside from the normal "next" attribute each node has, they also have a "random" attribute. The "random" attribute is essentially a reference to any other node in the linked list. For example, take a look at the linked list below.
 
-![](Linkedlist.jpg) 
+![](linkedlist.jpg) 
 
 Just a normal Linked List right? Right. Nothing special about it what so ever. Now lets take a look at a linked list with random pointers.
 
