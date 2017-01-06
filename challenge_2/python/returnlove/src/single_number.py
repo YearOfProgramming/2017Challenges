@@ -1,6 +1,11 @@
+"""
+To find the single number in a list.
+	Counts number of times each element is present in the list
+	prints all the elements which are present only once
+"""
+
 # function takes input list and converts to a dictionary, key being the element and value is the count
 def single_number(input_list):
-	# return(input_list)
 	my_dict = {}
 	for element in input_list:
 		if element in my_dict.keys():
@@ -19,33 +24,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
-<<<<<<< HEAD
-=======
-
-
-## Below is the solition but not with linear time.
-
-# my_list = [9,9,1,0,2,5,0,10,1,9,10,2,5,'x',100]
-# my_list = sorted(my_list)
-# # print(sorted(my_list))
-# dup = []
-# for i in range(len(my_list)):
-# 	actual_num = my_list[i]
-# 	for j in range(i+1, len(my_list)):
-# 		# print(j)
-# 		compare = my_list[j]
-# 		if(actual_num == compare):
-# 			# print(my_list[i],'dup')
-# 			dup.append(my_list[i])
-# 			break
-
-# # print(dup)
-# unique = []
-# for e in my_list:
-# 	if e not in dup:
-# 		# print(e)
-# 		unique.append(e)	
-
-# print('Single Number values are: ',unique)
->>>>>>> 7edefad8aec8cd0e5f9fe791eb6c862c79374ae1
