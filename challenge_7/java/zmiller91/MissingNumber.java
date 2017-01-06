@@ -6,7 +6,7 @@ public class MissingNumber {
     public static int find(int[] input) {
         
         // Invalid
-        if (input.length <= 1) {
+        if (input.length == 0) {
             return -1;
         }
         
@@ -21,18 +21,15 @@ public class MissingNumber {
         }
         
         // Calculate the expected sum
-        int sumZeroToMin = (min - 1) * (min) / 2;
-        int sumZeroToMax = max * (max + 1) / 2;
-        int expectedSum = sumZeroToMax - sumZeroToMin;
+        int expectedSum = max * (max + 1) / 2;
         
         // The answer is the difference between the expected and actual
-        int difference = expectedSum - actualSum;
-        return  difference != 0 ? difference : -1;
+        return expectedSum - actualSum;
     }
     
     public static void main(String[] args) {
         
-        int[] input = new int[]{9, 7, 5, 8};
+        int[] input = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12};
         System.out.println(find(input));
     }
 }
