@@ -7,9 +7,10 @@ object Ranges {
     lazy val nextIsIncrement = curr.head + 1 != curr(1)
     lazy val lastIsDecrement = answer.head.toInt + 1 == curr.head
     curr.length match {
-      case 1                      => if (lastIsDecrement) answerPlusNext.reverse else answer.reverse
-      case _ if (nextIsIncrement) => answerPlusNext.reverse
-      case _                      => makeRangeString(answerPlusNext)(curr.tail)
+      case 1 if lastIsDecrement => answerPlusNext.reverse
+      case 1                    => answer.reverse
+      case _ if nextIsIncrement => answerPlusNext.reverse
+      case _                    => makeRangeString(answerPlusNext)(curr.tail)
     }
   }
 
