@@ -40,16 +40,6 @@ public class UnitTest {
     }
 
     @Test
-    public void testRangeCount() {
-        Ranges r = new Ranges(new int[] {1, 2, 3, 4, 5, 6});
-        assertEquals(1, r.numofRanges());
-        r = new Ranges(new int[] {1,2,3,4,8,9,10,12,13,14});
-        assertEquals(3, r.numofRanges());
-        r = new Ranges(new int[] {1,2,3,4,8,9,10,12,13,14,20,21,22,23});
-        assertEquals(4, r.numofRanges());
-    }
-
-    @Test
     public void testChallenge() {
         Ranges r = new Ranges(new int[] {1, 2, 3, 4, 5, 6});
         assertArrayEquals(new String[] {"1->6"}, r.rangesString());
