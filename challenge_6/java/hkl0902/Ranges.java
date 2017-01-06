@@ -8,6 +8,7 @@ class Ranges {
     int[] input;
 
     public Ranges(int[] arr) {
+        input = new int[arr.length];
         System.arraycopy(arr, 0, input, 0, arr.length);
         ranges = new ArrayList<RangeList<Integer>>();
     }
