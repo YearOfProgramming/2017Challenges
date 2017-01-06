@@ -42,15 +42,15 @@ public class UnitTest {
     @Test
     public void testChallenge() {
         Ranges r = new Ranges(new int[] {1, 2, 3, 4, 5, 6});
-        assertArrayEquals(new String[] {"1->6"}, r.rangesString());
+        assertArrayEquals(new String[] {"1->6"}, r.toStringArr());
         r = new Ranges(new int[] {1,2,3,4,8,9,10,12,13,14});
-        assertArrayEquals(new String[] {"1->4", "8->10", "12->14"}, r.rangesString());
+        assertArrayEquals(new String[] {"1->4", "8->10", "12->14"}, r.toStringArr());
         r = new Ranges(new int[] {1,2,3,4,8,9,10,12,13,14,20,21,22,23});
-        assertArrayEquals(new String[] {"1->4", "8->10", "12->14", "20->23"}, r.rangesString());
+        assertArrayEquals(new String[] {"1->4", "8->10", "12->14", "20->23"}, r.toStringArr());
         r = new Ranges(new int[] {1});
-        assertArrayEquals(new String[] {}, r.rangesString());
+        assertArrayEquals(new String[] {}, r.toStringArr());
         r = new Ranges(new int[] {});
-        assertArrayEquals(new String[] {}, r.rangesString());
+        assertArrayEquals(new String[] {}, r.toStringArr());
     }
 
 
