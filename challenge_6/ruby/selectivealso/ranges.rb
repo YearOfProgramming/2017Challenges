@@ -1,19 +1,32 @@
-require './methods.rb'
+# ints = [1,2,3,4,8,9,10,12,13,14]
+ints = [1,2,3,4,8,9,10,13,15,16,17]
+starts = []
+ranges = {}
 
-ints = [1,2,3,4,8,9,10,12,13,14]
-count = 0
-ranges = []
+ints.each do |int|
+  # Find the index of the int
+  index = ints.find_index(int)
 
-ints.each do
-  if ints.start_of_range(count)
-    $start_range = ints[count]
+  # check if start of range
+  if int - 1 != ints[index - 1]
+    starts.push(index)
   end
 
-  count = count + 1
+end
 
-  if ints.end_of_range(count)
-    end_range = ints[count]
-    ranges.push("#{$start_range}->#{end_range}")
+x = 0
+(starts.count - 1).times do
+  # ranges.push("#{ints[starts[x]]}->#{ints[starts[x + 1] - 1]}")
+  ranges[ints[starts[x]]] = ints[starts[x + 1] - 1]
+  x = x + 1
+end
+
+ranges[ints[starts[-1]]] = ints[-1]
+
+ranges.each do |start, ending|
+  if start == ending
+    ranges.delete(start)
   end
 end
+
 puts ranges.inspect
