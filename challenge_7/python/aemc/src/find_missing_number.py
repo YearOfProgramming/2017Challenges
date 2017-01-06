@@ -2,9 +2,9 @@
 
 
 def find_missing_number(nums):
-    # sort list first and assign it to new variable called newlist
-    newlist = sorted(nums)
-    return sum(xrange(len(newlist)+1)) - sum(newlist) 
+	# Subtract the sum of nums of nth length from the sum of nums of nth + 1 length
+	# nth + 1 is the list of numbers without a missing number
+    return sum(xrange(len(nums)+1)) - sum(nums) 
 
 
 if __name__ == '__main__':
