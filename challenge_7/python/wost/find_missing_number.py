@@ -1,9 +1,6 @@
 def find_missing_number(c):
     b = max(c)
-    if min(c) == 1:
-        d = min(c + [0])
-    else:
-        d = min(c)
+    d = min(c + [0]) if min(c) == 1 else min(c)
     v = set(range(d, b)) - set(c)
     return list(v)[0] if v != set() else None
 
