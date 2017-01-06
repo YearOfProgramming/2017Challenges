@@ -27,6 +27,7 @@ class Ranges {
                 } else {
                     ranges.add(new RangeList<Integer>());
                     rangeIndex += 1;
+                    ranges.get(rangeIndex).add(next);
                 }
                 prev = next;
             }
