@@ -53,6 +53,13 @@ public class UnitTest {
         assertArrayEquals(new String[] {}, r.toStringArr());
     }
 
+    @Test
+    public void testSeparate() {
+        Ranges r = new Ranges(new int[] {1, 2, 3, 4, 5, 6});
+        assertEquals(1, r.getRanges().size());
+        assertEquals(6, r.getRanges().get(0).size());
+    }
+
 
 
 }
