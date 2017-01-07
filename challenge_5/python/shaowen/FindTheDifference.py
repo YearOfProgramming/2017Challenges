@@ -6,17 +6,20 @@ Created on Sat Jan  7 09:20:09 2017
 
 class Solution():
     def findTheDifference(self,s,t):
-        if s==t: return None
-        # combine s and t into st, and sorted
+        """
+        para 1: s, string type
+        para 2: t, string type
+        """
+        # combine s and t into st, and sort it
         st = sorted(s+t)
-        stack = []
+        cursor = None
         for o in st:
             # filter out the one not in pairs
-            if stack == []:
-                stack.append(o)
-            elif stack[-1] == o:
-                stack.pop()
-            elif stack[-1] != o:
-                return stack[-1]
-        # return the target if it's the last one
-        return stack[-1]
+            if cursor == None:
+                cursor = o
+            elif cursor == o:
+                cursor = None
+            else:
+                return cursor
+        # if the target happends to be the last one
+        return cursor
