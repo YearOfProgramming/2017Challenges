@@ -3,6 +3,12 @@
  */
 public class MissingNumber {
     
+	/**
+	 * Find the missing number in the provided array.
+	 * 
+	 * @param input - the array with a missing number
+	 * @return the missing number
+	 */
     public static int find(int[] input) {
         
         // Invalid
@@ -11,21 +17,37 @@ public class MissingNumber {
         }
         
         // Find the sum, min, and max values
-        int max = Integer.MIN_VALUE;
         int actualSum = 0;
         for(int i : input) {
             actualSum += i;
-            max = Math.max(max, i);
         }
         
         // The answer is the difference between the expected and actual
-        int expectedSum = max * (max + 1) / 2;
+        int N = input.length;
+        int expectedSum = N * (N + 1) / 2;
         return expectedSum - actualSum;
     }
     
     public static void main(String[] args) {
         
-        int[] input = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12};
+    	// Should be 0
+        int[] input = new int[]{1, 2, 3, 4};
+        System.out.println(find(input));
+        
+        // Should be 4
+        input = new int[]{0, 1, 2, 3};
+        System.out.println(find(input));
+        
+        // Should be 2
+        input = new int[]{0, 1, 4, 3};
+        System.out.println(find(input));
+        
+        // Should be 0
+        input = new int[]{1};
+        System.out.println(find(input));
+        
+        // Should be -1
+        input = new int[]{};
         System.out.println(find(input));
     }
 }
