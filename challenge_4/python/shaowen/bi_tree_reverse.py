@@ -41,4 +41,3 @@ def rev_tree(root):
             rev_tree(root.left)
         if root.right:
             rev_tree(root.right)
-            
