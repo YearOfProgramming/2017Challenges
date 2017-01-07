@@ -25,7 +25,7 @@ def ranges(arr):
 if __name__ == '__main__':
         val = ranges([1,3,4,5,7,8,9,14,15,16, 18, 19, 26,27,28, 30, 32,33,40])
         print val
-
+# Things I came up with to help me
 # if not last number check first number with the next number
 # if the next number is == to the second -1 then carry on else
 # end number == arr[i]
