@@ -10,7 +10,7 @@
 
 5. We iterate once more, this time through the `output_elements` and using `enumerate`. This final iteration serves the purpose of formatting `output_elements` into the expected presentation of `output_list`.
 
-# Unit Test
+## Unit Test
 
 `test.py` is the unit test I created for this challenge. It includes tests for
 
@@ -21,7 +21,7 @@
 5. 'Largest' `input_list` of ten ranges
 6. 'Negatives' `input_list` of three ranges, with two including negative integers
 
-# Learning Points
+## Learning Points
 
 1. `list_1 = list_2` is an assignment; `list_1 = list(list_2)` is a copy
 2. Naming your unit test `unittest.py` is one bad idea...
