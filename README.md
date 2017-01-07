@@ -27,13 +27,14 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 - [okraarmband](https://github.com/OkraArmband "OkraArmband")
 - [erocs](https://github.com/erocs "erocs")
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
-- [jremillard](https://github.com/jarydremillard "jaryd remillard")
+- [jremillard](https://github.com/jarydremillard "jarydremillard")
 - [sten](https://github.com/dashsten "dashten")
 - [manuel](https://github.com/ManuelMeraz "ManuelMeraz")
 - [marcus](https://github.com/MJUIUC "MJUIUC")
-- [ae1vtas](https://github.com/aev1tas "aev1tas")
 - [aakash](https://github.com/asethi77 "asethi77")
 - [flickdm](https://github.com/flickdm "flickdm")
+- [halogenandtoast](https://github.com/halogenandtoast "halogenandtoast")
+- [shank-redemption](https://github.com/Salil999 "Salil999")
 
 
 ## About Year of Programming
