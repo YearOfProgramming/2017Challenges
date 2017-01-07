@@ -36,22 +36,41 @@ class RandomPointerLinkedList:
         else:
             return 1
 
+    # Returns a list with the value of root for each LinkedList in self
     def rootsToList(self):
         return [l.root for l in self]
 
-    def nextToList(self):
-        return [l.next.root if l.next else None for l in self]
-
+    # Returns a list with the value of the index of random
     def randomToList(self):
-        return [l.next.random if l.next else None for l in self]
+        return [get(l.random) for l in self]
 
-    # Returns the i'th linked list. self is at 0
-    def get(i):
+    # Returns the index of L where L is a linked list in self. None otherwise
+    def get(l):
+        if not l:
+            return None
         index = 0
-        for l in self:
-            if index == i:
+        for link in self:
+            if l == link:
                 self.current = self
-                return l
+                return index
             index += 1
 
-    
+    # Returns a deep copy of self
+    def makeDeepCopy(self):
+        roots = self.rootsToList()
+        newRoots = [str(root) + "\'" for root in roots]
+        lists = [RandomPointerLinkedList(root, None, None) for root in newRoots]
+        randomIndeces = self.randomToList()
+
+        # Set up the next
+        for i in range(len(lists)):
+            if i == len(lists) - 1:
+                lists[i].next = None
+            else:
+                lists[i].next = lists[i+1]
+
+        # Set up the random
+        for list, r in zip(lists, randomIndeces):
+            lists[i].random = lists[r]
+
+        return lists[0]
