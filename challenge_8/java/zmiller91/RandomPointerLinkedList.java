@@ -31,8 +31,8 @@ public class RandomPointerLinkedList {
             if(cpHead == null) {
                 cpHead = copy;
                 cpNode = cpHead;
-            } else 
-            {
+            } 
+            else {
               cpNode.next = copy;
               cpNode = cpNode.next;
             }
@@ -175,6 +175,9 @@ public class RandomPointerLinkedList {
         three.random = three;
         one2.random = three;
         
-        assertEquals(three, deepCopy(three), "Test case 3 failed.");
+        assertEquals(three, deepCopy(three), "Test case 4 failed.");
+        
+        // #5. Nothing but null
+        assertEquals(null, deepCopy(null), "Test case 5 failed.");
     }
 }

@@ -10,7 +10,7 @@ A HashMap `ogIndexes` stores a node's index, given a reference to itself:
 {
     {7} => 0,
     {5} => 1,
-    {3} => 2,
+    {3} => 2
 }
 ```
 
@@ -20,7 +20,7 @@ A HashMap `cpObjects` stores a copied node, given it's index in the list
 {
     0 => {7'},
     1 => {5'},
-    2 => {3'},
+    2 => {3'}
 }
 ```
 
