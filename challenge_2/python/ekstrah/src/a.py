@@ -1,18 +1,17 @@
-def findingMajoList(aList): #{
-    bList = set(aList)
-    bList = list(bList)
-    for i in range(0, len(bList)): #{
-        if aList.count(bList[i]) > len(bList): #{
-            return bList[i]
+def findingSingleList(aList): #{
+    bList = list(set(aList))
+    for item in bList: #{
+        if aList.count(item) == 1: #{
+            return item
         #}
     #}
 #}
 
 
 
-aList = [2,2,3,7,5,7,7,7,4,7,2,7,4,5,6,7,7,8,6,7,7,8,10,12,29,30,19,10,7,7,7,7,7,7,7,7,7]
-cList = [1, 2, 3]
+
 if __name__ == "__main__": #{
-    val = findingMajoList(cList)
+    aList = [2,3,4,2,3,5,4,6,4,6,9,10,9,8,7,8,10,7]
+    val = findingSingleList(aList)
     print(val)
 #}
