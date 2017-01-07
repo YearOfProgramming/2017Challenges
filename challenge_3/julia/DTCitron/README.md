@@ -15,3 +15,4 @@ for example, given array = [2,2,3,7,5,7,7,7,4,7,2,7,4,5,6,7,7,8,6,7,7,8,10,12,29
 - The majority() function uses a dictionary ('counter') to count the number of times each element appears in the input array
 - If a majority element does not exist, returns a message stating that there is no such element
 - More on dictionaries here: https://en.wikibooks.org/wiki/Introducing_Julia/Dictionaries_and_sets
+ 
