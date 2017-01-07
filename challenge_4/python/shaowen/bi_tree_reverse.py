@@ -15,6 +15,9 @@ class Node():
         return (self.left or self.right)
     
 def bi_insert(root, new_node):
+    # insert new node into the tree
+    # arg 1: the root of the tree, type object
+    # arg 2. the new node to be inserted, type object
     if new_node.data >= root.data:
         # insert new node to the right
         if root.right:
@@ -31,8 +34,11 @@ def bi_insert(root, new_node):
 def rev_tree(root):
     # reverse binary tree
     if root.has_child:
+        # exchange the pos of two sub nodes 
         root.left, root.right = root.right, root.left
+        # go on the recursive proc with the child
         if root.left:
             rev_tree(root.left)
         if root.right:
             rev_tree(root.right)
+            
