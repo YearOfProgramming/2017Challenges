@@ -5,21 +5,10 @@ class RandomPointerLinkedList:
         self.random = random
         self.current = self
 
-    @property
-    def root(self):
-        return self.root
-
-    @property
-    def next(self):
-        return self.next
-
-    def random(self):
-        return self.random
-
     def __iter__(self):
         return self
 
-    def next(self):
+    def __next__(self):
         if self.current.next:
             curr = self.current
             self.current = self.current.next
@@ -42,10 +31,10 @@ class RandomPointerLinkedList:
 
     # Returns a list with the value of the index of random
     def randomToList(self):
-        return [get(l.random) for l in self]
+        return [self.get(l.random) for l in self]
 
     # Returns the index of L where L is a linked list in self. None otherwise
-    def get(l):
+    def get(self, l):
         if not l:
             return None
         index = 0
