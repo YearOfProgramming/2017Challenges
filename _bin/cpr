@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Checkout Pull Request
+#
+# Usage:
+#
+# _bin/cpr get <username> <branch>, as seen when looking at a Pull Request on
+# the web (see https://help.github.com/articles/checking-out-pull-requests-locally/)
+#
+# _bin/cpr merge <username> <branch> will merge the PR into master and open up
+# your editor for a commit message.
+#
+# This function is only useful for admins, as we are the only ones with write
+# access to the central repository. Don't bother running this in a fork of the
+# central unless you *yourself* have incoming pull requests.
+
+function get_pr () {
+	git remote add "$1" "https://github.com/${1}/2017Challenges.git"
+	git fetch "${1}"
+	git checkout "${1}/${2}"
+}
+
+function merge_pr () {
+	git checkout upstream/master || git checkout challenges/master
+	git pull
+	git merge "${1}/${2}"
+}
+
+if [[ "$#" == "0" ]]; then
+	cat <<-EOS
+Usage:
+
+_bin/cpr get <username> <branch>, as seen when looking at a Pull Request on the
+web (see https://help.github.com/articles/checking-out-pull-requests-locally/)
+
+_bin/cpr merge <username> <branch> will merge the PR into master and open up
+your editor for a commit message.
+
+This function is only useful for admins, as we are the only ones with write
+access to the central repository. Don't bother running this in a fork of the
+central repo unless you *yourself* have incoming pull requests.
+	EOS
+	exit 0
+fi
+
+if [[ "$1" == "" ]]; then
+	echo "You must specify an action"
+	exit 1
+elif [[ "$1" != "get" && "$1" != "merge" ]]; then
+	echo "The subcommands are 'get' and 'merge'. They require a username and a branch as second and third arguments."
+fi
+if [[ "$2" == "" ]]; then
+	echo "You must specify a GitHub username"
+	exit 2
+fi
+if [[ "$3" == "" ]]; then
+	echo "You must specify a GitHub branch"
+	exit 3
+fi
+
+case "$1" in
+	"get")
+		get_pr $2 $3
+		;;
+	"merge")
+		merge_pr $2 $3
+		;;
+esac
