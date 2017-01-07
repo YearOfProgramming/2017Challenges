@@ -309,8 +309,8 @@ You can copy and paste this:
 
 When You do perform a pull request, you should set the title of it so that others know no one has looked at it yet.
 -   If you just submitted the pull request, your title should look like this: `[language]challenge_[chalNumber](UnReviewed)`
--   If you have already recieved one review, your pull request title should look like this: `[language]challenge_[chalNumber](Pending)`
--   If you have at least 2 reviews, set your pull request to this: `[language]challenge_[chalNumber](ReadyForMerge)` and a mod will merge your code to the main repository.
+-   If your code is actively being reviewed, your pull request title should look like this: `[language]challenge_[chalNumber](Pending)`
+-   If your reviewer agrees that your change is good to merge, set your pull request to this: `[language]challenge_[chalNumber](ReadyForMerge)` and a mod will merge your code to the main repository.
 
 
 Taking this approach to code review will help to streamline the process and make reviews easier for everyone involved. Take the time to check your github notifications so that you can check to see if anyone has reviewed your code yet.
