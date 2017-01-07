@@ -27,13 +27,14 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 - [okraarmband](https://github.com/OkraArmband "OkraArmband")
 - [erocs](https://github.com/erocs "erocs")
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
-- [jremillard](https://github.com/jarydremillard "jaryd remillard")
+- [jremillard](https://github.com/jarydremillard "jarydremillard")
 - [sten](https://github.com/dashsten "dashten")
 - [manuel](https://github.com/ManuelMeraz "ManuelMeraz")
 - [marcus](https://github.com/MJUIUC "MJUIUC")
-- [ae1vtas](https://github.com/aev1tas "aev1tas")
 - [aakash](https://github.com/asethi77 "asethi77")
 - [flickdm](https://github.com/flickdm "flickdm")
+- [halogenandtoast](https://github.com/halogenandtoast "halogenandtoast")
+- [shank-redemption](https://github.com/Salil999 "Salil999")
 
 
 ## About Year of Programming
@@ -309,8 +310,8 @@ You can copy and paste this:
 
 When You do perform a pull request, you should set the title of it so that others know no one has looked at it yet.
 -   If you just submitted the pull request, your title should look like this: `[language]challenge_[chalNumber](UnReviewed)`
--   If you have already recieved one review, your pull request title should look like this: `[language]challenge_[chalNumber](Pending)`
--   If you have at least 2 reviews, set your pull request to this: `[language]challenge_[chalNumber](ReadyForMerge)` and a mod will merge your code to the main repository.
+-   If your code is actively being reviewed, your pull request title should look like this: `[language]challenge_[chalNumber](Pending)`
+-   If your reviewer agrees that your change is good to merge, set your pull request to this: `[language]challenge_[chalNumber](ReadyForMerge)` and a mod will merge your code to the main repository.
 
 
 Taking this approach to code review will help to streamline the process and make reviews easier for everyone involved. Take the time to check your github notifications so that you can check to see if anyone has reviewed your code yet.

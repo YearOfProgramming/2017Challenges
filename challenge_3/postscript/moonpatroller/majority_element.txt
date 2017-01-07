@@ -1,0 +1,79 @@
+% gs -dBATCH majority_element.ps
+%
+
+% - Given an array of size n, find the majority element. 
+% The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+
+% - You may assume that the array is non-empty and the majority element always exist in the array.
+
+% for example, given array = [2,2,3,7,5,7,7,7,4,7,2,7,4,5,6,7,7,8,6,7,7,8,10,12,29,30,19,10,7,7,7,7,7,7,7,7,7] 
+% your program should return 7
+
+
+/stdout { (%stdout) (w) file } def   % push stdout for writing
+/stdin { (%stdin) (r) file } def     % push stdin for writing
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+/2dup { 1 index 1 index } def        % dup top 2 elements
+
+/chopstring {      % s1 start-chars end-chars - s2
+
+  2 index length   % copy up string and convert to length
+  exch sub 1 sub   % subtract end-chars from length
+  getinterval
+
+} def
+
+/readstdin {   % size - str
+  stdin exch string readline pop
+} def
+
+/split {       % string needle - array
+  [ 3 1 roll   % mark array start
+  {
+    search {
+      3 1 roll % bury found element under needle and rest of search string
+    }
+    {
+      ] exit   % remaining string left on stack, finish array and exit loop
+    }
+    ifelse
+  }
+  loop
+} def
+
+/counts { % array - dict
+  1024 10 mul dict exch  % create initial dict
+  {
+    % dict el
+    2dup known
+    {
+      1 index exch 2dup
+      get 1 add put
+    }
+    {
+      1 index exch
+      1 put
+    }
+    ifelse
+  }
+  forall 
+} def
+
+1024 10 mul readstdin   % read ~10k string onto stack
+1 1 chopstring          % chop brackets off string
+(,) split               % convert to array
+dup length 2 idiv exch  % put half of length under array
+counts
+{ 
+  % key value
+  2 index gt {
+    1024 string cvs println
+  } {
+    pop
+  } ifelse
+} forall
+
+pop pstack quit
