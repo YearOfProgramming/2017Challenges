@@ -23,6 +23,9 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 8. [Submission Review](#submission-review)
 
 ## The Administration Team
+- [slandau](https://github.com/slandau3 "slandau3")
+- [okraarmband](https://github.com/OkraArmband "OkraArmband")
+- [erocs](https://github.com/erocs "erocs")
 - [myrrlyn](https://github.com/myrrlyn "myrrlyn")
 - [jremillard](https://github.com/jarydremillard "jaryd remillard")
 - [sten](https://github.com/dashsten "dashten")
@@ -30,6 +33,7 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
 - [marcus](https://github.com/MJUIUC "MJUIUC")
 - [ae1vtas](https://github.com/aev1tas "aev1tas")
 - [aakash](https://github.com/asethi77 "asethi77")
+
 
 ## About Year of Programming
 
