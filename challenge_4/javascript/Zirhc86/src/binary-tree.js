@@ -19,11 +19,10 @@ function reverseTree(node) {
 		}
 		if(node.right) {
 			reverseTree(node.right);
-		}
-
-
-	
-        // Swaps child nodes around
+		}	
+                // Swaps child nodes around only 
+		// on nodes that have at least
+	 	// one !null child
 		var temp;
 		temp = node.left;
 		node.left = node.right;
@@ -38,19 +37,16 @@ function printInOrder(tree) {
     getOrder(tree);
 
     function getOrder(root) {
-	    
 	    if(root){
 			getOrder(root.left);
 			p += p ?  ", " + root.value : root.value;
 			getOrder(root.right);
-		}	
+	    }	
     }  
 
     return p;
 	
 }
-
-
 // Declare and builds a tree
 var test = new Node(1);
 test.left = new Node(2);
@@ -61,9 +57,6 @@ test.right.left = new Node(6);
 test.right.right = new Node(7);
 test.right.right.right = new Node(8);
 test.right.right.right.right = new Node(9);
-
-
-
 
 console.log("Tree before reversal:")
 console.log(printInOrder(test));
