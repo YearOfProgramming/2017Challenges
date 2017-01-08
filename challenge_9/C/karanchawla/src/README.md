@@ -9,4 +9,4 @@ that can be used.
 
 To do: 
 - [x] Implement O(n) solution.
-- [] Man up and think about a better solution.
+- [ ] Man up and think about a better solution.
