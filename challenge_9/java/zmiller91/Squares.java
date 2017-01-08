@@ -108,6 +108,10 @@ public class Squares {
         assertEquals(new Double[]{}, 
                 square(input), "Test case 5 failed.");
         
+        // #6. All negatives
+        input = new int[]{-3, -2, -1};
+        assertEquals(new Double[]{1.0, 4.0, 9.0}, 
+                square(input), "Test case 6 failed.");
     }
     
 }
