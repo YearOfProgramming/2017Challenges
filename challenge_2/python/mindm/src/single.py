@@ -49,7 +49,7 @@ def args_to_list(arg_string):
 
 
 def test_alnum(arr):
-    """ Exits if list contains non-alphanumeric strings
+    """ Returns false if list contains non-alphanumeric strings
     """
     for element in arr:
         if not element.isalnum():
