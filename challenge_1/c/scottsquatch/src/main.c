@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 /* Constants */
 #define RETURN_SUCCESS 0
 #define MAX_SIZE 256
+#define TRUE 0
+#define FALSE -1
 
 /* Function Declarations */
-char* reverse(char* originalString);
-bool shouldContinue(char contineChar);
+void reverse(char* originalString);
+int should_continue(char contineChar);
+void swap(char*, int, int);
 
 int main()
 {
   char stringToReverse[MAX_SIZE];
   char continueResult;
-  char* reversedString = NULL;
 
   do
   {
@@ -24,48 +25,55 @@ int main()
     scanf("%s", stringToReverse);
 
     // Print result
-    reversedString = reverse(stringToReverse);
-    printf("Reversed String: %s\n", reversedString);
+    reverse(stringToReverse);
+    printf("Reversed String: %s\n", stringToReverse);
 
     // See if we should continue
     printf("Would you like to continue (y to continue): ");
     scanf(" %c", &continueResult);
 
-  } while(shouldContinue(continueResult));
-
-  // free up memory
-  free(reversedString);
+  } while(should_continue(continueResult) == TRUE);
 
   return RETURN_SUCCESS;
 }
 
 // Reverse a given string.
-char* reverse(char* originalString)
+void reverse(char* originalString)
 {
-  // Variables
-  int length;
-  char* reversedString = NULL;
-  int i;
-  int reversedIndex;
-
   if (originalString != NULL)
   {
-    length = strlen(originalString);
-    reversedString = calloc(length, sizeof(char));
-    reversedIndex = 0;
+    int length = strlen(originalString);
+    int backIdx = length - 1;
+    // Calculate number of loops here so that we don't have to keep recomputing.
+    // swapping front and back pointers so only iterate over half of length
+    int numLoops = length / 2;
 
-    // Iterate over Original String in Reverse
-    for (i = length - 1; i >= 0; i--)
+    // iterate over half of the string, swapping front and back pointers
+    for (int frontIdx = 0; frontIdx < numLoops; frontIdx++)
     {
-      reversedString[reversedIndex++] = originalString[i];
+      // Swap back and front to reverse string.
+      swap(originalString, frontIdx, backIdx--);
     }
   }
+}
 
-  return reversedString;
+// Swap characters of a character array
+void swap(char* string, int firstIndex, int secondIndex)
+{
+  char temp = string[firstIndex];
+  string[firstIndex] = string[secondIndex];
+  string[secondIndex] = temp;
 }
 
 // Return true if we are to continue loop
-bool shouldContinue(char contineChar)
+int should_continue(char contineChar)
 {
-  return contineChar == 'y' || contineChar == 'Y';
+  if (contineChar == 'y' || contineChar == 'Y')
+  {
+    return TRUE;
+  }
+  else
+  {
+    return FALSE;
+  }
 }
