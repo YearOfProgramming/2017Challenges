@@ -7,3 +7,4 @@ def solution(nums):
 	for i in xrange(0,n):
 		Summation += i
 	return Summation - sums
+
