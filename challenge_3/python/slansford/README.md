@@ -1,0 +1,1 @@
+This program iterates through a given array and prints the majority occurence, where majority is equal to n/2 and n is equal to the length of the array. Uses Python 3.6.0
