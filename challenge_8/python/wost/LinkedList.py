@@ -3,13 +3,13 @@ import random
 
 class LinkedList:
     class Node:
-        def __init__(self, val=None):
+        def __init__(self, val=None, ran=None):
             self.val = val
             self.next = None
-            self.random = None
+            self.random = ran
 
-        def __repr__(self):
-            return self.val
+        def __str__(self):
+            return "{0}".format(self.val)
 
     def __init__(self):
         self._root = self.Node()
@@ -20,7 +20,7 @@ class LinkedList:
         return self._length
 
     def __repr__(self):
-        self.print_all(self._root)
+        return "{0}".format(self.print_all(self._root))
 
     @property
     def root(self):
@@ -41,29 +41,23 @@ class LinkedList:
         else:
             self._current = self.Node(other)
 
-    def set_random(self):
-        i, ran = 1, random.randint(1, self._length)
-        root = self._root
-        while root.next is not None:
-            if i == ran:
-                return root
-            i += 1
-            root = root.next
-        return root
+    def add(self, val, ran=None):
+        if val is None:
+            raise ValueError("You can't have the value None on the value!")
+        self._add(val, self.root, ran)
 
-    def add(self, val):
-        self._add(val, self.root)
-
-    def _add(self, value, root):
+    def _add(self, value, root, ran):
         if root.val is None:
+            if root.random is None:
+                root.random = ran
             root.val = value
-            root.random = self.set_random()
         elif root.next is None:
+            if root.random is None:
+                root.next = self.Node(value, ran)
             root.next = self.Node(value)
-            root.next.random = self.set_random()
             self._length += 1
         else:
-            self._add(value, root.next)
+            self._add(value, root.next, ran)
 
     def next(self, node=None):
         """
@@ -79,7 +73,7 @@ class LinkedList:
             else:
                 self._current = self._current.next
         else:
-            return node.next.val
+            return node.next
 
     def deep_copy(self):
         """
@@ -89,13 +83,13 @@ class LinkedList:
         :return: The new LinkedList instance.
         """
         new = LinkedList()
-        new.add(self.root.val)
+        new.add(self._root.val, self._root.random)
         current_node = self.current
         self.current = self._root
         while self.current.next is not None:
-            new.add(self.next(self.current))
+            new.add(self.next(self.current).val, self.current.random)
             self.current = self.current.next
-        self.current = self.root
+        self.current = current_node
         return new
 
     def print_all(self, root):

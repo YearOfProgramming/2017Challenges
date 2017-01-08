@@ -15,18 +15,13 @@ def main():
     lst.add(10)
     lst.add(5)
     lst.add(8)
+    lst.root.random = lst.current.next
     lst2 = LinkedList()
 
     lst2 = lst.deep_copy()
 
-    print(len(lst))
-    print(len(lst2))
-    print(lst.current.val)
-    print(lst2.current.val)
-    print(lst.current.val)
-
-    print(lst.print_all(lst.root))
-    print(lst2.print_all(lst2.root))
+    print(lst)
+    print(lst2)
 
 
 if __name__ == "__main__":
