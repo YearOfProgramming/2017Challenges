@@ -1,3 +1,5 @@
+/*Not an efficient solution, but I learnt arrays, vectors in rust and can't 
+define run time array in rust :( */
 pub fn reverse(input: &str) -> String {
 	let n = input.len();
 	// Define a vector of char type with length of the input string
@@ -10,7 +12,8 @@ pub fn reverse(input: &str) -> String {
 	// Iterate, copy and collect it as a string
 	let result: String = char_vec.iter().cloned().collect();
 	return result
-	// oneliner : return input.chars().rev().collect::<String>()
+	// oneliner : return input.chars().rev().collect::<String>();
+	
 }
 
 
