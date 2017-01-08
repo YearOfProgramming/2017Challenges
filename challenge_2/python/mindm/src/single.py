@@ -14,7 +14,10 @@ def main():
         exit(1)
 
     inlist = args_to_list(args)
-    test_alnum(inlist)
+    
+    if test_alnum(inlist) == False:
+        print("Invalid arguments")
+        exit(1)
 
     # Map elements to a dictionary where the key is the element and increment
     # the value (default value is 0 for each key initially)
@@ -50,8 +53,8 @@ def test_alnum(arr):
     """
     for element in arr:
         if not element.isalnum():
-            print("Error: '{}' is not alphanumeric.".format(element))
-            exit(1)
+            return False
+    return True
 
 
 if __name__ == "__main__":
