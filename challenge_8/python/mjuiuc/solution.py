@@ -21,4 +21,3 @@ def solution(head):
 		temp4 = temp4.next
 		temp3 = temp3.next
 	return newHead
-	
