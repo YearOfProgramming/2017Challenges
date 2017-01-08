@@ -1,0 +1,19 @@
+% gs -dBATCH find_missing.txt
+%
+
+% Given a list of N integers whose values will be in the range 0 to N, find the missing number.
+%
+
+/stdout { (%stdout) (w) file } def   % push stdout file on top of stack
+
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+
+/sum-array { 0 exch { add } forall } def   % sum array elements
+/sum-ints  { dup 1 add mul 2 idiv  } def   % sum ints from 0 to n
+/find_missing { dup length sum-ints exch sum-array sub } def
+
+[ 2 3 0 1 5 6 ] find_missing dup 4 ne
+{ (Array is missing number 4) println } if
