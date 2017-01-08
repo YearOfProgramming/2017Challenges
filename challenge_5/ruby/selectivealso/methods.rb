@@ -1,13 +1,26 @@
-class Array
-  # This is the same method in challenge 2
-  def find_unique
+class ElementsArray < Array
+
+  def initialize elements, comparison
+    @elements = elements.chars
+    @comparisons = comparison.chars
+  end
+
+  def find_diff_chars
     count = Hash.new(0)
 
-    self.each do |num|
-      count[num] += 1
+    @elements.each do |element|
+      count[element] += 1
     end
 
-    return count.key(1)
+    @comparisons.each do |comparison|
+      count[comparison] += 1
+    end
 
+    count.each do |char, occurances|
+      if occurances % 2 == 1
+        return char
+      end
+    end
   end
+
 end

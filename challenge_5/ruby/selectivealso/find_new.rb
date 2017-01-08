@@ -3,4 +3,6 @@ require "./methods.rb"
 s = "abcd"
 t = "abcde"
 
-puts "#{s}#{t}".split('').find_unique
+complete_string = ElementsArray.new(s, t)
+
+puts complete_string.find_diff_chars
