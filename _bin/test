@@ -53,7 +53,7 @@ ch_num=$1 # challenge number
 language=${2,,} # Makes it lowercase
 name=$3 # name of person
 test_dir="./challenge_$ch_num/testfiles" 
-user_solution=$(find ./challenge_$1/$language/$name/ -name "solution.*")
+user_solution=$(find ./challenge_$1/$language/$name/ -name "*solution*")
 
 # If the directory contains a file named solution
 if ! [[ $user_solution =~ .*solution.* ]]; then
