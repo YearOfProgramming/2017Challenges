@@ -356,3 +356,18 @@ Usage:
     followed  by the extension of your choice (e.g. solution.py, solution.exe, etc). Your 
     program must expect a line(s) of standard input and the solution must be printed out and
     terminate with a new line.
+    
+######Sample Program
+
+Challenge 1 - Reverse a String
+
+solution.py
+```
+#!/usr/bin/python3
+
+# Your line input
+str = input() 
+
+#Your line of output
+print(str)
+```
