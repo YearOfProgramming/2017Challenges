@@ -21,12 +21,15 @@
     /end source length 1 sub def
     /target-end source length 1 sub def
 
+    % loop over all chars in the source string
     source length
     {
+        % get first and last char and see which is square is greater
         source start get dup mul
         source end get dup mul
         2 copy
         gt
+        % copy greater squared element into target array
         {
             pop target target-end 3 -1 roll put
             /start start 1 add def
