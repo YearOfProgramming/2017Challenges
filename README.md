@@ -354,5 +354,5 @@ Usage:
     This program will go to the challenge you are testing and pass in the testfiles
     within that challenge to your solution. Your solution must be named solution 
     followed  by the extension of your choice (e.g. solution.py, solution.exe, etc). Your 
-    program must expect a line of standard input and the solution must be printed out and
+    program must expect a line(s) of standard input and the solution must be printed out and
     terminate with a new line.
