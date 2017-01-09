@@ -1,0 +1,1 @@
+I wanted this program to work with any string. First, I create a list for the end output. Then, I get the length of the string. Then for as many times as there are characters in the string, I add the the last character to the list i created in the beginning. This is completed, and then i complete the string.
