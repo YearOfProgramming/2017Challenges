@@ -5,30 +5,30 @@
 
 % test if 2 arrays have the same simple elements
 /array-eq {
-	/a2 exch def
-	/a1 exch def
-	a1 length a2 length ne
-	{
-		false
-	}
-	{
-		/all-true true def
-		0 1 a1 length 1 sub {
-			a1 1 index get a2 2 index get ne
-			{
-				/all-true false def
-				pop exit
-			}
-			{
-				pop
-			} ifelse
-		} for
-		all-true
-	} ifelse
+    /a2 exch def
+    /a1 exch def
+    a1 length a2 length ne
+    {
+        false
+    }
+    {
+        /all-true true def
+        0 1 a1 length 1 sub {
+            a1 1 index get a2 2 index get ne
+            {
+                /all-true false def
+                pop exit
+            }
+            {
+                pop
+            } ifelse
+        } for
+        all-true
+    } ifelse
 } def
 
 /if-not-println {
-	exch not { println } { pop } ifelse
+    exch not { println } { pop } ifelse
 } def
 
 /test-arrays-same { array-eq (Arrays shouldn't be different) if-not-println } def 

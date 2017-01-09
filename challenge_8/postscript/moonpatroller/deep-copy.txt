@@ -1,4 +1,4 @@
-% gs -dBATCH deep_copy.txt
+% gs -dBATCH deep-copy.txt
 
 % Random Pointer Linked List
 % ======
@@ -52,27 +52,27 @@
 /list-print {
     /print-data { get-data stdout exch 100 string cvs writestring } def
     {
-		dup print-data
-		stdout (, ) writestring
-		dup get-random dup [] ne 
-		{ 
-			print-data 
-		} 
-		{ 
-			pop 
-		} ifelse
-		stdout (, ) writestring
-		dup get-next
-		dup length 0 gt
-		{
-			print-data
-			get-next
+        dup print-data
+        stdout (, ) writestring
+        dup get-random dup [] ne 
+        { 
+            print-data 
+        } 
+        { 
+            pop 
+        } ifelse
+        stdout (, ) writestring
+        dup get-next
+        dup length 0 gt
+        {
+            print-data
+            get-next
         }
         {
-        	pop
-        	pop
+            pop
+            pop
             stdout (null\n) writestring
-    		exit
+            exit
         } ifelse
         stdout (; ) writestring
     } loop
@@ -82,12 +82,12 @@
     {
         dup length 0 eq
         {
-        	pop exit
-    	}
-    	{
-	        dup 0 set-data
-	        get-next
-    	} ifelse
+            pop exit
+        }
+        {
+            dup 0 set-data
+            get-next
+        } ifelse
     } loop
 } def
 
@@ -99,7 +99,7 @@
     }
     {
         5 dict begin
-        	% make new node with old node's data
+            % make new node with old node's data
             /new-node [ old get-data [] [] ] def
 
             % if old node's random points to previously seen old node...
@@ -107,22 +107,22 @@
             prev-seen old get-random known
             and
             {
-            	new-node prev-seen old get-random get set-random
+                new-node prev-seen old get-random get set-random
             } if
 
             % map old node to new node
             prev-seen old new-node put
 
-        	% map old node's future random back to new node
+            % map old node's future random back to new node
             old length 0 gt {
-            	rev-rands old get-random new-node put 
+                rev-rands old get-random new-node put 
             } if
 
-        	% re-set other random pointers
+            % re-set other random pointers
             rev-rands old known
             {
-            	% point prev node's random to this new node
-            	rev-rands old get new-node set-random
+                % point prev node's random to this new node
+                rev-rands old get new-node set-random
             } if
 
             % recursively make next node
@@ -137,9 +137,9 @@
 } def
 
 /deep-copy {
-	5 dict begin
-	    /prev-seen 1024 dict def
-	    /rev-rands 1024 dict def
-	    deep-copy-helper
-	end
+    5 dict begin
+        /prev-seen 1024 dict def
+        /rev-rands 1024 dict def
+        deep-copy-helper
+    end
 } def
