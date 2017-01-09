@@ -14,12 +14,13 @@
 
 `test.py` is the unit test I created for this challenge. It includes tests for
 
-1. 'Small' `input_list` of one range
-2. 'Single' `input_list` of a single integer
-3. 'Large' `input_list` of two ranges
-4. 'Larger' `input_list` of five ranges
-5. 'Largest' `input_list` of ten ranges
-6. 'Negatives' `input_list` of three ranges, with two including negative integers
+1. 'Empty' `input_list` of empty array
+2. 'Small' `input_list` of one range
+3. 'Single' `input_list` of a single integer
+4. 'Large' `input_list` of two ranges
+5. 'Larger' `input_list` of five ranges
+6. 'Largest' `input_list` of ten ranges
+7. 'Negatives' `input_list` of three ranges, with two including negative integers
 
 ## Learning Points
 
