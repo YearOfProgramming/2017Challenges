@@ -61,6 +61,22 @@ if ! [[ $user_solution =~ .*solution.* ]]; then
     exit 5
 fi
 
+if [[ $user_solution =~ .*py.* ]]; then
+    echo "It looks like you are using python, please enter the version (e.g. 3, 2.7, 3.6)"
+    read py_version
+
+    # checks if decimal or integer
+    re='^[0-9]+([.][0-9]+)?$'
+    if ! [[ $py_version =~ $re ]]; then
+        echo "Please enter a correct python version">&2
+
+        exit 6 
+    fi
+    user_solution="python$py_version $user_solution"
+fi
+
+
+
 rm -f result
 chmod +x _bin/test
 
