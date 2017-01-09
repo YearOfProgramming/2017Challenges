@@ -61,7 +61,7 @@ if ! [[ $user_solution =~ .*solution.* ]]; then
     exit 5
 fi
 
-if [[ $user_solution =~ .*py.* ]]; then
+if [[ $user_solution =~ .*py ]]; then
     echo "It looks like you are using python, please enter the version (e.g. 3, 2.7, 3.6)"
     read py_version
 
@@ -74,8 +74,6 @@ if [[ $user_solution =~ .*py.* ]]; then
     fi
     user_solution="python$py_version $user_solution"
 fi
-
-
 
 rm -f result
 chmod +x _bin/test
