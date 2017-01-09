@@ -23,7 +23,9 @@ class bTree:
             self._add(node, value, self.root)
 
     def _add(self, node, value, parent):
-        if value <= parent.value:
+        if value == None:
+            return 
+        elif value <= parent.value:
             if parent.left == None:
                 parent.left = node
             else:
