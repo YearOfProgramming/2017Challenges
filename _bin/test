@@ -87,10 +87,10 @@ let num_testcases/=2
 
 for input in $test_dir/t*; do
     let count++
-    rm -f user_result
-    $user_solution < $input >> user_result
 
-    diff user_result $test_dir/o$count >> comparison
+    $user_solution < $input > user_result
+
+    diff user_result $test_dir/o$count > comparison
     if [[ -s comparison ]] ; then
         echo "Incorrect for $count th example.";
     else
@@ -104,5 +104,4 @@ done
 echo $corr/${num_testcases};
 
 rm -f user_result
-rm -f correct_result
 rm -f comparison

@@ -293,3 +293,5 @@ error_log
 #######################################
 
 result
+comparison
+user_result
