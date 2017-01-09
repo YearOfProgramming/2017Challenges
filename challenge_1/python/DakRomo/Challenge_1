@@ -1,0 +1,4 @@
+s = 'Jon'
+print s
+s = s[-1::-1]
+print s

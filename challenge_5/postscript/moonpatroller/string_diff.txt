@@ -1,0 +1,90 @@
+% gs -dBATCH string_diff.ps
+%
+
+/stdout { (%stdout) (w) file } def   % push stdout file on top of stack
+/stdin  { (%stdin)  (r) file } def   % push stdin file on top of stack
+
+/println {  % str -        print a string, then a newline character
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+
+/readstdin {   % size - str    read from stdin into a string
+  stdin exch string readline pop
+} def
+
+/str_swap { % s n1 n2 -        swap characters at indexes n1 and n2 in string s
+	2 index 2 index get           % s n1 n2 i1
+	3 index 2 index get           % s n1 n2 i1 i2
+	4 index 5 -1 roll 3 -1 roll   % s n2 i1 s n1 i2
+	put put
+} def
+
+% (abdfg hiijkl) dup 10 3 str_swap
+% pstack
+
+/exch_if_gt { % s n1 n2 -      swap characters at indexes if first > second
+	2 index 2 index get           % s n1 n2 i1
+	3 index 2 index get           % s n1 n2 i1 i2
+	gt
+	{ str_swap }
+	{ pop pop pop }
+	ifelse
+} def
+
+% (abdfg hiijkl) dup 3 10 exch_if_gt
+% pstack
+
+/one-pass {   % word -      iterate through word swapping char with next char if first char is greater
+	/word exch def
+	0 1 word length 2 sub
+	{
+		word exch dup 1 add exch_if_gt
+	}
+	for
+} def
+
+% (abdfg hiijkl) dup 
+% one-pass pstack
+
+/bubble-sort {   % word -     call one-pass n-1 times to sort word
+	0 1 2 index length 2 sub
+	{
+		pop dup one-pass
+	} for
+} def
+
+% (azbwdsftg hiijkl) 
+% bubble-sort pstack
+
+% iterate through strings and print first char in second string 
+% that's different from the corresponding char in the first string
+/find-diff-in-second-word {   % word1 word2 - string
+	0 1 3 index length 1 sub
+	{
+		2 index 1 index get
+		2 index 2 index get
+		dup 3 1 roll
+		eq
+		{
+			pop
+			% if equal to word1 length - 1, last char of word2 if different
+			2 index length 1 sub
+			eq
+			{
+				dup dup length 1 sub 1 getinterval println
+				pop pop
+			} if
+		}
+		{
+			1 string dup 0 4 -1 roll put println pop pop pop exit
+		}
+		ifelse
+	} for
+} def
+
+% read and sort 2 strings, then print the char that differs between them
+1024 readstdin bubble-sort
+1024 readstdin bubble-sort
+find-diff-in-second-word
+
