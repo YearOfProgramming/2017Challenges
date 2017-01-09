@@ -1,6 +1,12 @@
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ Given two strings that differ by one character, finds the differing character.
+
+ @author: Hyunkyu Michael Lee
+ */
+
 class FindTheDifference {
     List<Character> s;
     List<Character> t;
