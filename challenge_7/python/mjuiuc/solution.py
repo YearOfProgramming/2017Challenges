@@ -4,6 +4,6 @@ def solution(nums):
 	Summation = 0
 	for i in nums:
 		sums += i
-	for i in xrange(0,n+1):
+	for i in xrange(0,n):
 		Summation += i
-	return (Summation - sums) % n
+	return Summation - sums
