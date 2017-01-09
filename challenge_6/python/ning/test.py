@@ -6,6 +6,12 @@ import unittest
 from  challenge_6 import ranges
 
 class Tests(unittest.TestCase):
+    def test_empty(self):
+        self.assertEqual(
+                ranges([]),
+                []
+                )
+
     def test_small(self):
         self.assertEqual(
                 ranges([1, 2]),
