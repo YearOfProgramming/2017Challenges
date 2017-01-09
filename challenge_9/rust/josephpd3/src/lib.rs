@@ -42,6 +42,10 @@ pub fn get_sorted_squares(mut v: Vec<i32>) -> Vec<i32> {
                                 .rev()
                                 .collect::<Vec<i32>>();
             
+            // For all the fans of Merge Sort:
+            // You've got two separate, already sorted lists,
+            // ...so just take all the items in order!
+
             loop {
                 if gtz_pows.is_empty() && ltz_pows.is_empty() {
                     break;
