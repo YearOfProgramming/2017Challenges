@@ -1,12 +1,13 @@
 #include <limits.h> // For INT_Min
 #include <string>
-#include "findTheDifference.h"
+#include "include/findTheDifference.h"
 
 int findMax (std::string str) {
 
     int max = INT_MIN;
+    int length = str.length();
 
-    for(int i = 0; i < str.length(); i++) {
+    for(int i = 0; i < length; i++) {
         if(str[i] > max) {
             max = str[i];
         }

@@ -13,18 +13,11 @@ extra credit: given array = [2,a,l,3,l,4,k,2,3,4,a,6,c,4,m,6,m,k,9,10,9,8,7,8,10
 
 ##Testing
 
-At the moment the testing script only works with python and any compiled executable. Please have your program contain 'solution' in its name.
-
-To see if your code works:
-
-     /2017Challenges/_bin/test <challenge #> <language> <name>
-    
-
-####Expected input:
+Expected input:
 
      2, 3, 4, 2, 3, 5, 4, 6, 4, 6, 9, 10, 9, 8, 7, 8, 10, 7 
 
-####Expected output:
+Expected output:
 
     5
 
