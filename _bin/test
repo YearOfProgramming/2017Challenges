@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Tests your program for correct input and output
+
+if [[ "$#" == "0" ]]; then
+    cat <<-EOS
+    Usage:
+
+    _bin/test <challenge number> <programming language> <identity> 
+
+    <challenge number> is the challenge you are on (e.g. 5)
+    <programming language> is the name of the directory for the programming language you 
+    chose (e.g python, cpp, csharp, etc)
+    <identity> is the name of the directory that you created that identifies you
+
+    Example:
+
+    _bin/test 4 python Johnson
+
+    This program will go to the challenge you are testing and pass in the testfiles
+    within that challenge to your solution. Your solution must be named solution 
+    followed  by the extension of your choice (e.g. solution.py, solution.exe, etc). Your 
+    program must expect a line of standard input and the solution must be printed out and
+    terminate with a new line.
+
+	EOS
+    exit 0
+fi
+
+#Checks if first argument is an integer
+re='^[0-9]+$'
+if ! [[ "$1" =~ $re ]]; then
+    echo "You must specify the challenge number">&2
+    exit 1
+fi
+
+if [[ "$2" == "" ]]; then
+    echo "You must specify the directory name for your programming language (e.g. python)">&2
+    exit 2
+fi
+
+if [[ "$3" == "" ]]; then
+    echo "You must specify the name you are using for you submission (e.g. john)">&2
+    exit 3
+fi
+
+challenge=$1
+language=${2,,} # Makes it lowercase
+name=$3
+
+
