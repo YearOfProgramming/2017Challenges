@@ -70,13 +70,11 @@ function printRanges(ranges) {
 
     if(ranges.length > 0){
 
-        document.getElementById('output').innerHTML = '<b>Ranges:</b>';
-		
+        document.getElementById('output').innerHTML = '<b>Ranges:</b>';		
     }
     else {
 
         document.getElementById('output').innerHTML = '<b>There are no ranges</b>';
-
     }
 
     for(var i = 0; i < ranges.length; i++) {
