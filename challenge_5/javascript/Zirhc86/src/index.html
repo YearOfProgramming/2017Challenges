@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Challenge_5|YoP 2017</title>
+        <style type="text/css">
+            body {
+                text-align: center;
+            }
+
+            .main-content {
+                display: inline-block;
+                background-color: #bbb;
+                padding: 30px;
+                border-radius: 10px;
+                margin-top: 10%;
+                max-width: 50%;
+            }
+
+            input {
+                margin-bottom: 15px;
+            }
+
+            button {
+                margin-top: 40px;
+            }
+
+            #output {
+                text-align: left !important;
+            }
+            
+        </style>
+	</head>
+	<body>
+        <div class="container">
+            <div class="main-content">
+                <form>
+                    <label>Insert string:</label><br />
+                    <input id="user-string" 
+                        type="text" autocomplete="off" required><br />
+                    <label>Insert a character to add:</label><br />
+                    <input id="user-extra-char" type="text" autocomplete="off" 
+                        maxlength="1" required><br />
+                    <button id="submit-string">Submit</button>
+                </form>
+                <div id="output"></div>
+            </div>
+        </div>
+        
+        <script src="find-the-difference.js"></script>
+
+	</body>
+</html>
