@@ -14,6 +14,6 @@ after your program runs, it should return a tree that looks like this
 
 -	Your program should run on any size tree. What is the runtime and space of your algorithm? Do you think it's reasonable? These are important questions you should ask yourself when creating these types of solutions.
 
-## Testing
+[Testing](#https://github.com/YearOfProgramming/2017Challenges/tree/testing#testing)
 
 There is no automated testing for this challenge.
