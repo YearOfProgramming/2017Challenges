@@ -1,0 +1,42 @@
+% gs -dBATCH square-sort.txt
+%
+
+/stdout { (%stdout) (w) file } def   % push stdout file on top of stack
+
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+
+/print {  % str -
+  stdout exch writestring
+  stdout ( ) writestring
+} def
+
+% copy source elements from both ends inwards to target stack from right to left
+/square-sort {
+	/source exch def
+	/target source length array def
+	/start 0 def
+	/end source length 1 sub def
+	/target-end source length 1 sub def
+
+	source length
+	{
+		source start get dup mul
+		source end get dup mul
+		2 copy
+		gt
+		{
+			pop target target-end 3 -1 roll put
+			/start start 1 add def
+		}
+		{
+			target target-end 3 -1 roll put pop 
+			/end end 1 sub def
+		} ifelse
+		/target-end target-end 1 sub def 
+	} repeat
+	target
+} def
+
