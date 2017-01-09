@@ -1,7 +1,7 @@
 #	Writing solution for this range problem
 
 class solution(object):
-	def compRange(self,nums):
+	def compRange(nums):
 		#	nums is of type list()
 		#	nums contains only integers in ascending order
 		#	this function should return the list of collapsed ranges
