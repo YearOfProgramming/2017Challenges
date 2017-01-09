@@ -63,7 +63,7 @@ Node deepCopy(Node head)
 
 	temp = head;
 	//copy arbitrary matching
-	while(temp && temp->next)
+	while(temp && temp->next && temp->random)
 	{
 
 		temp->next->random = temp->random->next;
