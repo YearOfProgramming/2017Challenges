@@ -5,7 +5,7 @@ if [[ "$#" == "0" ]]; then
     cat <<-EOS
     Usage:
 
-    _bin/test <challenge number> <programming language> <identity> 
+    ./_bin/test <challenge number> <programming language> <identity> 
 
     <challenge number> is the challenge you are on (e.g. 5)
     <programming language> is the name of the directory for the programming language you 
@@ -14,7 +14,7 @@ if [[ "$#" == "0" ]]; then
 
     Example:
 
-    _bin/test 4 python Johnson
+    ./_bin/test 4 python Johnson
 
     This program will go to the challenge you are testing and pass in the testfiles
     within that challenge to your solution. Your solution must be named solution 
