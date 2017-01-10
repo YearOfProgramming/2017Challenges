@@ -20,5 +20,3 @@ def square_sort(arr):
             
     # one of the list should be emtpy, clear the other one, O(n)
     return res + [o**2 for o in a_list[::-1] + b_list[::-1]]
-    
-#print square_sort([-3,-2,-1])
