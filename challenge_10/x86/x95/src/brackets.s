@@ -10,10 +10,11 @@ check_brackets:
 	#Get ready for some jumpy action... sorry
 
 	#clear registers
-	xorq %rax,%rax
-	xorq %r8,%r8
-	xorq %r9,%r9
-	xorq %r10,%r10
+	xorq %rax,%rax	#general counter
+	xorq %r8,%r8	#counting ()
+	xorq %r9,%r9	#counting []
+	xorq %r10,%r10	#counting {}
+	xorq %r11,%r11	#Checking stack/correct nesting
 
 	#main method
 	stringloop:
@@ -24,6 +25,7 @@ check_brackets:
 	#check for ()
 	cmp $40,%al
 	jne skip_open_round
+	pushq $1	#push one open (
 	inc %r8
 	skip_open_round:
 
@@ -32,11 +34,15 @@ check_brackets:
 	dec %r8
 	test %r8,%r8 	#)( is not allowed
 	js return_false
+	popq %r11
+	cmp $1,%r11	#everything between () closed?
+	jne return_false
 	skip_close_round:
 
 	#check for []
 	cmp $91,%al
 	jne skip_open_rect
+	pushq $2	#push one open [
 	inc %r9
 	skip_open_rect:
 
@@ -45,11 +51,15 @@ check_brackets:
 	dec %r9
 	test %r9,%r9 	#][ is not allowed
 	js return_false
+	popq %r11
+	cmp $2,%r11	#everything between [] closed?
+	jne return_false
 	skip_close_rect:
 
 	#check for {}
 	cmp $123,%al
 	jne skip_open_fancy
+	pushq $3	#push one open {
 	inc %r10
 	skip_open_fancy:
 
@@ -58,6 +68,9 @@ check_brackets:
 	dec %r10
 	test %r10,%r10 	#}{ is not allowed
 	js return_false
+	popq %r11
+	cmp $3,%r11	#everything between {} closed?
+	jne return_false
 	skip_close_fancy:
 
 	inc %rdi	#move to next char
