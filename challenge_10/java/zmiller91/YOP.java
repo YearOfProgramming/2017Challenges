@@ -1,5 +1,3 @@
-package zmiller91;
-
 import java.util.Scanner;
 
 /**
