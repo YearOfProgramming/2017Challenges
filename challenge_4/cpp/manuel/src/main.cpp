@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "treeInversion.h"
+#include "include/treeInversion.h"
 
 int main(int argc, char **argv) {
 
