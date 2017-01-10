@@ -8,7 +8,7 @@ object ValidClosers {
       lazy val continueWithPop  = innerClosers(in.tail, stack.tail)
 
       in match {
-        case x :: _ if x == '(' || x == '[' || x == '{'    => continueWithPush
+        case '(' :: _ | '[' :: _ | '{' :: _                => continueWithPush
         case ')' :: _ | ']' :: _ | '}' :: _ if stackCloses => continueWithPop
         case Nil                                           => stack.isEmpty
         case _                                             => innerClosers(in.tail, stack)
