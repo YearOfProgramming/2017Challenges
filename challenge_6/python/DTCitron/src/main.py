@@ -1,6 +1,8 @@
 def rangefinder(t):
     # List of ranges
     ranges = []
+    if len(t) < 2:
+        return ranges
 
     # Start at the very beginning
     rangestart = t[0]
@@ -32,9 +34,15 @@ if __name__=="__main__":
     t4 = [1]
     t5 = [1, 2, 3, 14, 25, 30, 31, 32]
     t6 = [5,6,9,10,12,13,15,16,18,19,25,30]
-    print rangefinder(t1)
-    print rangefinder(t2)
-    print rangefinder(t3)
-    print rangefinder(t4)
-    print rangefinder(t5)
-    print rangefinder(t6)
+    print 'Input: ', t1
+    print 'Output: ', rangefinder(t1)
+    print 'Input: ', t2
+    print 'Output: ', rangefinder(t2)
+    print 'Input: ', t3
+    print 'Output: ', rangefinder(t3)
+    print 'Input: ', t4
+    print 'Output: ', rangefinder(t4)
+    print 'Input: ', t5
+    print 'Output: ', rangefinder(t5)
+    print 'Input: ', t6
+    print 'Output: ', rangefinder(t6)
