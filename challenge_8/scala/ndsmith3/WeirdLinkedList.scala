@@ -2,30 +2,37 @@ import scala.util.Random.nextInt
 
 case class WeirdList[A](data: A) {
   var next: Option[WeirdList[A]] = None
-  var rand: Option[WeirdList[A]] = None
+  var rand: WeirdList[A]         = this
   var length: Int                = 1
 
   def add(data: A): Unit = {
     def assignRand(list: WeirdList[A])(
         index: Int = nextInt(this.length)): Unit = {
       if (index == this.indexOf(list.data)) assignRand(list)()
-      else list.rand = Option(this.subList(index))
+      else list.rand = this.subList(index)
     }
 
-    if (this.next.isDefined) this.next.get.add(data)
-    else this.next = Option(WeirdList(data))
+    this.next match {
+      case None           => this.next = Option(WeirdList(data))
+      case Some(nextNode) => nextNode.add(data)
+    }
     if (this.length > 1) this foreach (x => assignRand(x)())
     length += 1
   }
 
   def addNode(node: WeirdList[A]): Unit = {
-    if (this.next.isDefined) this.next.get.addNode(node)
-    else this.next = Option(node)
+    this.next match {
+      case None           => this.next = Option(node)
+      case Some(nextNode) => nextNode.addNode(node)
+    }
   }
 
   def indexOf(data: A, index: Int = 0): Int = {
     if (this.data == data) index
-    else this.next.get.indexOf(data, index + 1)
+    else this.next match {
+      case None           => throw new Exception("Element not found")
+      case Some(nextNode) => nextNode.indexOf(data, index + 1)
+    }
   }
 
   def subList(index: Int): WeirdList[A] =
@@ -33,11 +40,17 @@ case class WeirdList[A](data: A) {
 
   def foreach(f: WeirdList[A] => Unit): Unit = {
     f(this)
-    if (this.next.isDefined) this.next.get.foreach(f)
+    this.next match {
+      case None           => ()
+      case Some(nextNode) => nextNode.foreach(f)
+    }
   }
 
   override def toString(): String = {
-    val end = if (next.isDefined) " :: " + next.get.toString else ""
+    val end = this.next match {
+      case None           => ""
+      case Some(nextNode) => " :: " + nextNode.toString
+    }
     data.toString + end
   }
 }
@@ -47,16 +60,19 @@ object WeirdList {
     def getData(curr: WeirdList[A] = list): List[(A, Option[Int], Int, Int)] = {
       val tuple = {
         val data = curr.data
-        val nextIndex =
-          if (curr.next.isDefined)
-            Some(list.indexOf(curr.next.get.data))
-          else None
-        val randIndex = list.indexOf(curr.rand.get.data)
+        val nextIndex = curr.next match {
+          case None            => None
+          case Some(nextIndex) => Some(list.indexOf(nextIndex.data))
+        }
+        val randIndex = list.indexOf(curr.rand.data)
         val length    = curr.length
         (data, nextIndex, randIndex, length)
       }
-      if (curr.next.isEmpty) tuple :: Nil
-      else tuple :: getData(curr.next.get)
+
+      curr.next match {
+        case None           => tuple :: Nil
+        case Some(nextNode) => tuple :: getData(nextNode)
+      }
     }
 
     val data  = getData()
@@ -64,7 +80,7 @@ object WeirdList {
     nodes foreach { x =>
       val dataObj = data(nodes.indexOf(x))
       x.next = dataObj._2.flatMap(x => Option(nodes(x)))
-      x.rand = Option(nodes(dataObj._3))
+      x.rand = nodes(dataObj._3)
       x.length = dataObj._4
     }
     nodes.head
