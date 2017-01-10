@@ -24,6 +24,8 @@ we will be posting ~~daily~~ periodic challenges for the community to complete.
     10. [Acquiring new challenges](#10-acquiring-new-challenges)
 7. [Workflow](#workflow)
 8. [Submission Review](#submission-review)
+9. [Testing](#testing)
+
 
 ## The Administration Team
 - [slandau](https://github.com/slandau3 "slandau3")
@@ -126,7 +128,7 @@ Click on the green dropdown button titled "Clone or download" and copy the URL t
 
 Open up your command line tool and enter:
 
-*Note: Enter the following without the following without the angled brackets (i.e. `git clone git@github.com:ManuelMeraz/2017Challenges.git`)*
+*Note: Enter the following without the following without the angled brackets (e,g, `git clone git@github.com:ManuelMeraz/2017Challenges.git`)*
 
 ```
 $ cd ~
@@ -297,7 +299,7 @@ If it exists, move into that directory. Otherwise, make a new directory for your
 
 `/challenge_#/language/`
 
-*Note: The format for directory naming for programming languages is all lowercase plain text with no special characters(i.e. csharp).*
+*Note: The format for directory naming for programming languages is all lowercase plain text with no special characters(e.g. csharp).*
 
 Once inside your preferred programming language directory you will create a directory with your slackusername or name you want to be identified by for your work.
 
@@ -441,3 +443,54 @@ Once you've seen that you've been given an approval by any two people, write a c
 
 Taking this approach to code review will help to streamline the process and make reviews easier for everyone involved. Take the time to check your github notifications so that you can check to see if anyone has reviewed your code yet.
 
+## Testing
+
+At the moment we can test python scripts and and any compiled executable. If the challenge README has a section for testing, you can use this script.
+
+######Requirements
+1. Have your solution to the challenge contain the name solution in its title (e.g. solution.py, solution.exe, solution, etc)
+2. Have it accept the input and output requirements for the challenge
+
+That's it!
+
+We have a bash script to test your program
+```
+/2017Challenges/_bin/test
+```
+
+Move to the root of the 2017Challenges directory to use it.
+
+Usage:
+
+    ./_bin/test <challenge number> <programming language> <identity> 
+    
+    <challenge number> is the challenge you are on (e.g. 5)
+    
+    <programming language> is the name of the directory for the programming language you 
+    chose (e.g python, cpp, csharp, etc)
+    
+    <identity> is the name of the directory that you created that identifies you
+    Example:
+    
+    ./_bin/test 4 python Johnson
+    
+    This program will go to the challenge you are testing and pass in the testfiles
+    within that challenge to your solution. Your solution must be named solution 
+    followed  by the extension of your choice (e.g. solution.py, solution.exe, etc). Your 
+    program must expect a line(s) of standard input and the solution must be printed out and
+    terminate with a new line.
+    
+######Sample Program
+
+Challenge 1 - Reverse a String
+
+solution.py
+```
+#!/usr/bin/python3
+
+# Your line input
+str = input() 
+
+#Your line of output
+print(str)
+```
