@@ -9,19 +9,19 @@ Random Deep Copy
 
 
 //node definition for the linked list
-struct node
+typedef struct node
 {
 	int data;
 	struct node* next;
 	struct node* random;
-};
+}Node;
 
-typedef struct node* Node;
+//typedef struct node* Node;
 
 //utility function to create a node
-Node newNode(int key)
+Node* newNode(int key)
 {
-	Node temp = (struct node*) malloc(sizeof(struct node));
+	Node* temp = (struct node*) malloc(sizeof(struct node));
 
 	temp->data = key;
 	temp->next = NULL;
@@ -31,12 +31,20 @@ Node newNode(int key)
 }
 
 //utility function to print the list
-void printList(Node head)
+void printList(Node* head)
 {
 	while(head!=NULL)
 	{
-		printf("Node key: %d\t", head->data);
-		printf("Random Node pointer data: %d\n", head->random->data);
+		if(head->random!=NULL)
+		{
+			printf("Node key: %d\t", head->data);
+			printf("Random Node pointer data: %d\n", head->random->data);
+		}
+		else
+		{
+			printf("Node key: %d\t", head->data);
+			printf("Random Node pointer data: NULL\n");
+		}
 		head = head->next;
 	}
 	return;
@@ -46,15 +54,15 @@ void printList(Node head)
 //after the first node in the original list
 //Copy the random pointers
 //Separate this second list
-Node deepCopy(Node head)
+Node* deepCopy(Node* head)
 {
-	Node old;
-	Node temp = head;
+	Node* old;
+	Node* temp = head;
 	//modify this list
 	while(temp)
 	{
 
-		Node temp2 = newNode(temp->data);
+		Node* temp2 = newNode(temp->data);
 		old = temp->next;
 		temp->next = temp2;
 		temp2->next = old;
@@ -63,15 +71,20 @@ Node deepCopy(Node head)
 
 	temp = head;
 	//copy arbitrary matching
-	while(temp && temp->next && temp->random)
+	while(temp && temp->next)
 	{
-
-		temp->next->random = temp->random->next;
+		if(temp->random==NULL)
+		{
+			temp->next->random = NULL;	
+		}
+		else
+			temp->next->random = temp->random->next;
+		
 		temp = temp->next->next;
 	}
 
 	//Separating the two lists
-	Node newNode = head->next;
+	Node* newNode = head->next;
 	temp = head; 
 
 	while(temp)
@@ -88,7 +101,7 @@ Node deepCopy(Node head)
 //Driver program;
 int main(void)
 {
-	Node head = newNode(1);
+	Node* head = newNode(1);
 	head->next = newNode(2);
 	head->next->next = newNode(3);
 	head->next->next->next = newNode(4);
@@ -98,12 +111,12 @@ int main(void)
 	// Assign random Pointers
 	head->random = head->next->next;
 	head->next->random = head->next->next->next;
-	head->next->next->random = head;
+	head->next->next->random = NULL;
 	head->next->next->next->random = head->next;
 	head->next->next->next->next->random = head->next->next->next->next;
 
 	printList(head);
-	Node deepCopyList = deepCopy(head);
+	Node* deepCopyList = deepCopy(head);
 
 	printList(deepCopyList);
 

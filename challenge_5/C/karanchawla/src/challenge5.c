@@ -27,9 +27,11 @@ void shuffle(char *array, size_t n)
     if (n > 1) 
     {
         size_t i;
-        for (i = 0; i < n - 1; i++) 
+        for (i = 0; i < n; i++) 
         {
-            size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+            //size_t j = i + rand() / (RAND_MAX / (n - i));
+            size_t j = rand()%n ;
+            printf("%s\n", array);
             char t = array[j];
             array[j] = array[i];
             array[i] = t;
@@ -47,63 +49,72 @@ int main(void)
 {   
     srand(time(NULL));
 
-    //First string cannot be empty
+
     char s[] = "alkugfv";
     int size = sizeof(s)/sizeof(*s);
     char t[size + 1];
     strcpy(t,s);
     
-    //edge case
-    if(size==0)
-        continue;
-    else
+    //if first string 's' is not empty
+    if(size!=0)
+    {
         shuffle(s,size-1);
     
-    //Insert the char e at a random position
-    int pos = rand() % (size-1);
-    
-    for(int i=0;i<size;i++)
-    {
-        char temp;
 
-        if(i==pos)
+        //Insert the char d at a random position
+        int pos = rand() % (size-1);
+    
+        for(int i=0;i<size;i++)
         {
-            temp = t[i];
-            t[i] = 'd';
+            char temp;
+
+            if(i==pos)
+            {
+                temp = t[i];
+                t[i] = 'd';
+            }
+
+            t[size-1] = temp;
         }
 
-        t[size-1] = temp;
-    }
-
     
-    //Sort the two strings
-    qsort(s,size-1,sizeof(*s),comp);
-    qsort(t,size,sizeof(*t),comp);
+        //Sort the two strings
+        qsort(s,size-1,sizeof(*s),comp);
+        qsort(t,size,sizeof(*t),comp);
     
-    char extraChar[1];
-    int flag = 0;
+        char extraChar;
+        int flag = 0;
 
-    //find the added character
-    for(int i=0; i<size-1; i++)
-    {
-        if(t[i]!=s[i])
+        //find the added character
+        for(int i=0; i<size-1; i++)
         {
-            extraChar[0] = t[i];
-            flag = 1;
-            break;
+            if(t[i]!=s[i])
+            {
+                extraChar = t[i];
+                flag = 1;
+                break;
+            }
+            else
+                continue;
+
+        }
+
+        //print the answer
+        if(flag==0)
+        {
+            printf("%c\n",t[size-1]);
         }
         else
-            continue;
+            printf("%c\n", extraChar);
 
     }
-
-    //print the answer
-    if(flag==0)
-    {
-        printf("%c\n",t[size-1]);
-    }
+    //This is when string s is length 0
+    //Just insert the new char and print it.
     else
-        printf("%c\n", extraChar[0]);
+    {
+        t[0] = 'd';
+        printf("%d\n", t[0]);
+    }
 
     return 0;
 }
