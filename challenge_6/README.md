@@ -39,6 +39,17 @@ assert ranges([1]) == []
 assert ranges([1,2,3,4,5,8,9,10]) == ["1->5", "8->10"]
 ```
 
+To test this using the [test](https://github.com/YearOfProgramming/2017Challenges#testing):
+
+Expected input:
+
+    1,2,3,4,5,8,9,10
+
+Expected output:
+
+    1->5
+    8->10
+
 Development
 ------------
 Challenge and solution created by slandau3
