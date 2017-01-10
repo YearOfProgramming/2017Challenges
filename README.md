@@ -355,7 +355,7 @@ Usage:
     within that challenge to your solution. Your solution must be named solution 
     followed  by the extension of your choice (e.g. solution.py, solution.exe, etc). Your 
     program must expect a line(s) of standard input and the solution must be printed out and
-    terminate with a new line.
+    terminate with a new line (most print functions will do this automatically)
     
 ######Sample Program
 
