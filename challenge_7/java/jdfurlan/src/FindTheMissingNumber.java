@@ -11,10 +11,9 @@ public class FindTheMissingNumber {
 		int thisSum = 0;
 		int i;
 		for (i = 0; i < arr.length; i++) {
-			actualSum += i;
+			actualSum += i+1;
 			thisSum += arr[i];
 		}
-		actualSum += i;
 		return actualSum - thisSum;
 	}
 

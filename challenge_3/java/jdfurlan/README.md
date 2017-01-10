@@ -1,22 +1,22 @@
-# InvertBinarTree
+# MajorityElement
 ###### Java 8
 
 ### 1. Approach to Solving the problem
 
-Trees suck if you haven't messed with them in a while!
-Swapping the values is relatively easy using an A-B-C swap approach.
-The approach to print was to do a [Breadth-First Traversal](https://www.cs.bu.edu/teaching/c/tree/breadth-first/)
+I used a map to make sure all equivalent elements were mapped to the same key
+and tracked their frequencies with their value
 
 ### 2. How to compile and run this code
 
 Compile the Node class first
 
 ```
-javac InvertBinarTree.java
-java InvertBinarTree
+javac MajorityElement.java
+java MajorityElement
 ```
 
 ### 3. How this program works
 
-Iterate through the array, if the key is new add it and frequency of 1
-Otherwise increment its frequency. After incrementing, check if that frequency is > n/2
+As we iterate through the list, if the map has never seen this element before,
+place it in the map and initialize its frequency at 1. If we have seen it before, increment 
+its frequency, check if > n.length/2  and print if true, else update the frequency.

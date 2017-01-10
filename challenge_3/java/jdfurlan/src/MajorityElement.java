@@ -9,11 +9,12 @@ public class MajorityElement {
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int n : nums) {
 			if (map.containsKey(n)) {
-				map.put(n, map.get(n) + 1);
-				if (map.get(n) > (nums.length / 2)) {
+				int f = map.get(n) + 1;
+				if (f > (nums.length / 2)) {
 					System.out.println(n);
 					System.exit(0);
 				}
+				map.put(n, f);
 			} else {
 				map.put(n, 1);
 			}
