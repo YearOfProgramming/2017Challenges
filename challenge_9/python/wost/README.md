@@ -16,3 +16,6 @@ incorrect answer. My solution resolves that and makes sure to sort the list corr
 Simply call the function `squared_sort([list])`, where `list` is your sorted list.
 The function creates two lists: `neg` (for the negative numbers) and `pos` (for the positive numbers).
 I loop through the inputted list, add the negative numbers in `neg` and positive numbers in `pos`. I reverse `neg` to make it ordered.
+Then I go through the lowest number (ie. `[0]` because they are sorted) in each list, and add those to the result list until one of the lists are empty.
+
+Then I return the result list plus the non-empty list.
