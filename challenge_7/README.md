@@ -48,7 +48,7 @@ assert findMissing([1,3,4,0]) == 2
 
 Expected input:
 
-    1,3,4,0
+    1, 3, 4, 0
 
 Expected output:
 
