@@ -13,6 +13,12 @@
 
 # Windows
 Desktop.ini
+.bundle
+.tmtags
+tags
+vendor.tags
+tmtagsHistory
+Icon
 Thumbs.db
 ehthumbs.db
 $RECYCLE.BIN/
@@ -177,6 +183,7 @@ dependency-reduced-pom.xml
 *.so.*
 *.dylib
 *.exe
+*.com
 *.out
 *.app
 
@@ -287,3 +294,17 @@ error_log
 
 *.bak
 *.backup
+
+#######################################
+# File backups                        #
+#######################################
+
+*.sqlite
+
+#######################################
+# _bin/test output                    #
+#######################################
+
+result
+comparison
+user_result
