@@ -28,3 +28,5 @@ Instead of describing each test case, I'm just going to list them out here since
 ((((((fjdalfeja((((alefjalisj(())))))))))))d Should return True
 
 )))(((d Should return False
+
+({)} Should return False
