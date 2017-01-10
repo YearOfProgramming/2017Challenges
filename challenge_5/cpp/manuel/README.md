@@ -34,15 +34,12 @@ then the max ASCII value of the larger string is the different character.
 Assuming you are within the directory under my name
 
 ```
-$ g++ src/main.cpp src/findTheDifference.cpp -o challenge_5.exe
-$ ./challenge_5.exe < src/input
+$ make
 ```
 
 ### 3. How this program works
 
-I have a file called input in the src/ directory that you can modify. 
+This program takes in 2 lines of standard input and prints out the different integer
 
-The first line is the number of testcases to test and following that
-every pair of lines is a tes case.
-
+It does not handle mixed characters
 

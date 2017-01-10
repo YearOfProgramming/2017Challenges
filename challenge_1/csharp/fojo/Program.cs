@@ -1,18 +1,15 @@
-﻿using System;
-
-namespace Fojo
+namespace Challenges
 {
     public class Challenge1
     {
-        public static void Main(string[] args)
+        public static string ReverseString(string inputString)
         {
-            var inputString = Console.ReadLine();
-            string reversedString = string.Empty;
-            for (int i = inputString.Length - 1; i >= 0; i--)
+            var reversedString = string.Empty;
+            for (var i = inputString.Length - 1; i >= 0; i--)
             {
                 reversedString += inputString[i];
             }
-            Console.WriteLine(reversedString);
+            return reversedString;
         }
     }
 }

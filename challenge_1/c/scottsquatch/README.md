@@ -1,6 +1,5 @@
 # Reverse a String
 Application which reverses a string.
-
 ## Building
 ``` bash
 make
