@@ -26,14 +26,9 @@ The index that contains a value of n/2 is the majority element.
 Assuming you are within the directory under my name
 
 ```
-$ g++ src/main.cpp src/majorityElement.cpp -o challenge_3.exe
-$ ./challenge_3.exe < src/input
+$ make
 ```
 
 ### 3. How this program works
 
-I have a file in the src/ directory that you can modify. 
-The first line is the number of testcases to test and following
-that each line is a testcase.
-
-
+This program takes in an array as a line of stanard input and prints out the majority element

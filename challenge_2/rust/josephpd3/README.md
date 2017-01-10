@@ -10,4 +10,4 @@ let v = vec!['1', '1', '2', 'a', 'b', 'b', 'b', 'c', 'c'];
 assert_eq!(get_lonely_items(&v), vec!['2', 'a']);
 ```
 
-The test can be run using `cargo test` from within the package.
+The tests can be run using `cargo test` from within the package.

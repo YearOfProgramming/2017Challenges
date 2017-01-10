@@ -1,0 +1,1 @@
+This program iterates through a given array and returns the occurence that does not repeat itself. Does not use any external libraries. Uses Python 3.6.0
