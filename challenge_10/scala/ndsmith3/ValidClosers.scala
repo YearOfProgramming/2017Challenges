@@ -19,11 +19,5 @@ object ValidClosers {
 }
 
 object Challenge10 extends App {
-  def test(str: String): Unit = println(ValidClosers.hasValidClosers(str))
-
-  ("{{{{{{{{{adfkjaefia}}}}}}}" ::
-    "{{{{{{{{{[[[[[[kadfa{{{{{{{((({daljfdaf({{{[]}}kaldjfs})})))}}}}}}}]]]]]]}kjfela}}}}}}}}" ::
-      "{{{[}}}}dafda" :: "{{{{{{{{{}}}}}}}}}" ::
-        "[[[[[[[[[kafjalfeianfailfeja;fjai;efa;sfj]]]]]]]]]kjajdain" :: "" ::
-          "((((((fjdalfeja((((alefjalisj(())))))))))))d" :: ")))(((d" :: Nil) foreach test
+  println(ValidClosers.hasValidClosers(scala.io.StdIn.readLine))
 }
