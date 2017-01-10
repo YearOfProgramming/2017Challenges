@@ -22,7 +22,6 @@ Using stack to check if the matching pair exists or not
 #define TOO_LONG 2
 #endif
 
-
 //structure for linked list node
 typedef struct node
 {
