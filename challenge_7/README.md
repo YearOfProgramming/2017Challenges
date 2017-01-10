@@ -1,10 +1,10 @@
 Find The Missing Number
 ======
-
-Premise
+Idea
 ------
-Given a list of N integers whose values will each be an integer in the range
-from 0 to N, your job is to find the missing number.
+Given a list of numbers from 0 to N-1, your job is to find the missing number. Your program should take in a list of integers and return a single integer (the missing number).
+
+Note: This is a popular interview question. Bloomberg in particular, really likes this question. 
 
 Input
 -----
@@ -17,12 +17,13 @@ Requirements
 ------------
 * You should not sort the list of integers
 * Your solution should use O(1) space and complete in O(N) time
+* O(1) space means that your algorithm should not need to allocate an additional additional array of N elements to solve the problem
+* O(N) times means that your algorithm can not contain nested loops
 
 Notes
 -----
+* The test cases will not be sorted
 * The fact that the values range from 0 to N is important
-* O(1) space means that your algorithm should not need to allocate additional objects to solve the problem
-* O(N) times means that your algorithm can not contain nested loops
 
 Example 1
 ---------
@@ -42,8 +43,3 @@ For example:
 ```ruby
 assert findMissing([1,3,4,0]) == 2
 ```
-
-Background
-----------
-This is a popular interview question. Bloomberg in particular, really likes
-this question.

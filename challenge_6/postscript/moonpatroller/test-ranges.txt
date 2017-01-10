@@ -1,0 +1,48 @@
+% gs -dBATCH test-ranges.ps
+%
+
+(compress-ranges.ps) run
+
+/arrays-equal {
+	/a2 exch def
+	/a1 exch def
+	a1 length a2 length ne
+	{ false }
+	{
+		/els-same true def
+		0 1 a1 length 1 sub
+		{
+			a1 1 index get
+			a2 2 index get
+			ne
+			{
+				pop
+				/els-same false def
+				exit
+			}
+			{
+				pop
+			}
+			ifelse
+		}
+		for
+		els-same
+	}
+	ifelse
+} def
+
+[ 1 2 3 ] [ 1 2 3 ] arrays-equal not
+{ (Arrays should be equal) println } if
+
+[ 0 1 2 3 ] [ 1 2 3 ] arrays-equal
+{ (Arrays have different length) println } if
+
+[ 2 1 3 ] [ 1 2 3 ] arrays-equal
+{ (Arrays have different elements) println } if
+
+[ 1 2 3 4 8 9 10 12 13 14 ] ranges [ (1->4) (8->10) (12->14) ] arrays-equal not
+{ (Arrays should be equal) println } if
+
+[ 1 2 3 4 9 10 15 ] ranges [ (1->4) (9->10) (15) ] arrays-equal not
+{ (Arrays should be equal) println } if
+
