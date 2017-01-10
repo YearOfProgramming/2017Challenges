@@ -1,0 +1,7 @@
+[package]
+name = "josephpd3"
+version = "0.1.0"
+authors = ["Joseph P DeBartola III <josephdebartola@gmail.com>"]
+
+[dependencies]
+itertools = "*"
