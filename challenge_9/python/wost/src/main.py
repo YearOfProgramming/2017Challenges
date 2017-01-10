@@ -15,15 +15,18 @@ def square_sort(inp: list) -> list:
     result = []
 
     while pos != [] and neg != []:
-        if pos[0] > neg[0]:
+        if pos[0] >= neg[0]:
             result.append(neg.pop(0))
-        else:
+        elif pos[0] <= neg[0]:
             result.append(pos.pop(0))
 
-    return result + pos if neg == [] else neg
+    if neg == []:
+        return result + pos
+    elif pos == []:
+        return result + neg
 
 print(square_sort([1, 4, 6, 8, 8]))
 print(square_sort([0, 2, 6, 8]))
 print(square_sort([-3, 0, 1, 6]))
 print(square_sort([-2, -1, 0, 6]))
-print(square_sort([-2, 3]))
+print(square_sort([-3, 0, 1]))
