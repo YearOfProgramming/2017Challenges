@@ -16,7 +16,7 @@ pub fn get_lonely_items(v: &[char]) -> Vec<char> {
                 present = false;
             }
         }
-        
+
         if !present { // Add base entry if didn't exist
             counts.insert(ch, 1);
         }
