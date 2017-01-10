@@ -1,4 +1,4 @@
-#Challenge_1 Solution
+# Challenge_2 Solution
 
 To compile run: "csc.exe src\Single.cs" 
 and run the resulting file with your sequence as arguments: "Single.exe 2 3 4 3 2 3 a a".
