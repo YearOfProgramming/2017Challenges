@@ -1,8 +1,6 @@
 #include <vector>
 #include <string>
 
-#include <iostream>
-
 namespace ranges {
 
     std::string represent_range (int start, int end) {
