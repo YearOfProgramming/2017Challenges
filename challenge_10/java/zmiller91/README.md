@@ -14,9 +14,9 @@ java ValidClosers
 
 The solution is a stack implementation, the stack must follow these rules:
 
-1. `openers` get pushed to the stack
-2. `openers` will be poped from the stack if the closers meet the following conditions:
-   a. `stack` is not empty
-   b. The first element on the stack is an `openers`
-   c. The `closers` must match the `opners` popped from the `stack`
-3. `stack` must be empty after the string has been processed
+* `openers` get pushed to the stack
+* `openers` will be poped from the stack if the closers meet the following conditions:
+   * `stack` is not empty
+   * The first element on the stack is an `openers`
+   * The `closers` must match the `opners` popped from the `stack`
+* `stack` must be empty after the string has been processed
