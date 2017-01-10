@@ -10,7 +10,7 @@ def square_sort(inp: list) -> list:
     pos, neg = [], []
     for i in inp:
         pos.append(i**2) if i >= 0 else neg.append(i ** 2)
-    neg = reversed(neg)
+    neg = neg[::-1]
 
     result = []
 
