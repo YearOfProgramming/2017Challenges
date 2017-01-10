@@ -16,10 +16,15 @@ $(EXE) : $(BINDIR) $(OBJDIR) $(OBJECTS)
 obj/%.o : src/%.cpp $(HEADERS)
 	@$(CC) $(CFLAGS) -o $@ $<
 
-.PHONY : clean $(BINDIR) $(OBJDIR)
+.PHONY : clean test $(BINDIR) $(OBJDIR)
 
 clean : 
 	@rm -rf $(BINDIR) $(OBJDIR)
+
+test :
+	@cd ../../..;\
+	./_bin/test 6 cpp manuel;\
+	cd challenge_6/cpp/manuel;
 
 $(BINDIR) : 
 	@mkdir -p $(BINDIR)
