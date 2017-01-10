@@ -287,3 +287,11 @@ error_log
 
 *.bak
 *.backup
+
+#######################################
+# _bin/test output                    #
+#######################################
+
+result
+comparison
+user_result
