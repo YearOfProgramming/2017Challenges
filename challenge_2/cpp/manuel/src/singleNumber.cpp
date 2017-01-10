@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <math.h>
-#include "singleNumber.h"
+#include "include/singleNumber.h"
 
 int findMax (std::vector<int> arr) {
 
