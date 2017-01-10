@@ -237,7 +237,7 @@ When you're done, switch back to your working branch
 ```
 $ git checkout python_0
 Switched to branch 'python_0'
-$ git pop
+$ git stash pop
 On branch python_0
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
