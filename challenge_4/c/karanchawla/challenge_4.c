@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> 
 
+//Define node
 typedef struct node
 {
 	/* data */
@@ -8,6 +9,7 @@ typedef struct node
 	struct node* left, *right;
 }Node;
 
+//utility function for adding a new node
 Node* newNode(int data)
 {
 	Node* newNode = (Node*) malloc(sizeof(Node));
@@ -18,6 +20,7 @@ Node* newNode(int data)
 	return newNode;
 }
 
+//function to invert the tree
 void invertTree(Node* head)
 {
 	if(head==NULL)
@@ -38,6 +41,7 @@ void invertTree(Node* head)
 	return;
 }
 
+//utility function for inorder tree traversal
 void inOrder(struct node* node) 
 {
   if (node == NULL) 
