@@ -1,4 +1,7 @@
-def brackets(a_string):
+def brackets():
+
+    a_string = input("Please enter a string to process: ")
+
     brac_dict = {
         '}' : '{',
         ']' : '[',

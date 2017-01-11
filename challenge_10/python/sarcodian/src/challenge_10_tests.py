@@ -1,5 +1,6 @@
 # we start by importing the unittest module
 import unittest
+from unittest import mock
 
 # Next lets import our function that we intend to do testing on
 #
@@ -10,18 +11,31 @@ from challenge_10 import brackets
 # lets define our suite of tests as a class and lets inherit from unittest.TestCase
 class TestBinaryMethods(unittest.TestCase):
 
-    def test_squareSort(self):
-        """ Tests from the READ.me used to test the non input version"""
+    def test_Brackets(self):
+        """ Tests from the READ.me """
         
-        self.assertEqual(brackets('{{{{{{{{{adfkjaefia}}}}}}}'), False)
-        self.assertEqual(brackets('{{{{{{{{{[[[[[[kadfa{{{{{{{((({daljfdaf({{{[]}}kaldjfs})})))}}}}}}}]]]]]]}kjfela}}}}}}}}'), True)
-        self.assertEqual(brackets('{{{[}}}}dafda'), False)
-        self.assertEqual(brackets('{{{{{{{{{}}}}}}}}}'), True)
-        self.assertEqual(brackets('[[[[[[[[[kafjalfeianfailfeja;fjai;efa;sfj]]]]]]]]]kjajdain'), True)
-        self.assertEqual(brackets('< blank >'), True)
-        self.assertEqual(brackets('((((((fjdalfeja((((alefjalisj(())))))))))))d'), True)
-        self.assertEqual(brackets(')))(((d'), False)
-        self.assertEqual(brackets('({)} '), False)
+        test_list = [
+            '{{{{{{{{{adfkjaefia}}}}}}}',
+            '{{{{{{{{{[[[[[[kadfa{{{{{{{((({daljfdaf({{{[]}}kaldjfs})})))}}}}}}}]]]]]]}kjfela}}}}}}}}',
+            '{{{[}}}}dafda',
+            '{{{{{{{{{}}}}}}}}}',
+            '[[[[[[[[[kafjalfeianfailfeja;fjai;efa;sfj]]]]]]]]]kjajdain',
+            '< blank >',
+            '((((((fjdalfeja((((alefjalisj(())))))))))))d',
+            ')))(((d',
+            '({)} '
+        ]
+        
+        with mock.patch('builtins.input', side_effect=test_list):
+            self.assertEqual(brackets(), False)
+            self.assertEqual(brackets(), True)
+            self.assertEqual(brackets(), False)
+            self.assertEqual(brackets(), True)
+            self.assertEqual(brackets(), True)
+            self.assertEqual(brackets(), True)
+            self.assertEqual(brackets(), True)
+            self.assertEqual(brackets(), False)
+            self.assertEqual(brackets(), False)
 
         
 
