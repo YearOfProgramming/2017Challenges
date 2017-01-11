@@ -2,7 +2,6 @@ def square_soft(input_list):
     """
     Returns a list with all values squared and sorted
     """
-
     squared = []
 
     # Separate negative and positive values
@@ -18,15 +17,15 @@ def square_soft(input_list):
     while len(squared) != len(input_list):
         # Add the rest of pos array if neg is empty
         if not neg:
-            squared.append(pos.pop(0))
+            squared.extend(pos)
         # Add the rest of neg array if pos is empty
         elif not pos:
-            squared.append(neg.pop(0))
+            squared.extend(neg)
 
         elif pos[0] >= neg[0]:
             squared.append(neg.pop(0))
 
-        elif neg[0] >= pos[0]:
+        else:
             squared.append(pos.pop(0))
 
     return squared
