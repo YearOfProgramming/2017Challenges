@@ -7,6 +7,8 @@
 namespace tools {
 
     std::vector<int> string_to_numbers (std::string str) {
+        // Given a string "1,2,3,4,5" this outputs
+        // an array of integers [1,2,3,4,5]
 
         std::vector<int> numbers;
         std::stringstream ss(str);
