@@ -26,15 +26,10 @@ The index that contains a value of 1 is the single number.
 Assuming you are within the directory under my name
 
 ```
-$ g++ src/main.cpp src/singleNumber.cpp -o challenge_2.exe
-$ ./challenge_2.exe < src/input
+$ make
 ```
 
 ### 3. How this program works
 
-I have a file called input in the src/ directory that you can modify. 
-
-The first line is the number of testcases to test and following that
-each line is a testcase.
-
+This program takes in an array as as a line of standard input and outputs the single number
 
