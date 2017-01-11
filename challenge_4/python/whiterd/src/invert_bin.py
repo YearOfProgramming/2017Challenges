@@ -11,3 +11,5 @@ def mirror(node):
         mirror(node.left)
         mirror(node.right)
         node.left, node.right = node.right, node.left
+        
+    return node
