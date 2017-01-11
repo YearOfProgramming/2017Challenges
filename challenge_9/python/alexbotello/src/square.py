@@ -2,11 +2,10 @@ def square_soft(input_list):
     """
     Returns a list with all values squared and sorted
     """
-    neg = []
-    pos = []
+
     squared = []
 
-    # Seperate negative and positive values
+    # Separate negative and positive values
     # Reverse the negative array to preserve order
     # ex: [-3, -2, -1] -> [-1, -2, -3] -> [1, 4, 9]
     neg = [x**2 for x in input_list if x < 0]
