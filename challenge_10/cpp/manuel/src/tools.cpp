@@ -20,13 +20,12 @@ std::map<char, int> tools::count (std::string input) {
             counter['{']--;
         } else if(input[i] == ']') {
             counter['[']--;
-        } else if(input[i] == '<') {
+        } else if(input[i] == '>') {
             counter['<']--;
         }
 
-        if(counter[input[i]] < 0) {
-            // If there are more closers than
-            // openers, this is false
+        if(counter['('] < 0 || counter['{'] < 0 || counter['['] < 0 || counter['<'] < 0) {
+            // Right side closer without a pair
 
             counter.clear();
             return counter;
@@ -38,9 +37,9 @@ std::map<char, int> tools::count (std::string input) {
 
 bool tools::verify_closers(std::map<char, int> counter) {
 
-    if(counter['{'] != 0 || counter['('] != 0 || counter['['] != 0 || counter.empty()) {
+    if(counter.empty() || counter ['<'] != 0 || counter['{'] != 0 || counter['('] != 0 || counter['['] != 0 ) {
         return false;
     }
 
-    else return true;
+    return true;
 }
