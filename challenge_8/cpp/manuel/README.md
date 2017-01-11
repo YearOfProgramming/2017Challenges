@@ -1,24 +1,28 @@
-# Challenge Name
+# Random Pointer Linked List
 ###### C++11 @manuel
 
 ### 1. Approch to Solving the problem
 
-Given a set of numbers ranging from 0 to N-1 with one missing number,
-then the largest number in that set is the length of the array. 
+I assume that I am given a linked list that is prebuilt and the random
+attribute always points to a random node, so I do not verify whether the 
+connections match.
 
-If we find the sum of N + (N-1) + (N - 2) + ... + (N - N) = N * (N + 1) / 2,
-and then iterate through the given set and subtract this value, once we
-reach the end of the array the difference will be the missing number.
+To make copies I map every node in the given list with a copy.
+
+I then iterate through my linked list and assign every attribute in
+the copy to the corresponding copy of the given node.
+
+To test this I make a simple linked list containing all the letters
+alphabet and make a copy of it to verify.
 
 ### 2. How to compile and run this code
 
 ```
 make
-make test 
 make clean
 ```
 
 ### 3. How this program works
 
-Single line of input -> Single line of output
-             1,3,4,0 -> 2 
+This program does not take any input data and prints out
+the tests I run in the main method.
