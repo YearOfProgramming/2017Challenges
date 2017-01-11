@@ -1,27 +1,25 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jan 11 09:21:20 2017
-
-@author: Shaowen Liu
 """
 def solution(strr):
     """check if all brackets closed properly"""
     
     closerof = {'{':'}', '[':']','(':')'}
+    start = ('[','{','(')
+    closer = (']','}',')')
     stack = []
     
-    for i in list(strr):
+    for i in strr:
         # push into stack, if new bracket found
-        if i in ['[','{','(']:
+        if i in start:
             stack.append(i)
         # pop out if proper closer found, else False
-        elif i in [']','}',')']:
+        elif i in closer:
             if closerof[stack[-1]] == i:
                 stack.pop()
-            elif closerof[stack[-1]] !=i:
+            else:
                 return False
+               
     # check leftover in stack
-    if stack:
-        return False
-    else:
-        return True
+    return not stack

@@ -11,27 +11,31 @@ class solution_test(unittest.TestCase):
     
     def test_case1(self):
         strr = '{{{}}}'
-        self.assertEqual(solution(strr), True)
+        self.assertTrue(solution(strr))
     
     def test_case2(self):
         strr = '{{{{{{{{{adfkjaefia}}}}}}}'
-        self.assertEqual(solution(strr), False)
+        self.assertFalse(solution(strr))
 
     def test_case3(self):
         strr = '{{{{{{{{{[[[[[[kadfa{{{{{{{((({daljfdaf({{{[]}}kaldjfs})})))}}}}}}}]]]]]]}kjfela}}}}}}}}'
-        self.assertEqual(solution(strr), True)
+        self.assertTrue(solution(strr))
 
     def test_case4(self):
         strr = '{{{[}}}}'
-        self.assertEqual(solution(strr), False)
+        self.assertFalse(solution(strr))
         
     def test_case5(self):
         strr = '{{{{{{{{{}}}}}}}}}'
-        self.assertEqual(solution(strr), True)
+        self.assertTrue(solution(strr))
 
     def test_case6(self):
         strr = '[[[[[[[[[kafjalfeianfailfeja;fjai;efa;sfj]]]]]]]]]kjajdain'
-        self.assertEqual(solution(strr), True)
+        self.assertTrue(solution(strr))
+
+    def test_case7(self):
+        strr = '([{)}]'
+        self.assertFalse(solution(strr))
 
 if __name__ == '__main__':
     unittest.main()
