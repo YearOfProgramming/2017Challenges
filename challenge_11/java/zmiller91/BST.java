@@ -62,7 +62,7 @@ class BST extends YOP {
 
             head.left = new Node(data);
             head.left.parent = head;
-            return head.left;
+            return head;
         }
 
         if (data > head.data) {
@@ -72,7 +72,7 @@ class BST extends YOP {
 
             head.right = new Node(data);
             head.right.parent = head;
-            return head.right;
+            return head;
         }
 
         // Ignore duplicates
