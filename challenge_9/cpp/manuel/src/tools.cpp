@@ -7,6 +7,8 @@
 #include "include/tools.h"
 
 std::vector<int> tools::string_to_numbers(std::string input) {
+    // Given a string "1,2,3,4,5" this outputs
+    // an array of integers [1,2,3,4,5]
     std::stringstream ss(input);
     std::vector<int> numbers;
     int number;
@@ -41,6 +43,8 @@ std::vector<int> tools::sort_squares(std::vector<int> numbers) {
     int left_index = left_length - 1;
     int right_index = left_length;
     bool squared = false; // Checks if this value has been squared
+
+    // Compare both sides of array and insert accordingly
     while(right_length > 0 && left_length > 0) {
 
         // Cotntinue squaring only if right index increments
@@ -49,6 +53,8 @@ std::vector<int> tools::sort_squares(std::vector<int> numbers) {
             squared = true;
         }
 
+        // If next right index is smaller insert, otherwise
+        // insert the left one
         if(numbers[right_index] <= numbers[left_index]) {
             sorted.push_back(numbers[right_index]);
             right_index++;
@@ -61,6 +67,7 @@ std::vector<int> tools::sort_squares(std::vector<int> numbers) {
         }
     }
 
+    // Simply insert the last numbers of the longer side of the array
     while(right_length > 0) {
         numbers[right_index] = pow(numbers[right_index], 2);
         sorted.push_back(numbers[right_index]);
