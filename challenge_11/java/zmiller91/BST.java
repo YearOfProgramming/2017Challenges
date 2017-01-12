@@ -25,16 +25,16 @@ class BST extends YOP {
     * @param data - value to be deleted
     * @param n - tree to look at
     */
-    public Node search(int data, Node n) {
+    protected Node search(int data, Node n) {
 
         // Not found
         if (n == null) {
-                return null;
+            return null;
         }
 
         // Found, return the node
         if (data == n.data) {
-                return n;
+            return n;
         }
 
         // Search the next tree
