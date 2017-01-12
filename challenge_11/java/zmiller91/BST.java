@@ -20,29 +20,6 @@ class Node {
 class BST extends YOP {
 
     /**
-    * Returns the object containing the provided data point
-    * 
-    * @param data - value to be deleted
-    * @param n - tree to look at
-    */
-    protected Node search(int data, Node n) {
-
-        // Not found
-        if (n == null) {
-            return null;
-        }
-
-        // Found, return the node
-        if (data == n.data) {
-            return n;
-        }
-
-        // Search the next tree
-        Node next = data < n.data ? n.left : n.right;
-        return search(data, next);
-    }
-
-    /**
     * Inserts a value into a BST.
     *
     * @param data - what to insert
@@ -98,7 +75,7 @@ class BST extends YOP {
     * @param n - head of subtree
     * @param head - a reference to the head of the tree
     */
-    public void remove(Node remove, Node n) {
+    protected void remove(Node remove, Node n) {
 
         if (remove == null){
                 return;
@@ -121,6 +98,29 @@ class BST extends YOP {
             parent.left = parent.left != remove ? parent.left : null;
             parent.right = parent.right != remove ? parent.right : null;
         }
+    }
+    
+    /**
+    * Returns the object containing the provided data point
+    * 
+    * @param data - value to be deleted
+    * @param n - tree to look at
+    */
+    protected Node search(int data, Node n) {
+
+        // Not found
+        if (n == null) {
+            return null;
+        }
+
+        // Found, return the node
+        if (data == n.data) {
+            return n;
+        }
+
+        // Search the next tree
+        Node next = data < n.data ? n.left : n.right;
+        return search(data, next);
     }
 
     /**
