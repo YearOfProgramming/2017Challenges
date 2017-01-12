@@ -154,13 +154,4 @@ if __name__ == '__main__':
         else:
             print 'key %s not found.' % key
             
-    print 'New bst list:\n%s\n' % str(pre_order(root))
-    
-    
-            
-
-    
-    
-        
-        
-        
+    print 'New bst list:\n%s\n' % str(pre_order(root))  
