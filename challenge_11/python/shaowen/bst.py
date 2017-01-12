@@ -27,8 +27,8 @@ class Node():
             return False
             
 def has_key(root, key):
-    """lookup node obj in bst, it's possible node is not in bst
-    but return a 'theory' or 'should-be' path to the node anyway
+    """lookup key in bst,
+    return Ture if key found, else False
     """
     if not root: return False
         
@@ -43,15 +43,16 @@ def has_key(root, key):
         return has_key(root.left, key)
     
 def delete_node(root, key):
-    """delete the node with data = key, from bst starts from root node
+    """delete the node with data equals to key.
     args:
         root, bst node obj
-        key, integer
+        key, int
     """
-    # if root does not have key, return the original bst
+    # if root does not have key, return the root directly
     if not has_key(root, key):
         return root
         
+    # check root    
     if root.data == key:
         # if root does not have child, delete the root directly
         if not root.has_child():
@@ -59,8 +60,9 @@ def delete_node(root, key):
         # if root has only one child, make that child the root
         elif root.has_one_child():
             return root.has_one_child()
-        # if root has two children, replace the root with the smallest node 
-        # in right branch 
+        # if root has two children, 
+        # 1. replace the root with the smallest key in right branch
+        # 2. delete that node with the smallest key
         else:
             min_key = smallest_key(root.right)
             root.right = delete_node(root.right, min_key)
@@ -77,22 +79,29 @@ def delete_node(root, key):
 
     return root
 
-def insert(root, node):
-    """insert a new node obj into bst starts from root"""
-    # if no bst exist, make new node as root
+def insert(root, key):
+    """insert a new node obj into bst
+    args:
+        root, node obj
+        key, int
+    
+    """
+    new_node = Node(key)
+    # if bst does not exist, make new node the root
     if root is None:
-        root = node
+        root = new_node
     else:
         # add node to the right branch recursively
-        if node.data >= root.data:
-            root.right = insert(root.right, node)
+        if key >= root.data:
+            root.right = insert(root.right, key)
         # add node to the left branch recersively
         else:
-            root.left = insert(root.left, node)
+            root.left = insert(root.left, key)
     return root
             
 def smallest_key(root):
     """return the minimum key in bst"""
+    
     if root.left:
         return smallest_key(root.left)
     else:
@@ -105,7 +114,7 @@ def build_bst(arr):
     """
     root = None
     for i in arr:
-        root = insert(root, Node(i))
+        root = insert(root, i)
     return root
 
       
@@ -129,19 +138,23 @@ if __name__ == '__main__':
         
     # pre_order print
     print 'Original bst list: \n %s\n' % str(pre_order(root))
-    erase_key = raw_input('Please type in one node integer you want to delete:\n')
+    erase_keys = raw_input('Please type in key(s) you want to delete:\n')
     
     # check whether input is valid
     try:
-        erase_key = int(erase_key)
+        keys = map(int, erase_keys.split())
     except ValueError:
         raise ValueError('invalid input')
+        
     # check if key exists.
-    if has_key(root, erase_key):
-        root = delete_node(root, erase_key)
-        print 'New bst list:\n%s\n' % str(pre_order(root))
-    else:
-        print 'key not found.'
+    for key in keys: 
+        if has_key(root, key):
+            root = delete_node(root, key)
+            #print 'key %s is deleted from bst' % key
+        else:
+            print 'key %s not found.' % key
+            
+    print 'New bst list:\n%s\n' % str(pre_order(root))
     
     
             
