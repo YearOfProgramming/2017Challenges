@@ -19,11 +19,14 @@ namespace ranges {
 
         for( int i = 1; i < length; i++ ) {
 
+            // If there's a gap of >=2 and the current range is > 0
             if( end + 1 < numbers[i] && start != end) {
 
                 ranges.push_back(represent_range(start, end));
                 start = numbers[i];
             } else if (end + 1 < numbers[i] && start == end) {
+                // if the gap is >=2, but the range is 0
+                // skip
 
                 start = numbers[i];
             }
