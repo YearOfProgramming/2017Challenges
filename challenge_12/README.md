@@ -13,6 +13,7 @@ Notes
 * The input can consist of any (printable) character
 * The input can be of any length
 * You may not be able to compress the input at all, ex: 'abc'
+* The string being compressed will never contain '#'
 
 Testing
 -----
