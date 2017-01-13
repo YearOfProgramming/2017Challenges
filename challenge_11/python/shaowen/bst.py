@@ -3,19 +3,19 @@
 
 class Node():
     
-    def __init__(self, data=None):
-        self.data = data
-        self.left = None
-        self.right = None
+    def __init__(self, key, left=None, right=None, parent=None):
+        self.key = key
+        self.left = left
+        self.right = right
+        self.parent = parent
         
     def __str__(self):
-        return str(self.data)
-    
-    def has_child(self):
-        """return True, if the node has at least one child"""
+        return str(self.key)
+        
+    def has_any_child(self):
         return self.left or self.right
     
-    def has_one_child(self):
+    def the_only_child(self):
         """if the node has only one child, return the child
         else, return False
         """
@@ -25,119 +25,152 @@ class Node():
             return self.right
         else:
             return False
+    
+    def is_left_child(self):
+        return bool(self.parent.left == self)
+    
+    def is_right_child(self):
+        return bool(self.parent.right == self)
             
-def has_key(root, key):
-    """lookup key in bst,
-    return Ture if key found, else False
-    """
-    if not root: return False
-        
-    # node found to be root
-    if key == root.data:
-        return True
-    # lookup right branch
-    elif key > root.data:
-        return has_key(root.right, key)
-    # lookup left branch
-    elif key < root.data:
-        return has_key(root.left, key)
+class BST():
     
-def delete_node(root, key):
-    """delete the node with data equals to key.
-    args:
-        root, bst node obj
-        key, int
-    """
-    # if root does not have key, return the root directly
-    if not has_key(root, key):
-        return root
-        
-    # check root    
-    if root.data == key:
-        # if root does not have child, delete the root directly
-        if not root.has_child():
-            return None
-        # if root has only one child, make that child the root
-        elif root.has_one_child():
-            return root.has_one_child()
-        # if root has two children, 
-        # 1. replace the root with the smallest key in right branch
-        # 2. delete that node with the smallest key
-        else:
-            min_key = smallest_key(root.right)
-            root.right = delete_node(root.right, min_key)
-            root.data = min_key
-            return root
-
-    # check left branch
-    if root.left:
-        root.left = delete_node(root.left, key)
-        
-    # check right branch
-    if root.right:
-        root.right = delete_node(root.right, key)
-
-    return root
-
-def insert(root, key):
-    """insert a new node obj into bst
-    args:
-        root, node obj
-        key, int
+    def __init__(self, root = None, size = 0):
+        self.root = root
+        self.size = size
     
-    """
-    new_node = Node(key)
-    # if bst does not exist, make new node the root
-    if root is None:
-        root = new_node
-    else:
-        # add node to the right branch recursively
-        if key >= root.data:
-            root.right = insert(root.right, key)
-        # add node to the left branch recersively
+    def _insert(self, key, current_node):
+        
+        if key == current_node.key:
+            raise IndexError('Find duplicated key.')
+        elif key > current_node.key:
+            if current_node.right:
+                self._insert(key, current_node.right)
+            else:
+                current_node.right = Node(key, parent = current_node)
+        elif key < current_node.key:
+            if current_node.left:
+                self._insert(key, current_node.left)
+            else:
+                current_node.left = Node(key, parent = current_node)
+        
+    def insert(self, key):
+        """insert new key into bst"""
+        # if bst does not exist, make new node the root
+        if not self.root:
+            self.root = Node(key, parent = None)
+        # else insert the node into bst recercively
         else:
-            root.left = insert(root.left, key)
-    return root
+            self._insert(key, self.root)
+        self.size += 1
+    
+    def _has_key(self, key, current_node):
+        
+        if key == current_node.key:
+            return current_node
+        # lookup right branch
+        elif key > current_node.key:
+            return self._has_key(key, current_node.right)
+        # lookup left branch
+        elif key < current_node.key:
+            return self._has_key(key, current_node.left)
+        
+    def has_key(self, key):
+        """lookup key in bst,
+        return node if key found, else False
+        """
+        if not self.root: 
+            return False
+        else:
+            return self._has_key(key, self.root)
+    
+    def smallest_key(self, current_node):
+        """start from current_node,
+        search the node with the minimum key in bst
+        """
+        if not current_node:
+            raise IndexError('this is an empty (sub)tree')
+        
+        if current_node.left:
+            return self.smallest_key(current_node.left)
+        else:
+            return current_node
+        
+    def _delete(self, removed_node):
+        
+        # if removed_node has no child
+        if not removed_node.has_any_child():
+            # removed node is a leaf
+            if removed_node.parent:
+                if removed_node.is_left_child():
+                    removed_node.parent.left = None
+                else:
+                    removed_node.parent.right = None
+                self.size -= 1
+            # removed node is root 
+            else:
+                self.root = None
+                self.size = 0
+                
+        # removed node has only one child
+        elif removed_node.the_only_child():
+            if removed_node.parent:
+                if removed_node.is_left_child():
+                    removed_node.parent.left = removed_node.the_only_child()
+                    removed_node.the_only_child().parent = removed_node.parent
+                else:
+                    removed_node.parent.right = removed_node.the_only_child()
+                    removed_node.the_only_child().parent = removed_node.parent
+            # removed node is root
+            else:
+                self.root = self.root.the_only_child()
+        
+        # removed node has two children
+        else:
+            min_node = self.smallest_key(removed_node.right)
+            removed_node.key = min_node.key
+            self._delete(min_node) 
             
-def smallest_key(root):
-    """return the minimum key in bst"""
+    def delete(self, key):
+        """delete key from bst"""
+        removed_node = self.has_key(key)
+        # if bst has the key, kick off delete process
+        if removed_node:
+            self._delete(removed_node)
+        else:
+            raise ValueError('key not found.')
     
-    if root.left:
-        return smallest_key(root.left)
-    else:
-        return root.data
+    def _pre_order(self, current_node):
+        
+        arr = []
+        arr.append(current_node.key)
+        if current_node.left:
+            arr += self._pre_order(current_node.left)
+        if current_node.right:
+            arr += self._pre_order(current_node.right)
+        return arr
+        
+    def pre_order_print(self):
+        """print the tree by pre_order traversal"""
+        if self.root:
+            return self._pre_order(self.root)
+        else:
+            return []
 
 def build_bst(arr):
-    """build a bst from an array
-    args:
-        arr, a list of integer
-    """
-    root = None
+    """build a bst from an array"""
+    bst = BST()
     for i in arr:
-        root = insert(root, i)
-    return root
-
-      
-def pre_order(root):
-    """print the tree by pre_order traversal"""
-    arr = []
-    if root:
-        arr.append(root.data)
-        arr += pre_order(root.left)
-        arr += pre_order(root.right)
-    else:
-        return arr
-    return arr
-
+        bst.insert(i)
+    return bst
 
 if __name__ == '__main__':
     #user input
     node_arr = raw_input('Please type in a list of node integer, seperated by space.\n')
     # insert nodes
-    root = build_bst(map(int, node_arr.split()))
+    bst = build_bst(map(int, node_arr.split()))
         
     # pre_order print
-    print 'Original bst list: \n %s\n' % str(pre_order(root))
+    print 'Original bst list: \n %s\n' % str(bst.pre_order_print())
     erase_keys = raw_input('Please type in key(s) you want to delete:\n')
     
     # check whether input is valid
@@ -148,10 +181,9 @@ if __name__ == '__main__':
         
     # check if key exists.
     for key in keys: 
-        if has_key(root, key):
-            root = delete_node(root, key)
-            #print 'key %s is deleted from bst' % key
+        if bst.has_key(key):
+            bst.delete(key)
         else:
             print 'key %s not found.' % key
             
-    print 'New bst list:\n%s\n' % str(pre_order(root))  
+    print 'New bst list:\n%s\n' % str(bst.pre_order_print())  
