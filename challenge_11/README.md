@@ -12,3 +12,9 @@ Binary Trees are a big deal in computer science. It's only fitting that we have 
  Testing
  -----
  Testing for this challenge is fairly straight forward. Simply insert a bunch of nodes into the BST, remove one then print the BST to ensure that it was removed.
+ 
+ Notes:
+ * Please implement functionality to read standard input. Upon activating the program the user should be prompted with a message asking them to input space separated values (lets say characters) which are to be put inserted into the tree one after the other. These values will not repeat.
+ * The tree should now be printed in pre-order
+ * A new prompt should appear asking what value(s) the user would like to delete from the tree. This input will be space seperated and non repeating.
+ * The program should output the tree again, in pre order then terminate.
