@@ -10,10 +10,9 @@ As for decompressing, your program needs to be capable of uncompressing the comp
 
 Notes
 * The input will never be empty
-* The input can consist of any (printable) character
+* The input can consist of any alphabetic characters (no ints or specials)
 * The input can be of any length
 * You may not be able to compress the input at all, ex: 'abc'
-* The string being compressed will never contain '#'
 
 Testing
 -----
