@@ -68,6 +68,8 @@ std::vector<int> tools::sort_squares(std::vector<int> numbers) {
     }
 
     // Simply insert the last numbers of the longer side of the array
+    
+    // If the right array was longer, then insert the rest in order
     while(right_length > 0) {
         numbers[right_index] = pow(numbers[right_index], 2);
         sorted.push_back(numbers[right_index]);
@@ -75,6 +77,7 @@ std::vector<int> tools::sort_squares(std::vector<int> numbers) {
         right_length--;
     }
 
+    // If the left  array was longer, then insert the rest in order
     while(left_length > 0 ) {
         sorted.push_back(numbers[left_index]);
         left_index--;
