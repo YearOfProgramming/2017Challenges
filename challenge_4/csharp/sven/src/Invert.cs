@@ -66,10 +66,6 @@ namespace Challenge_4
 
             tree = traverseInOrder(tree, node => node != null ? new BinaryTreeNode(node.value, node.rightChild, node.leftChild) : null);
             traversePreOrder(tree, node => { Console.Write((node != null ? node.value : EMPTY) + " "); return node; } );
-
-            int x = 3;
-
-            //Console.WriteLine(args.GroupBy(val => val).OrderBy(g => g.Count()).Last().Key);
         }
     }
 }
