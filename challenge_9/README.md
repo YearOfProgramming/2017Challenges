@@ -21,6 +21,21 @@ Notes
 
 Hint: There is no limit to the space complexity for this challenge.
 
-Testing
+[Testing](https://github.com/YearOfProgramming/2017Challenges#testing)
 -----
 Testing is rather straightforward. Simply create an array with/without negatives, 0 and positives, then feed it into your function and verify it by hand.
+
+######Test Script
+
+Input:
+
+    -2,-1,0,1,2
+ 
+Output:
+  
+    0
+    1
+    1
+    4
+    4
+  

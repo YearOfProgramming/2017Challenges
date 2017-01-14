@@ -3,13 +3,14 @@
 #include <sstream>
 #include <vector>
 #include <math.h>
-#include "majorityElement.h"
+#include "include/majorityElement.h"
 
 int findMax (std::vector<int> arr) {
 
     int max = INT_MIN;
+    int size = arr.size();
 
-    for(int i = 0; i < arr.size(); i++) {
+    for(int i = 0; i < size; i++) {
         if(arr[i] > max) {
             max = arr[i];
         }

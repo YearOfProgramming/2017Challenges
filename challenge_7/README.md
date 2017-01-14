@@ -33,7 +33,7 @@ Example 2
 ---------
 Given the list [1,2,3], your program should return the 0.
 
-Testing
+[Testing](https://github.com/YearOfProgramming/2017Challenges#testing)
 ------
 Testing for this challenge is fairly straight forward. Simply create a list of
 size N, filled with integers from 0 to N, with one integer missing.
@@ -43,3 +43,15 @@ For example:
 ```ruby
 assert findMissing([1,3,4,0]) == 2
 ```
+
+######Test script requirements
+
+Expected input:
+
+    1, 3, 4, 0
+
+Expected output:
+
+    2
+
+
