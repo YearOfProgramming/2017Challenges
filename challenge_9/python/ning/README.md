@@ -1,4 +1,4 @@
-# Challenge 9, Squares
+# Challenge #9, Squares
 
 This solution makes use of `Counter` from the in-built `collections` library. The creation of the Counter object, `abs_counter` is an O(n) operation as can be seen from the [source code](https://hg.python.org/cpython/file/2.7/Lib/collections.py#l528).
 
