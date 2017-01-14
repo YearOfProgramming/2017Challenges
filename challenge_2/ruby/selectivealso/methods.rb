@@ -1,16 +1,17 @@
-class ElementsArray < Array
-
-  def initialize elements
-    @elements = elements
+class UniqueFinder
+  def initialize array
+    @array = array
   end
 
-  def find_unique_ints
-    count = Hash.new(0)
+  def find_unique
+    counts.key(1)
+  end
 
-    @elements.each do |element|
-      count[element] += 1
-    end
+  private
 
-    return count.key(1)
+  attr_reader :array
+
+  def counts
+    array.each_with_object(Hash.new(0)) { |element, hash| hash[element] += 1 }
   end
 end
