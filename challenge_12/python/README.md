@@ -2,6 +2,8 @@
 
 Our solution comes in two parts, `compress` and `decompress`. Running `challenge_12.py` will invoke an 'interactive' mode that will compress or decompress according to the input.
 
+---
+
 `compress`,
 
 1. The main logic in this function is to iterate through characters of the given input string, and compare it to the previous character to determine if it is a different character.
@@ -14,6 +16,8 @@ Some minor features:
 * The first character is added to the buffer before the iterating `for` loop to prevent `IndexError` for the comparison conditional detecting change in character `if character == buff[-1]`.
 * There is a `else` for the main iterating `for` loop for the case whereby the string ends on a sequence of repeats (and therefore there is no differing character to trigger `elif character != buff[-1]`
 
+---
+
 `decompress`,
 
 1. The main logic in this function is to iterate through the characters of the given input string, and append all alphabetical characters into the output string.
@@ -23,6 +27,8 @@ Some minor features:
 
 * The '#' character is removed at the start as it serves no purpose (numbers are sufficient to indicate a sequence of compressed repetition).
 * As with `compress`, an `else` block for the main iterating `for` loop catches the case whereby the input string ends in a number.
+
+---
 
 ```
 ......
