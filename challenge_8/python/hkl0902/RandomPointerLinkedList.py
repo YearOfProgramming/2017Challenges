@@ -1,7 +1,10 @@
 class RandomPointerLinkedList:
     def __init__(self, root, next, random):
         self.root = root
+        self.index = 0
         self.next = next
+        if next:
+            self.index = next.index + 1
         self.random = random
         self.current = self
 
@@ -25,41 +28,32 @@ class RandomPointerLinkedList:
         else:
             return 1
 
-    # Returns a list with the value of root for each LinkedList in self
-    def rootsToList(self):
-        return [l.root for l in self]
+    # Returns a list of the roots in the linked lists
+    # The root for self is at the end of the list
+    def toList(self):
+        return [l.root for l in self][::-1]
 
-    # Returns a list with the value of the index of random
-    def randomToList(self):
-        return [self.get(l.random) for l in self]
+    # Returns a list of the index of the random linked list
+    # The last element in the returned list is the random element's index for self
+    # Assumes that all elements have a random
+    def randomIndices(self):
+        return [l.random.index for l in self][::-1]
 
-    # Returns the index of L where L is a linked list in self. None otherwise
-    def get(self, l):
-        if not l:
-            return None
-        index = 0
-        for link in self:
-            if l == link:
-                self.current = self
-                return index
-            index += 1
-
-    # Returns a deep copy of self
+    # Makes a deep copy
     def makeDeepCopy(self):
-        roots = self.rootsToList()
-        newRoots = [str(root) + "\'" for root in roots]
-        lists = [RandomPointerLinkedList(root, None, None) for root in newRoots]
-        randomIndeces = self.randomToList()
+        allRoots = self.toList()
+        allRandom = self.randomIndices()
 
-        # Set up the next
-        for i in range(len(lists)):
-            if i == len(lists) - 1:
-                lists[i].next = None
+        # Makes all the linked lists
+        lists = [RandomPointerLinkedList(root, None, None) for root in allRoots]
+        length = len(lists)
+
+        # Adds all the next to all the LinkedLists in lists
+        # it's i-1 because the allRoots and allRandom give values in reverse order
+        for l, i in zip(lists, range(length)):
+            if i == 0:
+                l.next = None
             else:
-                lists[i].next = lists[i+1]
+                l.next = lists[i-1]
 
-        # Set up the random
-        for list, r in zip(lists, randomIndeces):
-            lists[i].random = lists[r]
-
-        return lists[0]
+        
