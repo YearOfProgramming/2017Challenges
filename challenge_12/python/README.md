@@ -23,3 +23,11 @@ Some minor features:
 
 * The '#' character is removed at the start as it serves no purpose (numbers are sufficient to indicate a sequence of compressed repetition).
 * As with `compress`, an `else` block for the main iterating `for` loop catches the case whereby the input string ends in a number.
+
+```
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK
+```
