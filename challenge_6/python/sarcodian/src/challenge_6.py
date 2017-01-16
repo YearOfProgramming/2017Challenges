@@ -1,4 +1,10 @@
 def ranges(int_list):
+    '''
+    int_list: list, containing intergers sorted from low to high
+    returns: list, each element is the first and last digit of a run
+        of consecutive numbers with the middle digits replaced by an
+        arrow.
+    '''
     temp_list = []
     final_list = []
 
@@ -16,8 +22,11 @@ def ranges(int_list):
             temp_list.append(int_list[i])
             final_list.append(print_range(temp_list))
             temp_list.clear()
-    print(final_list)
     return final_list
 
 def print_range(range_list):
+    '''
+    range_list: list, a list of consecutive integers
+    returns: string, first and last integer with arrow in the middle
+    '''
     return '{}->{}'.format(range_list[0], range_list[-1])
