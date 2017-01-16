@@ -3,11 +3,11 @@
 
 ### 1. Approch to Solving the problem
 
-This one is pretty straight forward.  Just have to understand what standard library
-and standard library function is used to print something out to the command line
+This one is pretty straight forward.  You jut have to understand what standard library
+and standard library function will be used to print something out to the command line --
 printf() was used here.  Tons of print options exist depending on what type of file
-you want to print to. ( printf, fprintf, sprintf, snprintf, asprintf, dprintf, vprintf, 
-vfprintf, vsprintf, vsnprintf, vasprintf,vdprintf).  I wanted to print to standard out
+you want to print to ( printf, fprintf, sprintf, snprintf, asprintf, dprintf, vprintf, 
+vfprintf, vsprintf, vsnprintf, vasprintf, vdprintf).  I wanted to print to standard out
 so printf() was used.
  
 ### 2. How to compile and run this code
@@ -17,9 +17,7 @@ it installed you can type:
 
 ```
 $ gcc --version
-'''
-in bash. 
-
+``` 
 
 Compiling:
 ```
