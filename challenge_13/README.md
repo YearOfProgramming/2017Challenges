@@ -9,7 +9,7 @@ The program should take a number from standard input (this is the only time you 
 
 ### Constraints
 1. Your program must not use any "built-in" methods or classes, only generics.
-2. This means nothing like *String.valueOf()* or *.equals()* or *.reverse()*
+2. This means nothing like *String.valueOf()* or *.reverse()*
 3. **Your program must not use Strings or Characters in any form. Only numbers (integers/doubles)**
 
 Input can be expected to have at least 1 digit and all digits are positive.
