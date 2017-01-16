@@ -1,4 +1,9 @@
 def find_the_diff(s, t):
+    '''
+    s: string, a string made up of lower case letters
+    t: string, a string made up of shuffled up s plus one additional char
+    returns: char, the single element string that was not in s
+    '''
     
     t_dict = {}
     s_dict = {}
