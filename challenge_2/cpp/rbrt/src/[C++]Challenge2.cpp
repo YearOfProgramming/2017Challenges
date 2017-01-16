@@ -12,6 +12,7 @@ int main()
 	 	//we accept as input a value representing the length of the array
 		//and we create an array of the given size
 
+
 		cout<< "Please insert the array length >> ";
 		cin>>n;
 		int *x=new int[n+1];
