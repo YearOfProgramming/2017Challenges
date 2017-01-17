@@ -26,7 +26,7 @@ A subset of _Case 4_, we detect a three digit difference, and the program contin
 
 1. `get_int_len` takes an integer input and returns the number of digits in that integer by comparing it to powers of 10. A more mathematical way to do this would be with log of base 10, but this would violate rule #1 with its use of the `math` module.
 2. `check_palindrome` takes an integer input and returns True if it is an integer palindrome, and False if not.
-3. `check_palindrome_str(_str) is a wrapper around the above `check_palindrome` function which takes a string input instead.
+3. `check_palindrome_str `is a wrapper around the above `check_palindrome` function which takes a string input instead.
 
 
 ## Unit Test
