@@ -19,7 +19,7 @@ Binary Trees are a big deal in computer science. It's only fitting that we have 
  * A new prompt should appear asking what value(s) the user would like to delete from the tree. This input will be space seperated and non repeating.
  * The program should output the tree again, in pre order then terminate.
  
- ###### Script
+ ##### Testing with the test script
  
  You will receive a few values line by line:
  
