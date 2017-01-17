@@ -18,3 +18,13 @@ pub fn find_single(input: Vec<i32>) -> i32 {
 }
 
 
+#[cfg(test)]
+mod tests {
+	use super::*;
+	#[test] 
+	fn test_int() {
+		let expected = 5;
+		let input = vec![2, 3, 4, 2, 3, 5, 4, 6, 4, 6, 9, 10,9 ,8 ,7 ,8 ,10 ,7];
+		assert_eq!(expected.to_owned(), find_single(input));	
+	}
+}
