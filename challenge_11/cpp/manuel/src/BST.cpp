@@ -17,7 +17,7 @@ BST::BST() {
  *   Free all memory used by current tree
  ****************************************************************/
 BST::~BST() {
-    delete root;
+    delete_children(root);
 }
 
 
@@ -41,7 +41,7 @@ void BST::insert(int key) {
 
     }
     new_node->parent = parent;
-    
+
     if(parent == NULL) {
         root = new_node;
     } else if ( key > parent->data) {
@@ -70,6 +70,7 @@ void BST::del(int key) {
             min->left = node->left;
             min->left->parent = min;
         }
+        delete node;
     }
 }
 
@@ -163,4 +164,16 @@ void BST::post_order(Node *node) {
         BST::post_order(node->right);
         std::cout << node->data << std::endl;
     }
+}
+
+void BST::delete_children(Node *parent) {
+    if(parent->left != NULL) {
+        delete_children(parent->left);
+    }
+
+    if(parent->right != NULL) {
+        delete_children(parent->right);
+    }
+
+    delete parent;
 }

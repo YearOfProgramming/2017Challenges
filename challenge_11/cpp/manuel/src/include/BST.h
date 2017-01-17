@@ -34,6 +34,7 @@ class BST {
     void in_order(Node *current_node); // Inorder traversal
     void pre_order(Node *current_node); // Preorder traversal
     void post_order(Node *current_node); // Postorder traversal
+    void delete_children(Node *parent); // Deletes all children recursively
 };
 
 #endif
