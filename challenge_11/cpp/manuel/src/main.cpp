@@ -1,6 +1,5 @@
-#include <sstream>
-#include <iostream>
 #include <string>
+#include <iostream>
 #include "include/BST.h"
 
 int main(int argc,char **argv) {
@@ -20,10 +19,6 @@ int main(int argc,char **argv) {
         if(command == 'e') {
             return 0;
         }
-
-        // Use cerr if you want to always print to the console, because cout
-        // will be redirected to the output file when calling the Grade05 script:
-        // cerr<<line<<endl;
 
         if (command == 'o' ) {
             // print out in order

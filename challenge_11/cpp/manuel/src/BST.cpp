@@ -2,7 +2,6 @@
 #include <string>
 #include "include/BST.h"
 
-using namespace std;
 
 /****************************************************************
  * CONSTRUCTOR
