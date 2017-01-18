@@ -1,5 +1,5 @@
 /**
- * This class hodls the code needed to meet the requirements for Challenge 0 of
+ * This class holds the code needed to meet the requirements for Challenge 0 of
  * the 2017 Year of Programming.
  *
  * @author Jake Bashaw
