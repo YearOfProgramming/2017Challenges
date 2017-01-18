@@ -18,7 +18,13 @@ The unit test covers,
 ```
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.001s
+Ran 6 tests in 8.258s
 
 OK
+test_all completed 100000 reps with 1.8796267224919547s
+test_negatives completed 100000 reps with 1.0380016055644727s
+test_positives completed 100000 reps with 1.0510455415440965s
+test_repeats completed 100000 reps with 2.041641256050432s
+test_zeroes_negatives completed 100000 reps with 1.102484358268124s
+test_zeroes_positives completed 100000 reps with 1.1347802273483003s
 ```
