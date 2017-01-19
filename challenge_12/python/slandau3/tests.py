@@ -4,6 +4,9 @@ import unittest
 from compression import compress, decompress
 
 class Test(unittest.TestCase):
+    """
+    hello
+    """
 
     def test1(self):
         """
@@ -17,7 +20,8 @@ class Test(unittest.TestCase):
         An arbitrarily long string
         :return:
         """
-        self.assertEqual(compress('abadbadsakdlfjieafnealfjiasfjaaaaanadddddddkkkjj'), "abadbadsakdlfjieafnealfjiasfja#5nad#7kkkjj")
+        self.assertEqual(compress('abadbadsakdlfjieafnealfjiasfjaaaaanadddddddkkkjj'), \
+            "abadbadsakdlfjieafnealfjiasfja#5nad#7kkkjj")
 
     def test3(self):
         """
@@ -38,7 +42,8 @@ class Test(unittest.TestCase):
         Decompress a fairly large string without too many compressions in it.
         :return:
         """
-        self.assertEqual(decompress('abadbadsakdlfjieafnealfjiasfja#5nad#7kkkjj'), 'abadbadsakdlfjieafnealfjiasfjaaaaanadddddddkkkjj')
+        self.assertEqual(decompress('abadbadsakdlfjieafnealfjiasfja#5nad#7kkkjj'), \
+            'abadbadsakdlfjieafnealfjiasfjaaaaanadddddddkkkjj')
 
     def test6(self):
         """
