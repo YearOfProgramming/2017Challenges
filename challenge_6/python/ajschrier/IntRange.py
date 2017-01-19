@@ -9,7 +9,7 @@ def outputRange(inputList):
 
     for i in inputList:
         # Detect the beginning of the list
-        if not rangeStart:
+        if rangeStart is None:
             rangeStart = i
             rangeEnd = i
         # Check for invalid sequence
