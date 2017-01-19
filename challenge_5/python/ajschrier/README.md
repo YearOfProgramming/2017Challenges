@@ -1,5 +1,7 @@
 # Challenge 5 - Find the Difference
 
+*Python Version:* 2.7
+
 Counts all the characters in a string and finds the added letter
 
 ## Functions

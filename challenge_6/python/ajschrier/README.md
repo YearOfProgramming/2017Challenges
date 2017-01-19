@@ -1,5 +1,7 @@
 # Challenge 6 - Integer Range
 
+*Python Version:* 2.7
+
 Finds ranges of integers from an ordered integer list.
 
 ## Functions
