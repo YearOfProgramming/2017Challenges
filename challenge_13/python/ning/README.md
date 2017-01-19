@@ -1,6 +1,6 @@
 # Challenge #13, Integer Palindrome
 
-This challenge was revisited on the request of @slandau.
+This challenge was revisited on the request of @slandau3.
 
 ## Solution Logic
 
