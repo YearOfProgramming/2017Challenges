@@ -28,3 +28,20 @@ _Note_: There is a check here for if the difference in digits is less than two. 
 ## Unit Test
 
 Unit test, `test.py` consists of the seven examples given as well as two extras (10111 & 5014).
+
+```
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 17.513s
+
+OK
+test_given_10111 completed 100000 reps with 0.8685361769107586s
+test_given_5014 completed 100000 reps with 0.7238855773284278s
+test_given_1 completed 100000 reps with 3.746295769833846s
+test_given_2 completed 100000 reps with 0.14555587452481245s
+test_given_3 completed 100000 reps with 0.9870822088894107s
+test_given_4 completed 100000 reps with 5.544389312746986s
+test_given_5 completed 100000 reps with 0.2545190703679676s
+test_given_6 completed 100000 reps with 2.5189242810785935s
+test_given_7 completed 100000 reps with 2.7153026247871885s
+```
