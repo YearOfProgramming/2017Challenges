@@ -27,7 +27,7 @@ _Note_: There is a check here for if the difference in digits is less than two. 
 
 ## Unit Test
 
-Unit test, `test.py` consists of the seven examples given as well as two extras (10111 & 5014).
+Unit test, `test.py`, consists of the seven examples given as well as two extras (10111 & 5014).
 
 ```
 .........
