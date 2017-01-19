@@ -15,12 +15,11 @@ typedef struct node
 //utility function to create a new node
 Node* newNode(char c)
 {
-	Node* NewNode = (Node*)malloc(sizeof(Node));
+	Node* new_node = (Node*)malloc(sizeof(Node));
+	new_node->c = c;
+	new_node->next = NULL;
 
-	NewNode->c = c;
-	NewNode->next = NULL;
-
-	return NewNode;
+	return new_node;
 }
 
 //utility function to add a new node to the linked list
@@ -28,9 +27,9 @@ void push(Node** head_ref, char c)
 {
 	Node* new_node = newNode(c);
 
-	new_node->next = (*head_ref);
+	new_node->next = *head_ref;
 
-	(*head_ref) = new_node;
+	*head_ref = new_node;
 }
 
 
@@ -52,7 +51,7 @@ void reverseLinkedList(Node** head_ref)
 		prev = current;
 		current = next;
 	}
-	(*head_ref) = prev;
+	*head_ref = prev;
 }
 
 //utility function to print linked list
@@ -63,7 +62,7 @@ void printLinkedList(Node* head)
 		printf("%c->", head->c);
 		head = head->next;
 	}
-	printf("NULL");
+	printf("NULL\n");
 }
 
 //driver program
@@ -82,7 +81,6 @@ int main(void)
 	printLinkedList(head);
 	//reverse the linked list
 	reverseLinkedList(&head);
-	printf("\n");
 	//print the reversed linked list
 	printLinkedList(head);
 
