@@ -8,7 +8,6 @@ and tracked their frequencies with their value
 
 ### 2. How to compile and run this code
 
-Compile the Node class first
 
 ```
 javac MajorityElement.java
