@@ -2,22 +2,18 @@
 ###### Language Version (Python 3.6.0)
 
 
-We have our function take the integer input and convert it into a list of
-integers. We find the number of digits, the midpoint, and then separate both
-halves of the list.
+First, we initialize a int variable ```reverse``` and set it equal to zero. As
+well as make a copy variable of the integer input ```num2```. Using a while
+loop, our algorithm will continue until ```num2``` is equal to zero. 
 
-If the number of digits is even, reverse the second half and compare it to the
-first. If number of digits are odd, follow the same steps, but be sure to add +1
-to the index of the first half.
-
-Run ```palin.py`` to test your implementation
+Run ```palin.py``` to test your implementation
 ```
 456070654
 
 True
 ```
 
-Run ```tests.py`` to check against unit test
+Run ```tests.py``` to check against unit test
 ```
 .......
 ----------------------------------------------------------------------

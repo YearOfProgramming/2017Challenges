@@ -4,20 +4,18 @@ def is_palindrome(num):
     """
     Returns True if integer is a Palindrome
     """
-    num = [int(x) for x in str(num)]
-    digits = len(num)
-    mid = digits // 2
-    back_half = num[mid:]
+    reverse = 0
+    num2 = num
 
-    if digits % 2 == 0:
-        return True if num[:mid] == back_half[::-1] else False
+    while num2 > 0:
+        # Finds the last digit of num2, removes it, and adds the
+        # digit to the reverse variable
+        reverse = (10*reverse) + num2%10
+        num2 //= 10
 
-    else:
-        return True if num[:mid+1] == back_half[::-1] else False
-
+    return True if reverse == num else False
 
 if __name__ == "__main__":
-
     num = int(input())
     print()
     print(is_palindrome(num))
