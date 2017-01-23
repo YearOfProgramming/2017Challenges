@@ -2,9 +2,11 @@
 #include <stdlib.h>
 
 int sumOfRange( int a, int b ){
-  int tot = a;
-  while( a++ < b ) tot += a;
-  return tot;
+  int n = b - a + 1;
+  int nSum = n * (n + 1) / 2;
+  int bSum = (a - 1) * n;
+
+  return nSum + bSum;
 }
 
 int main( int argc, char *argv[] ){
@@ -29,8 +31,8 @@ int main( int argc, char *argv[] ){
 
   puts( "]" );
 
-  int tRange = sumOfRange( min, max );
-  printf( "The missing number is: %d\n", tRange - sum  );
+  int sRange = sumOfRange( min, max );
+  printf( "The missing number is: %d\n", sRange - sum  );
 
   return 0;
 }
