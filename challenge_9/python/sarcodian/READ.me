@@ -1,0 +1,12 @@
+Takes a list of sorted values and squares them, resorting 
+the resulting list. The algorithm cannot use sort on the 
+resulting list.
+
+If the first element of the list is greater then 0, we can 
+just return the list squared as tis already sorted.
+
+Otherwise, we work backwards, but comparing the absolute value 
+of the first element with the last element and squaring the largest.
+
+We then return the reverse of the squared list to get it sorted from
+smallest to largest.

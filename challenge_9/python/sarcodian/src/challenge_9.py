@@ -1,4 +1,8 @@
 def square_n_sort(L):
+    '''
+    Get an ordered list of ints and square the values, returning a list
+    of squares ordered from smallest to largest.
+    '''
 
     L_square = []
     L_sorted = []
