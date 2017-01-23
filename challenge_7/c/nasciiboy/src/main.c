@@ -2,11 +2,7 @@
 #include <stdlib.h>
 
 int sumOfRange( int a, int b ){
-  int n = b - a + 1;
-  int nSum = n * (n + 1) / 2;
-  int bSum = (a - 1) * n;
-
-  return nSum + bSum;
+  return (b - a + 1) * (b + a) / 2;
 }
 
 int main( int argc, char *argv[] ){
