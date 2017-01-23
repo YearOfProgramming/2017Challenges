@@ -11,7 +11,6 @@ from challenge_7 import missing_int
 class TestBinaryMethods(unittest.TestCase):
 
     def test_missingInt(self):
-        """ Tests from the READ.me """
         
         self.assertEqual(missing_int([1,3,4,0]), 2)
         self.assertEqual(missing_int([1,2,3]), 0)
