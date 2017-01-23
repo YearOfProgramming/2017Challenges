@@ -22,7 +22,7 @@ public class ValidClosers {
 			if (openers.contains(c)) {
 				stack.push(c);
 			}
-			if (closers.contains(c)) {
+			else if (closers.contains(c)) {
 				// the stack can't be empty when looking at a closer, otherwise
 				// they don't match
 				if (!stack.isEmpty()) {
