@@ -1,5 +1,10 @@
 def brackets():
-
+    '''
+    Asks for a string and returns True/False.
+    True if all openning brackets {([ have a matching ])},
+    else returns False
+    '''
+    
     a_string = input("Please enter a string to process: ")
 
     brac_dict = {
