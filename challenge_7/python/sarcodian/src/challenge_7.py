@@ -9,8 +9,7 @@ def missing_int(L):
     for i in range(len(L)+1):
         sum_n += i
     
-    for i in L:
-        sum_n_less_1 += i
+    sum_n_less_1 = sum(L)
 
     return sum_n - sum_n_less_1
 
