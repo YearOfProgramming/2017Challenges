@@ -1,4 +1,4 @@
-# Reverse a String
+# Single Number
 ###### C++ 11
 
 ### 1. Approch to solving the problem
