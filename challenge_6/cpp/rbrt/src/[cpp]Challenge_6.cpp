@@ -1,4 +1,5 @@
 #include <iostream> 
+
 using namespace std;
 
 int check_range(int l[],int start_point,int n){
