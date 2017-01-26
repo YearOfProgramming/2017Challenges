@@ -1,2 +1,1 @@
-s = raw_input("Enter String: ")
-print (s[::-1])
+print(input("Enter string: ")[::-1])
