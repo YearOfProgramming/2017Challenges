@@ -15,7 +15,7 @@ public class FindTheDifference {
 				System.exit(0);
 			}
 		}
-
+		System.out.println(t.charAt(0));
 	}
 
 }
