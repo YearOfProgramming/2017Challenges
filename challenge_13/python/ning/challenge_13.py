@@ -1,54 +1,64 @@
-def get_int_len(_int):
+def get_len(_int):
     '''Find the number of digits of an int
+    if not mathematical integer (1.0 allowed)
+    (e.g. 1.1), return -1
 
     Given an integer, finds the number of
     digits in that integer in base 10
     '''
-    power = 1
+    power = 0
+
+    if _int % 1 != 0:
+        return -1
+
     while True:
-        if _int == 0:
-            return 0
-        elif _int < 10**power:
+        if _int < 10**power:
             return power
         power += 1
 
-def check_palindrome(_int):
-    ones = 0
-    digits = get_int_len(_int)
-    while digits > 1:
-        if _int % 10 != 0:  # not end with 0
-            ones += 1
-            _int -= 1
-        else:
-            _int -= ones * 10**(digits-1)
-            _int /= 10
-            new_digits = get_int_len(_int)
-            diff_digits = digits - new_digits
-            if diff_digits == 1 or _int < 0:
-                # e.g. 514, 510, 110, 10
-                # e.g. 415, 410, -90, -9
-                return False
-            elif diff_digits > 2:
-                # e.g. 10101, 10100, 0010
-                extra_zeroes = diff_digits - 2
-                _int /= 10**(extra_zeroes)
-                if _int % 1 != 0:
-                    return False
-            digits = get_int_len(_int)
-            ones = 0
+def is_palindrome(_int):
+    len_pre = get_len(_int)
 
-    return True
+    # base cases
+    if len_pre == -1:
+        # e.g. 4323.4 (refer func get_len)
+        return False
+    elif len_pre == 0 or len_pre == 1:
+        # e.g. 0, 1, 2, ...
+        return True
+    elif len_pre == 2:
+        # e.g. 11, 22, 33, ...
+        return _int % 11 == 0
 
-def check_palindrome_str(_str):
-    return check_palindrome(int(_str))
+    # recursive reduction
+    else:
+        digit_last = _int % 10
+        _int -= digit_last
+        _int /= 10
+        _int -= digit_last * 10**(len_pre-2)
+
+        # check for extra zeroes
+        # e.g. 1010101 -> return 101 NOT 1010
+        len_post = get_len(_int)
+        if len_pre - len_post < 2:
+            return False
+        elif len_pre - len_post > 2:
+            extra_0 = len_pre - len_post - 2
+            _int /= 10**extra_0
+
+    return is_palindrome(_int)
+
+
+def is_palindrome_str(_str):
+    return is_palindrome(int(_str))
 
 if __name__ == '__main__':
     while True:
-        print(check_palindrome_str(input(' >>> ')))
+        print(is_palindrome_str(input(' >>> ')))
 
 '''
 # FOR REPL.IT
 while True:
-    print(check_palindrome_str(input(' >>> ')))
+    print(is_palindrome_str(input(' >>> ')))
 '''
 
