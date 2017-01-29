@@ -13,6 +13,7 @@ int main()
   {
     cout << input[i];
   }
+  cout << endl;
 
   return 0;
 }
