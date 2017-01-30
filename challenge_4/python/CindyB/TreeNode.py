@@ -19,3 +19,10 @@ class TreeNode:
     
     def GetLeftChild(self):
         return self.leftChild
+        
+    def printNode(self):
+        if self.GetLeftChild() != None:
+            self.GetLeftChild().printNode()
+        print str(self.GetValue())
+        if self.GetRightChild() != None:
+            self.GetRightChild().printNode()

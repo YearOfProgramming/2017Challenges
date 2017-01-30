@@ -9,3 +9,5 @@ input.remove(input[0])
 
 for value in input:
     myTree.insert(value,myTree.GetRoot())
+
+myTree.printTree()

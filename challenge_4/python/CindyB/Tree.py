@@ -22,3 +22,6 @@ class Tree:
                 node.SetLeftChild(TreeNode(value))
             else:
                 self.insert(value,node.GetLeftChild())
+
+    def printTree(self):
+        self.GetRoot().printNode()
