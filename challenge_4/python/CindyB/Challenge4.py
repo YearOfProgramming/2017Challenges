@@ -11,3 +11,5 @@ for value in input:
     myTree.insert(value,myTree.GetRoot())
 
 myTree.printTree()
+myTree.invertTree()
+myTree.printTree()

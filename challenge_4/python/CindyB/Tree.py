@@ -25,3 +25,6 @@ class Tree:
 
     def printTree(self):
         self.GetRoot().printNode()
+
+    def invertTree(self):
+        self.GetRoot().invertNode()

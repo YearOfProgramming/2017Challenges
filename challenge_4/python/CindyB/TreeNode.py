@@ -23,6 +23,15 @@ class TreeNode:
     def printNode(self):
         if self.GetLeftChild() != None:
             self.GetLeftChild().printNode()
-        print str(self.GetValue())
+        print str(self.GetValue()),
         if self.GetRightChild() != None:
             self.GetRightChild().printNode()
+
+    def invertNode(self):
+        if self.GetLeftChild() != None:
+            self.GetLeftChild().invertNode()
+        if self.GetRightChild() != None:
+            self.GetRightChild().invertNode()
+        tempNode = self.GetLeftChild()
+        self.SetLeftChild(self.GetRightChild())
+        self.SetRightChild(tempNode)
