@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def find_num(a):
     total = sum(range(len(a) + 1))
 

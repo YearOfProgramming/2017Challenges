@@ -1,7 +1,7 @@
 def get_ranges(a):
     result = []
 
-    if len(a) > 0:
+    if a:
         start = a[0]
         found = False
 
