@@ -1,0 +1,16 @@
+def majority_number(db):
+    dic = {}
+    maxcount = 0
+
+    for i in db:
+        if i in dic:
+            dic[i] += 1
+        else:
+            dic[i] = 1
+
+    maxcount = max(dic, key=lambda i: dic[i])
+    return maxcount
+	
+
+w = [2,2,3,7,5,7,7,7,4,7,2,7,4,5,6,7,7,8,6,7,7,8,10,12,29,30,19,10,7,7,7,7,7,7,7,7,7]
+majority_number(w)
