@@ -3,28 +3,28 @@ from TreeNode import TreeNode
 class Tree:
 
     def __init__(self,root):
-        self.root = root
+        self._root = root
 
     def invert(self):
         return ''
 
-    def GetRoot(self):
-        return self.root
+    def get_root(self):
+        return self._root
 
     def insert(self,value,node):
-        if value >= node.GetValue():
-            if node.GetRightChild() == None:
-                node.SetRightChild(TreeNode(value))
+        if value >= node.get_value():
+            if node.get_right_child() == None:
+                node.set_right_child(TreeNode(value))
             else:
-                self.insert(value,node.GetRightChild())
+                self.insert(value,node.get_right_child())
         else:
-            if node.GetLeftChild() == None:
-                node.SetLeftChild(TreeNode(value))
+            if node.get_left_child() == None:
+                node.set_left_child(TreeNode(value))
             else:
-                self.insert(value,node.GetLeftChild())
+                self.insert(value,node.get_left_child())
 
-    def printTree(self):
-        self.GetRoot().printNode()
+    def print_tree(self):
+        self.get_root().print_node()
 
-    def invertTree(self):
-        self.GetRoot().invertNode()
+    def invert_tree(self):
+        self.get_root().invert_node()

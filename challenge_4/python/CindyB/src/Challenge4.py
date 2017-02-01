@@ -4,12 +4,12 @@ from Tree import Tree
 from TreeNode import TreeNode
 
 input = [4,2,7,1,3,6,9]
-myTree = Tree(TreeNode(input[0]))
+my_tree = Tree(TreeNode(input[0]))
 input.remove(input[0])
 
 for value in input:
-    myTree.insert(value,myTree.GetRoot())
+    my_tree.insert(value,my_tree.get_root())
 
-myTree.printTree()
-myTree.invertTree()
-myTree.printTree()
+my_tree.print_tree()
+my_tree.invert_tree()
+my_tree.print_tree()
