@@ -1,5 +1,3 @@
-import sys
-
 from Tree import Tree
 from TreeNode import TreeNode
 
@@ -8,7 +6,7 @@ my_tree = Tree(TreeNode(input[0]))
 input.remove(input[0])
 
 for value in input:
-    my_tree.insert(value,my_tree.get_root())
+    my_tree.insert(value)
 
 my_tree.print_tree()
 my_tree.invert_tree()
