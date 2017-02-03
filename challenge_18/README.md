@@ -13,6 +13,7 @@ Example 2: N = 5. Possible paths: 252
 
 Example 3: N = 12. Possible paths: 2704156
 
-Example 4: N = 2. Possible paths: 6. For the sake of the example, here are the paths ['UURR', 'URUR', 'URRU', 'RUUR', 'RURU', 'RRUU'] U = Up, R = Right
+Example 4: N = 3 Possible paths: 6 
+For the sake of the example, here are the paths ['UURR', 'URUR', 'URRU', 'RUUR', 'RURU', 'RRUU'] U = Up, R = Right
 
 Once again, a program like this will have an enormous time complexity so don't bother testing anything larger than say N = 15 (if that).
