@@ -9,6 +9,7 @@ def make_change(cash, coins=[25,10,5,1]):
 	else:
 		return(make_change(cash, coins[1:]) + make_change(cash - coins[0], coins))
 
+# This solution uses dynamic programming and O(N) space
 def make_change_dp(n, coins=[1,5,10,25]):
 	arr = np.zeros(n+1, dtype=int)
 
