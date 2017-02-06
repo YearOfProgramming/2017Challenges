@@ -1,0 +1,1 @@
+The program will take in user input and reverse that string each time it runs.

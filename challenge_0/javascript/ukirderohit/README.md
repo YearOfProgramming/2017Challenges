@@ -1,0 +1,1 @@
+Open the webpage in any browser. Open Console that will say "Hello World".
