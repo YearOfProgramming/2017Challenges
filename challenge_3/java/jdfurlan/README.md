@@ -1,4 +1,4 @@
-# InvertBinarTree
+# InvertBinaryTree
 ###### Java 8
 
 ### 1. Approach to Solving the problem
@@ -12,8 +12,8 @@ The approach to print was to do a [Breadth-First Traversal](https://www.cs.bu.ed
 Compile the Node class first
 
 ```
-javac InvertBinarTree.java
-java InvertBinarTree
+javac InvertBinaryTree.java
+java InvertBinaryTree
 ```
 
 ### 3. How this program works
