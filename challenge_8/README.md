@@ -12,7 +12,7 @@ Just a normal Linked List right? Right. Nothing special about it what so ever. N
 
 Your job is to create a function "deep_copy" (or whatever you want to call it), that, when given the root of a linked list with random pointers, can construct a deep copy of it. 
 
-"What is a deep copy?" You ask. A deep copy is a copy of a "structure" but with no references what so ever to the origina. For more information take a look at http://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy
+"What is a deep copy?" You ask. A deep copy is a copy of a "structure" but with no references what so ever to the original. For more information take a look at http://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy
 
 For the purpose of this challenge, each node in the list has three attributes. Next, random and data (normally in this problem "data" is excluded). For the sake of testing, the deep-copies "data" field should have the original copies data but it should end with a \'. In other words if we have one node whose data is "A", the deep copy of that node has A' as its data.
 
