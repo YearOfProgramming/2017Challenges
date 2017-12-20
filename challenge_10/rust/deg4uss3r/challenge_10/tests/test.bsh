@@ -1,0 +1,76 @@
+#! /bin/bash
+
+strings=("{{{{{{{{{adfkjaefia}}}}}}}", "{{{{{{{{{[[[[[[kadfa{{{{{{{((({daljfdaf({{{[]}}kaldjfs})})))}}}}}}}]]]]]]}kjfela}}}}}}}}", "{{{[}}}}dafda", "{{{{{{{{{}}}}}}}}}", "[[[[[[[[[kafjalfeianfailfeja;fjai;efa;sfj]]]]]]]]]kjajdain", "< blank >", "((((((fjdalfeja((((alefjalisj(())))))))))))d", ")))(((d", "({)}")
+
+#false, true, false, true, true, true, true, false, false
+
+out=`echo ${strings[0]} | ../target/release/challenge_10`
+if [ ${out} == "false" ]; then
+    echo "Test 1 Passed"
+else
+    echo "Test 1 Failed!"
+fi
+
+out=`echo ${strings[1]} | ../target/release/challenge_10`
+if [ ${out} == "true" ]; then
+    echo "Test 2 Passed"
+else
+    echo "Test 2 Failed!"
+fi
+
+out=`echo ${strings[2]} | ../target/release/challenge_10`
+if [ ${out} == "false" ]; then
+    echo "Test 3 Passed"
+else
+    echo "Test 3 Failed!"
+fi
+
+out=`echo ${strings[3]} | ../target/release/challenge_10`
+if [ ${out} == "true" ]; then
+    echo "Test 4 Passed"
+else
+    echo "Test 4 Failed!"
+fi
+
+out=`echo ${strings[4]} | ../target/release/challenge_10`
+if [ ${out} == "true" ]; then
+    echo "Test 5 Passed"
+else
+    echo "Test 5 Failed!"
+fi
+
+out=`echo ${strings[5]} | ../target/release/challenge_10`
+if [ ${out} == "true" ]; then
+    echo "Test 6 Passed"
+else
+    echo "Test 6 Failed!"
+fi
+
+out=`echo ${strings[6]} | ../target/release/challenge_10`
+if [ ${out} == "true" ]; then
+    echo "Test 7 Passed"
+else
+    echo "Test 7 Failed!"
+fi
+
+out=`echo ${strings[2]} | ../target/release/challenge_10`
+if [ ${out} == "false" ]; then
+    echo "Test 8 Passed"
+else
+    echo "Test 8 Failed!"
+fi
+
+out=`echo ${strings[2]} | ../target/release/challenge_10`
+if [ ${out} == "false" ]; then
+    echo "Test 9 Passed"
+else
+    echo "Test 9 Failed!"
+fi
+
+out=`cat ../src/main.rs | ../target/release/challenge_10`
+if [ ${out} == "true" ]; then
+    echo "Test 10 Passed"
+else
+    echo "Test 10 Failed!"
+fi
+

@@ -1,0 +1,89 @@
+% gs -dBATCH invert_tree.ps
+%
+
+% #Invert Binary Tree
+
+% - Your challenge is to take a binary tree and invert it. If you don't know what a binary tree is, follow this link: http://cslibrary.stanford.edu/110/BinaryTrees.html
+
+% for example, say you have a tree that looks like the following
+
+% ![tree](tree.jpg)
+
+% after your program runs, it should return a tree that looks like this
+
+% ![reversedTree](treeReversed.jpg)
+
+% - Your program should run on any size tree. What is the runtime and space of your algorithm? Do you think it's reasonable? These are important questions you should ask yourself when creating these types of solutions.
+
+
+/stdout { (%stdout) (w) file } def   % push stdout for writing
+/stdin { (%stdin) (r) file } def     % push stdin for writing
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+/2dup { 1 index 1 index } def        % dup top 2 elements
+
+/data        { 0 get } def
+/left_child  { 1 get } def
+/right_child { 2 get } def
+/is_empty    { length 0 eq } def
+/not_empty   { length 0 gt } def
+
+/set_left_child  { 1 exch put } def
+/set_right_child { 2 exch put } def
+
+/reverse_if_not_empty {
+  dup is_empty { pop } { reverse_tree } ifelse
+} def
+
+/print_if_not_empty {  % tree indent
+  1 add
+  1 index not_empty
+  { print_tree } { pop pop } ifelse
+} def
+
+/print_string_times { % str n -
+  string { pop stdout 1 index writestring } forall pop
+} def
+
+/reverse_tree {       % tree - tree
+
+  dup                    % root root
+  dup left_child exch    % root left root
+  dup dup right_child    % root left root root right
+  set_left_child         % root left root - put right into left
+  exch set_right_child   % root - put left into right
+
+  dup left_child reverse_if_not_empty
+  dup right_child reverse_if_not_empty
+  pop
+
+} def
+
+
+/print_tree {      % tree indent - print sideways
+
+  2dup
+  exch right_child exch print_if_not_empty
+
+  2dup
+  2 mul ( ) exch print_string_times
+  0 get 1024 string cvs println
+
+  exch left_child exch print_if_not_empty
+
+} def
+
+/leaf { [ [] [] [] ] dup 0 4 -1 roll put } def
+
+
+[4 [2 1 leaf 3 leaf][7 6 leaf 9 leaf]] 
+(Original:) println
+dup 0 print_tree
+dup reverse_tree
+(Reversed:) println
+0 print_tree
+
+pstack quit
+

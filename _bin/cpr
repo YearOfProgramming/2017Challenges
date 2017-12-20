@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Checkout Pull Request
 #
@@ -26,9 +26,28 @@ function merge_pr () {
 	git merge "${1}/${2}"
 }
 
+if [[ "$#" == "0" ]]; then
+	cat <<-EOS
+Usage:
+
+_bin/cpr get <username> <branch>, as seen when looking at a Pull Request on the
+web (see https://help.github.com/articles/checking-out-pull-requests-locally/)
+
+_bin/cpr merge <username> <branch> will merge the PR into master and open up
+your editor for a commit message.
+
+This function is only useful for admins, as we are the only ones with write
+access to the central repository. Don't bother running this in a fork of the
+central repo unless you *yourself* have incoming pull requests.
+	EOS
+	exit 0
+fi
+
 if [[ "$1" == "" ]]; then
 	echo "You must specify an action"
 	exit 1
+elif [[ "$1" != "get" && "$1" != "merge" ]]; then
+	echo "The subcommands are 'get' and 'merge'. They require a username and a branch as second and third arguments."
 fi
 if [[ "$2" == "" ]]; then
 	echo "You must specify a GitHub username"

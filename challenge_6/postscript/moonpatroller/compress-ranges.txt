@@ -1,0 +1,99 @@
+% gs -dBATCH compress-ranges.ps
+%
+
+% tos = top of stack
+
+/mark-1-below { 1 index [ eq } def   % test if element 1 below tos is a mark/array start
+/mark-2-below { 2 index [ eq } def   % test if element 2 below tos is a mark/array start
+
+/stdout { (%stdout) (w) file } def   % push stdout to tos
+
+% consume string from tos and print it and a newline character
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+
+/2dup { 1 index 1 index } def    % duplicate top 2 elements
+
+/top-2-sequential { 2dup sub -1 eq } def   % test if tos is 1 greater than element below it
+
+% complete the array on the stack if it's not empty
+% if tos is mark/an empty array, discard it
+/remove-mark-or-finish-array { dup [ eq { pop } { ] } ifelse } def
+
+/range-to-string {    % array - string
+	/a exch def
+	a length 1 eq
+	{
+		% array length is one, return that element converted to a string.
+		a 0 get 10 10 string cvrs
+	}
+	{
+		% convert each num into a string, then copy them and the -> into the dest-str
+		/first-num  a 0 get def
+		/second-num a 1 get def
+		/first-str  first-num  10 10 string cvrs def
+		/second-str second-num 10 10 string cvrs def
+		/dest-str first-str length second-str length add 2 add string def
+		dest-str 0 first-str putinterval
+		dest-str first-str length (->) putinterval
+		dest-str first-str length 2 add second-str putinterval
+		dest-str
+	}
+	ifelse
+} def
+
+% [1,2,3,4,8,9,10,12,13,14] - [[1 4], [8 10], [12 14]]
+% stack will hold array of range arrays
+/ranges {
+	% push start of return array and start of first range array below the input array
+	[ exch [ exch
+
+	% iterate over input array
+	{
+		% if current element is first in its range array leave it there
+		mark-1-below   % [ current - 
+		{}
+		{
+			% if current element is second in its range array...
+			mark-2-below   % [ num current -
+			{
+				% ...leave it there if the 2 are sequential
+				top-2-sequential
+				{}
+				% ...top two not part of same range
+				{
+					/current exch def	% move current into local variable
+					] [ current         % end current range, start new with current
+				} ifelse
+			}
+			{
+				% 3 elements in current range...
+				% [ n1 n2 current -
+				top-2-sequential
+				{
+					exch pop	% ...drop middle element if in same range
+				}
+				{
+					% ... otherwise current starts new range like above
+					/current exch def
+					] [ current
+				} ifelse
+			}
+			ifelse
+		}
+		ifelse
+	}
+	forall
+
+	% finish final range array
+	remove-mark-or-finish-array
+
+	] % end results array
+
+	[ exch	% return final array by converting ranges into strings
+	{ range-to-string } forall
+	]
+} def
+

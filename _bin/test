@@ -1,0 +1,106 @@
+#!/bin/bash
+# Tests your program for correct input and output
+
+if [[ "$#" == "0" ]]; then
+    cat <<-EOS
+    Usage:
+
+    ./_bin/test <challenge number> <programming language> <identity> 
+
+    <challenge number> is the challenge you are on (e.g. 5)
+    <programming language> is the name of the directory for the programming language you 
+    chose (e.g python, cpp, csharp, etc)
+    <identity> is the name of the directory that you created that identifies you
+
+    Example:
+
+    ./_bin/test 4 python Johnson
+
+    This program will go to the challenge you are testing and pass in the testfiles
+    within that challenge to your solution. Your solution must be named solution 
+    followed  by the extension of your choice (e.g. solution.py, solution.exe, etc). Your 
+    program must expect a line of standard input and the solution must be printed out. 
+
+	EOS
+    exit 0
+fi
+
+#Checks if first argument is an integer
+re='^[0-9]+$'
+if ! [[ "$1" =~ $re ]]; then
+    printf "You must specify the challenge number">&2
+    exit 1
+fi
+
+if [[ "$2" == "" ]]; then
+    echo "You must specify the directory name for your programming language (e.g. python, cpp, c, csharp, etc)">&2
+    exit 2
+fi
+
+if [[ "$3" == "" ]]; then
+    echo "You must specify the name you are using for you submission (e.g. john)">&2
+    exit 3
+fi
+
+if [[ $(pwd) =~ .*bin.* ]]; then
+    echo "You must move up one directory and run this program from the root of the 2017Challenges directory">&2
+
+    exit 4
+fi
+
+ch_num=$1 # challenge number
+language=$2 # Makes it lowercase
+name=$3 # name of person
+test_dir="./challenge_$ch_num/testfiles" 
+user_solution=$(find ./challenge_$1/$language/$name/ -name "*solution*")
+
+# If the directory contains a file named solution
+if ! [[ $user_solution =~ .*solution.* ]]; then
+    echo "Your submission directory must contain an executable containing solution in its name">&2
+    exit 5
+fi
+
+if [[ $user_solution =~ .*py ]]; then
+    echo "It looks like you are using python, please enter the version (e.g. 3, 2.7, 3.6)"
+    read py_version
+
+    # checks if decimal or integer
+    re='^[0-9]+([.][0-9]+)?$'
+    if ! [[ $py_version =~ $re ]]; then
+        echo "Please enter a correct python version">&2
+
+        exit 6 
+    fi
+    user_solution="python$py_version $user_solution"
+fi
+
+rm -f result
+chmod +x _bin/test
+
+corr=0
+count=0
+
+num_testcases=$(ls -l $test_dir | wc -l)
+let --num_testcases
+let num_testcases/=2
+
+for input in $test_dir/t*; do
+    let count++
+
+    $user_solution < $input > user_result
+
+    diff user_result $test_dir/o$count > comparison
+    if [[ -s comparison ]] ; then
+        echo "Incorrect for $count th example.";
+    else
+        echo "Correct for $count th example.";
+        let corr++
+    fi
+
+    echo $name "test" $i: ${corr}/${num_testcases} >> result
+done
+
+echo $corr/${num_testcases};
+
+rm -f user_result
+rm -f comparison
