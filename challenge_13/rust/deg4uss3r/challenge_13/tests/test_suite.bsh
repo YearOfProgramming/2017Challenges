@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+tests=`ls -1 ../../../tests`
+correctness=("true" "true" "false" "false" "true")
+x=0
+
+for i in $tests; do
+    test=`cat ../../../tests/${i} | ./target/release/challenge_13`
+    if [[ ${test} -eq correctness[x] ]]; then
+        echo "${i} passed!"
+        x+=1
+    else
+        echo "uh oh ${i} failed!"
+    fi
+done

@@ -1,15 +1,16 @@
 
 
-pub fn find_odd_letter(s: &str, t: &str) -> char {
+pub fn find_odd_letter(s: &str, t: &str) -> Option<char>{
 
     for i in t.chars() {
         if s.contains(&i.to_string()){
             continue;
         }
         else {
-            return i;
+            return Some(i);
         }
     }
 
-    panic!("No odd letter found, ruh roh!");
+    
+    None
 }
