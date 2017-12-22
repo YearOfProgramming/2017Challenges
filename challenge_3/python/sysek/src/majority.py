@@ -9,7 +9,11 @@ def majority_number(db):
             dic[i] = 1
 
     maxcount = max(dic, key=lambda i: dic[i])
+<<<<<<< HEAD
+    print(maxcount)
+=======
     return maxcount
+>>>>>>> 95ff366c17872db3c1d6de2a7c86780c92cc4bb9
 	
 
 w = [2,2,3,7,5,7,7,7,4,7,2,7,4,5,6,7,7,8,6,7,7,8,10,12,29,30,19,10,7,7,7,7,7,7,7,7,7]
