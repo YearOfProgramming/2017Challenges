@@ -1,0 +1,28 @@
+% gs -dBATCH test-deep-copy.txt
+%
+
+(deep-copy.txt) run
+
+/list [ 1 2 3 4 5 ] build-list def
+
+list list 2 list-nth set-random
+list 2 list-nth list 4 list-nth set-random
+list 3 list-nth list 2 list-nth set-random
+list 4 list-nth list 1 list-nth set-random
+list 1 list-nth list set-random
+
+stdout (Original list: ) writestring
+list list-print
+
+/new-list list deep-copy def
+
+stdout (Deep copy: ) writestring
+new-list list-print
+
+list list-zero
+
+stdout (Original, zeroed-out list: ) writestring
+list list-print
+
+stdout (New list:  ) writestring
+new-list list-print

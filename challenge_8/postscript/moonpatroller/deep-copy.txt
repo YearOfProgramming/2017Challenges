@@ -1,0 +1,145 @@
+% gs -dBATCH deep-copy.txt
+
+% Random Pointer Linked List
+% ======
+% List nodes will be arrays: [data, random-node, next-node]
+% Algo:
+% Iterate through the linked list mapping random pointers to the node that owns them
+% and mapping old nodes to corresponding new nodes.
+% Create new list as you iterate through the original list.
+
+% If a random pointer points to a previously seen node, point current new node
+% to previous new node in mapping from old nodes.
+
+% If a random pointer points to a non-previously seen node, map unknown node to current new node.  
+% If current old node maps to previous new node, point current new node's random pointer
+
+/stdout { (%stdout) (w) file } def   % push stdout file on top of stack
+
+/println {  % str -
+  stdout exch writestring
+  stdout (\n) writestring
+} def
+
+/get-data   { 0 get } def
+/get-random { 1 get } def
+/get-next   { 2 get } def
+
+/set-data   { 0 exch put } def
+/set-random { 1 exch put } def
+/set-next   { 2 exch put } def
+
+/make-node-3  { 3 array astore } def     % (data)
+
+/build-list {
+    /a exch def
+    a { [] } forall
+    []
+    a length { make-node-3 } repeat
+
+} def
+
+/list-nth {
+    dup 0 eq
+    {
+        pop
+    }
+    {
+        exch get-next exch 1 sub list-nth
+    } ifelse
+} def
+
+/list-print {
+    /print-data { get-data stdout exch 100 string cvs writestring } def
+    {
+        dup print-data
+        stdout (, ) writestring
+        dup get-random dup [] ne 
+        { 
+            print-data 
+        } 
+        { 
+            pop 
+        } ifelse
+        stdout (, ) writestring
+        dup get-next
+        dup length 0 gt
+        {
+            print-data
+            get-next
+        }
+        {
+            pop
+            pop
+            stdout (null\n) writestring
+            exit
+        } ifelse
+        stdout (; ) writestring
+    } loop
+} def
+
+/list-zero {
+    {
+        dup length 0 eq
+        {
+            pop exit
+        }
+        {
+            dup 0 set-data
+            get-next
+        } ifelse
+    } loop
+} def
+
+/deep-copy-helper {
+    /old exch def
+    old length 0 eq
+    {
+        [] 
+    }
+    {
+        5 dict begin
+            % make new node with old node's data
+            /new-node [ old get-data [] [] ] def
+
+            % if old node's random points to previously seen old node...
+            old length 0 gt 
+            prev-seen old get-random known
+            and
+            {
+                new-node prev-seen old get-random get set-random
+            } if
+
+            % map old node to new node
+            prev-seen old new-node put
+
+            % map old node's future random back to new node
+            old length 0 gt {
+                rev-rands old get-random new-node put 
+            } if
+
+            % re-set other random pointers
+            rev-rands old known
+            {
+                % point prev node's random to this new node
+                rev-rands old get new-node set-random
+            } if
+
+            % recursively make next node
+            /next-node old get-next deep-copy-helper def
+
+            % set new node's next node
+            new-node next-node set-next
+
+            new-node
+        end
+    } ifelse
+} def
+
+/deep-copy {
+    5 dict begin
+        /prev-seen 1024 dict def
+        /rev-rands 1024 dict def
+        deep-copy-helper
+    end
+} def
