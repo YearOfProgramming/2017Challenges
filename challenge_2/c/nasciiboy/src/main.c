@@ -30,22 +30,22 @@ void showUniqNodes( TreeNode *ptrTreeNode );
 void showMixData( MixData data[], uint32_t size );
 
 int main(){
-  TreeNode *ptrRaiz = NULL;
+  TreeNode *ptrRoot = NULL;
   MixData intData[18] = { {2,TINT},{3,TINT},{4,TINT},{2,TINT},{3,TINT},{5,TINT},{4,TINT},{6,TINT},{4,TINT},{6,TINT},{9,TINT},{10,TINT},{9,TINT},{8,TINT},{7,TINT},{8,TINT},{10,TINT},{7,TINT}};
   MixData mixData[26] = {{2,TINT},{u'a',TCHAR},{u'l',TCHAR},{3,TINT},{u'l',TCHAR},{4,TINT},{u'k',TCHAR},{2,TINT},{3,TINT},{4,TINT},{u'a',TCHAR},{6,TINT},{u'c',TCHAR},{4,TINT},{u'm',TCHAR},{6,TINT},{u'm',TCHAR},{u'k',TCHAR},{9,TINT},{10,TINT},{9,TINT},{8,TINT},{7,TINT},{8,TINT},{10,TINT},{7,TINT}};
 
   showMixData( intData, 18 );
-  printf( "unics: " );
-  appendNodes( &ptrRaiz, intData, 18 );
-  showUniqNodes( ptrRaiz );
-  freeNode( &ptrRaiz );
+  printf( "uniqs: " );
+  appendNodes( &ptrRoot, intData, 18 );
+  showUniqNodes( ptrRoot );
+  freeNode( &ptrRoot );
   putchar( '\n' );
 
   showMixData( mixData, 26 );
-  printf( "unics: " );
-  appendNodes( &ptrRaiz, mixData, 26 );
-  showUniqNodes( ptrRaiz );
-  freeNode( &ptrRaiz );
+  printf( "uniqs: " );
+  appendNodes( &ptrRoot, mixData, 26 );
+  showUniqNodes( ptrRoot );
+  freeNode( &ptrRoot );
   putchar( '\n' );
 
   return 0;
