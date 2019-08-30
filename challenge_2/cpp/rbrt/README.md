@@ -1,0 +1,2 @@
+The code accept an array of any length and find the values that appear only once in the array. The complexity of the code is linear with the length of the array. 
+In order to obtain this result we generate an array where we stored how many time the values in the input array appear. In this way it is necessary to scan the list only once and update the values in the counters array. Once the reading of the input list is over we look for the element that appear only once, i.e. the one that has the counter == 1. 
