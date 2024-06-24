@@ -6,16 +6,16 @@ def solution(strr):
     """check if all brackets closed properly"""
     
     closerof = {'{':'}', '[':']','(':')'}
-    Start = ('[','{','(')
-    Closer = (']','}',')')
+    START = ('[','{','(')
+    CLOSE = (']','}',')')
     stack = []
     
     for i in strr:
         # push into stack, if new bracket found
-        if i in Start:
+        if i in START:
             stack.append(i)
         # pop out if proper closer found, else False
-        elif i in Closer:
+        elif i in CLOSE:
             if closerof[stack[-1]] == i:
                 stack.pop()
             else:
