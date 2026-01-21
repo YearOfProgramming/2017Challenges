@@ -91,7 +91,10 @@ for input in $test_dir/t*; do
 
     diff user_result $test_dir/o$count > comparison
     if [[ -s comparison ]] ; then
+        echo "----------------------------"
         echo "Incorrect for $count th example.";
+        cat comparison
+        echo "----------------------------"
     else
         echo "Correct for $count th example.";
         let corr++
